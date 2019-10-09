@@ -1,0 +1,60 @@
+header {
+	padding: 2%;
+	font-family: Helvetica;
+	background-color: #00B8FF;
+	color: white;
+	font-weight: bold;
+	font-size: 100%;
+}
+
+h1 {
+	text-align: center;
+	padding-top: 46%;
+	padding-bottom: 1.5%;
+	background-repeat: no-repeat;
+	background: url("https://miro.medium.com/max/4242/1*8FNmOQytmTPDUFpMuQBcyw.jpeg");
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
+
+footer {
+	margin: 40%;
+}
+
+.user {
+	width: 50px;
+	border-radius: 50%; 
+}
+
+.align {
+	padding-left: 5%;
+}
+
+.col-xs-2 {
+	margin-top: 2%; 
+	padding-left: 65%;
+}
+
+#navbar {
+  background-color: #0076A4; /* Black background color */
+  position: fixed; /* Make it stick/fixed */
+  top: 0; /* Stay on top */
+  width: 100%; /* Full width */
+  transition: top 0.3s; /* Transition effect when sliding down (and up) */
+}
+
+/* Style the navbar links */
+#navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 24px;
+  text-decoration: none;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
