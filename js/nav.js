@@ -1,6 +1,3 @@
-console.log("hola");
-
-// let nav = ;
 let content = `<div class="align">
 								<a href="./logIn.html">LogIn/SignUp</a>
 								<a href="./index.html">Home</a>
