@@ -1,3 +1,29 @@
+form {
+		
+}
+
 .container {
-	padding: 10%;
+	padding-top: 7%;
+}
+
+.form {
+	padding-top: 5%;
+}
+
+.top {
+	padding-bottom: 3%;
+}
+
+.cont {
+	margin-right: 15%;
+}
+
+.logInBtn {
+	margin-top: 1%;
+	margin-left: 74%;
+}
+
+.signInBtn {
+	margin-top: 1%;
+	margin-left: 81%;
 }

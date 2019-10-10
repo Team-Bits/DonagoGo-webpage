@@ -10,21 +10,62 @@
 <body>
 	<div id="navbar"></div>
 
-	<main class="container">
+	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 signIn">
 				<h5>
-					¡Registro!
+					Registro
 				</h5>
-				
+				<div class="cont">
+					<form class="form">
+						<div class="col-xs-4 top">
+							<label for="ex3">Nombre(s)</label>
+							<input name="name" id="name-reg" class="form-control" id="ex3" type="text">
+						</div>
+						<div class="col-xs-4 top">
+							<label for="ex3">Apellido(s)</label>
+							<input name="name" id="lname-reg" class="form-control" id="ex3" type="text">
+						</div>
+						<div class="col-xs-4 top">
+							<label for="ex3">Correo</label>
+							<input name="name" id="mail-reg" class="form-control" id="ex3" type="text">
+						</div>
+						<div class="col-xs-4 top">
+							<label for="ex3">Contraseña</label>
+							<input name="name" id="pwd-reg" class="form-control" id="ex3" type="password">
+						</div>
+						<div class="col-xs-4 top">
+							<label for="ex3">Confirmar contraseña</label>
+							<input name="name" id="conf-pwd-reg" class="form-control" id="ex3" type="password">
+						</div>
+						<div class="top">
+							<button id="logInBtn" type="button" class="btn btn-success signInBtn">Registrar</button>
+						</div>
+					</form>
+				</div>
 			</div>
 			<div class="col-lg-6 logIn">
 				<h5>
-					¡Iniciar sesión!
+					Iniciar sesión
 				</h5>
+				<form class="form">
+					<div class="cont">
+						<div class="col-xs-4 top">
+							<label for="ex3">Correo</label>
+							<input name="name" id="name" class="form-control" id="ex3" type="email">
+						</div>
+						<div class="col-xs-4 top">
+							<label for="ex3">Contraseña</label>
+							<input name="pwd" id="pwd" class="form-control" id="ex3" type="password">
+						</div>
+						<div class="top">
+							<button id="logInBtn" type="button" class="btn btn-success logInBtn">Iniciar Sesión</button>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
-	</main>
+	</div>
 
 
 	<script type="text/javascript" src="./js/nav.js"></script>
