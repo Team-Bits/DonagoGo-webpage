@@ -3,9 +3,10 @@
 }
 
 .tab-content {
-	/*padding-top: 10%;*/
+	/*margin-top: -2.5%;*/
 	padding-bottom: 50%;
 	border: solid #E2EBEB;
+	/*border-top-style: none;*/
 	border-radius: 0px 0px 10px 10px;
 }
 
