@@ -1,0 +1,14 @@
+.cont {
+	margin: 8%; 
+}
+
+.tab-content {
+	/*padding-top: 10%;*/
+	padding-bottom: 50%;
+	border: solid #E2EBEB;
+	border-radius: 0px 0px 10px 10px;
+}
+
+.tab-pane {
+	margin: 2%;
+}

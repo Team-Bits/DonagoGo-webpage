@@ -37,11 +37,9 @@ footer {
 	margin-top: 3%; 
 	color: white;
 	padding: 5%;
-	background-color: green;
-	/*background-image: linear-gradient( 0.4deg,  rgba(28,23,203,1) 3.7%, rgba(54,210,228,1) 86.3% );*/
+	background-color: #3D8C2A;
 	display: flex;
 	flex-direction: row;
-	/*justify-content: space-around;*/
 	justify-content: space-between;
 	text-align: center;
 }
