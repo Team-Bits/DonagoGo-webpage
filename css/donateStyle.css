@@ -29,10 +29,6 @@
 	margin: 8%; 
 }
 
-.right {
-	margin-top: 4%;
-}
-
 .dot {
 	color: red;
 }
@@ -46,4 +42,14 @@
 .tab-pane {
 	margin: 2%;
 	margin-bottom: -1%;
+}
+
+.division-btn {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.right-btn {
+	margin-left: -7.4%;
 }

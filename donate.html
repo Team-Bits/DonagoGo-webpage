@@ -13,13 +13,10 @@
 		<!-- https://getbootstrap.com/docs/4.0/components/navs/ -->
 		<ul class="nav nav-tabs" id="myTab" role="tablist">
 			<li class="nav-item">
-				<a class="nav-link active" id="description-tab" data-toggle="tab" href="#home" role="tab" aria-controls="description" aria-selected="true">Descripción</a>
+				<a class="nav-link" id="description-tab" data-toggle="tab" href="#home" role="tab" aria-controls="description" aria-selected="false">Descripción</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Información</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Condición</a>
+				<a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Información</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Datos</a>
@@ -37,9 +34,12 @@
 							<label class="form-label">Lo describiría como... <span class="dot">*</span></label>
 							<textarea class="form-control" rows="5" id="description" placeholder="ej. Chamarra adidas de color negro en talla M, seis meses de uso."></textarea>
 						</div>
-						<div class="right">
-							<button type="button" id="next1" class="btn btn-success">Siguiente</button>
-						</div>
+						<dir class="form-group division-btn">
+							<dir class="right-btn"></dir>
+							<dir class="left-btn">
+								<button type="button" id="next1" class="btn btn-success">Siguiente</button>
+							</dir>
+						</dir>
 					</div>
 				</form>
 			</div>
@@ -48,7 +48,7 @@
 					<div class="form-content">
 						<div class="form-group division">
 							<div class="left">
-								<label class="form-label">Su marca es... </label>
+								<label class="form-label">La marca es... </label>
 								<input type="text" class="form-control" id="brand" placeholder="ej. Adidas">
 								<label class="optional">*Opcional</label>
 							</div>
@@ -57,30 +57,27 @@
 								<input type="text" class="form-control" id="model" placeholder="ej. Firebird">
 								<label class="optional">*Opcional</label>
 							</div>
-						</div>
-						<div class="form-group space">
-							<label class="form-label">asd<span class="dot">*</span></label>
-							<input type="text" class="form-control" id="title" placeholder="ej. Sudadera adidas">
-						</div>
-						<div class="form-group space">
-							<label class="form-label">Lo describiría como... <span class="dot">*</span></label>
-							<textarea class="form-control" rows="5" id="comment" placeholder="ej. Chamarra adidas de color negro en talla M, seis meses de uso."></textarea>
-						</div>
-						<div class="form-group division">
-							<div class="left">
-								<label class="form-label">Su marca es... </label>
-								<input type="text" class="form-control" id="title" placeholder="ej. Adidas">
-								<label class="optional">*Opcional</label>
-							</div>
 							<div class="center">
-								<label class="form-label">Con modelo... </label>
-								<input type="text" class="form-control" id="title" placeholder="ej. Firebird">
+								<label class="form-label">Del año </label>
+								<input type="text" class="form-control" id="year" placeholder="ej. 2015">
 								<label class="optional">*Opcional</label>
 							</div>
-							<div class="right">
-								<button type="button" id="next1" class="btn btn-success">Siguiente</button>
-							</div>
 						</div>
+						<div class="form-group space">
+							<label class="form-label">El producto es... <span class="dot">*</span></label>
+							<select class="form-control" id="condition">
+								<option value="new">Nuevo</option>
+								<option value="used">Usado</option>
+							</select>
+						</div>
+						<dir class="form-group division-btn">
+							<dir class="right-btn">
+								<button type="button" id="back2" class="btn btn-success">Regresar</button>
+							</dir>
+							<dir class="left-btn">
+								<button type="button" id="next2" class="btn btn-success">Siguiente</button>
+							</dir>
+						</dir>
 					</div>
 				</form>
 			</div>
