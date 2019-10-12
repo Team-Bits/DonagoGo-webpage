@@ -12,6 +12,10 @@
 	margin-right: 7%;
 }
 
+.fit {
+	margin-right: 60%;
+}
+
 .division {
 	display: flex;
 	flex-direction: row;
