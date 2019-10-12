@@ -9,21 +9,20 @@
 	<div id="navbar"></div>
 
 	<div class="cont">
-
 		<!-- https://getbootstrap.com/docs/4.0/components/navs/ -->
 		<ul class="nav nav-tabs" id="myTab" role="tablist">
 			<li class="nav-item">
 				<a class="nav-link" id="description-tab" data-toggle="tab" href="#home" role="tab" aria-controls="description" aria-selected="false">Descripción</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Información</a>
+				<a class="nav-link active" id="info-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Información</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Datos</a>
+				<a class="nav-link" id="data-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Datos</a>
 			</li>
 		</ul>
 		<div class="tab-content" id="myTabContent">
-			<div class="tab-pane fade" id="description" role="tabpanel" aria-labelledby="description-tab">
+			<div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
 				<form>
 					<div class="form-content">
 						<div class="form-group space">
@@ -33,6 +32,9 @@
 						<div class="form-group space">
 							<label class="form-label">Lo describiría como... <span class="dot">*</span></label>
 							<textarea class="form-control" rows="5" id="description" placeholder="ej. Chamarra adidas de color negro en talla M, seis meses de uso."></textarea>
+						</div>
+						<div class="form-group space">
+							<label class="form-label">Y así se ve... <span class="dot">*</span></label>
 						</div>
 						<dir class="form-group division-btn">
 							<dir class="right-btn"></dir>
@@ -66,8 +68,26 @@
 						<div class="form-group space">
 							<label class="form-label">El producto es... <span class="dot">*</span></label>
 							<select class="form-control" id="condition">
+								<option value="new">Seleccionar</option>
 								<option value="new">Nuevo</option>
 								<option value="used">Usado</option>
+							</select>
+						</div>
+						<div class="form-group space">
+							<label class="form-label">Y pertenece a la categoría... <span class="dot">*</span></label>
+							<select class="form-control" id="condition">
+								<option value="select">Seleccionar</option>
+								<option value="new">Ropa y accesorios</option>
+								<option value="new">Tecnología</option>
+								<option value="new">Hogar y familia</option>
+								<option value="new">Limpieza</option>
+								<option value="new">Mascotas</option>
+								<option value="new">Juguetes</option>
+								<option value="used">Libros y útiles</option>
+								<option value="used">Muebles</option>
+								<option value="used">Comida</option>
+								<option value="used">Depotes</option>
+								<option value="used">Electrodomesticos</option>
 							</select>
 						</div>
 						<dir class="form-group division-btn">
@@ -81,7 +101,7 @@
 					</div>
 				</form>
 			</div>
-			<div class="tab-pane fade show active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+			<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
 				<form>
 					<div class="form-content">
 						<div class="form-group space">
@@ -141,5 +161,7 @@ Datos
 
 	<script type="text/javascript" src="./js/nav.js"></script>
 	<script type="text/javascript" src="./js/navbar.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="./js/contController.js"></script>
 </body>
 </html>
