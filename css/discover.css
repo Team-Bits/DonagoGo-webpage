@@ -1,4 +1,14 @@
-.carousel {
-	margin: 10%;
+.categories {
+	padding-top: 10%;
 }
 
+.rowFlex {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding-top: 2%;
+}
+
+.colFlex {
+
+}
