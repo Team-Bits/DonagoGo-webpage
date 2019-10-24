@@ -6,9 +6,30 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-	padding-top: 2%;
+	/*padding-top: 0.5%;*/
+	padding-bottom: 2%;
+	/*text-align: center;*/
 }
 
-.colFlex {
+.colFlex:hover {
+	cursor: pointer;
+}
 
+.discoverTitle {
+	padding-left: 2%;
+	padding-bottom: 1%;
+}
+
+.sectionImage {
+	width: 250px;
+	height: 200px;
+}
+
+.subTitle {
+	padding-top: 1%;
+	padding-left: 0.5%;
+}
+
+.line {
+	margin-bottom: 2%;
 }
