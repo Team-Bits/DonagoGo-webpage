@@ -1,0 +1,55 @@
+.backCategory {
+	margin-bottom: 1%;
+	margin-left: 3.3%;
+}
+
+.detailImage {
+	/*width: 280%;
+	height: 200%;*/
+}
+
+.divitionDetail {
+	display: flex;
+}
+
+.rightDetail {
+	margin-right: 2%;
+}
+
+.priceDetail {
+	font-size: 120%;
+	display: flex;
+	/*margin-left: 10%;*/
+}
+
+.priceDetailLeft {
+	text-align: right;
+}
+
+.priceDetailRight {
+	margin-left: 1%;
+}
+
+.otherPrice {
+	color: red;
+}
+
+.bestPrice {
+	color: green;
+	font-weight: bold;
+}
+
+.difference {
+	color: #E9DF32;
+	font-weight: bold;
+}
+
+.characteristicsDetail {
+	margin-top: 2%;
+	font-size: 120%;
+}
+
+.charDetail {
+	font-weight: bold;
+
+}
