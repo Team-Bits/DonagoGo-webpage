@@ -28,6 +28,8 @@
 .subTitle {
 	padding-top: 1%;
 	padding-left: 0.5%;
+	text-align: center;
+	font-weight: bold;
 }
 
 .line {
@@ -44,6 +46,30 @@
 	margin-left: 3.3%;
 }
 
+.backCategory {
+	margin-bottom: 1%;
+	margin-left: 3.3%;
+}
+
 .selectedTitle {
 	margin-bottom: 1%;
+}
+
+.subInfo {
+	margin-top: -3%;
+}
+
+.price {
+	color: #E9DF32;
+	font-weight: bold;
+	font-size: 105%;
+}
+
+.location {
+	margin-top: -5%;
+}
+
+.productDetail {
+	margin-top: 10%;
+	margin-left: 1%;
 }
