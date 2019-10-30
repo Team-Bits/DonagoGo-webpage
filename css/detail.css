@@ -16,22 +16,28 @@
 	margin-right: 2%;
 }
 
-.priceDetail {
-	font-size: 120%;
+.descriptionDetail {
+	padding-top: 2%;
+}
+
+.split {
 	display: flex;
-	/*margin-left: 10%;*/
+	justify-content: space-between;
+	font-size: 110%;
+	margin-top: 5%;
 }
 
-.priceDetailLeft {
-	text-align: right;
+.priceDetail {
+	margin-left: 5%;
 }
 
-.priceDetailRight {
-	margin-left: 1%;
+.characteristicsDetail {
+	margin-right: 15%;
 }
 
 .otherPrice {
 	color: red;
+	font-weight: bold;
 }
 
 .bestPrice {
@@ -44,16 +50,34 @@
 	font-weight: bold;
 }
 
-.characteristicsDetail {
-	margin-top: 2%;
-	font-size: 120%;
+.send {
+	font-weight: bold;
 }
 
 .charDetail {
 	font-weight: bold;
 }
 
-.split {
+.btn-warning {
+	color: white;
+}
+
+.buttonsDetail {
+	padding-top: 10%;
 	display: flex;
+	justify-content: space-between;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.titleDetail {
+	padding-top: 5%;
 	padding-left: 5%;
+	font-size: 120%;
+}
+
+.identDetail {
+	font-size: 110%;
+	padding-top: 1%;
+	padding-left: 8%;
 }
