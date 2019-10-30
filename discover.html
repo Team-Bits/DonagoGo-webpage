@@ -9,9 +9,9 @@
 </head>
 <body>
 	<div id="navbar"></div>
-	<section class="categories">
+	<section class="categories" hidden="">
 		<div class="line">
-			<h3 class="discoverTitle">Para el hogar...</h3>
+			<h3 class="discoverTitle">🏡 Para el hogar...</h3>
 			<div class="rowFlex">
 				<div class="colFlex main">
 					<img id="clean" class="sectionImage" src="./img/clean.png">
@@ -40,7 +40,7 @@
 			</div>
 		</div>
 		<div class="line">
-			<h3 class="discoverTitle">Entretenimiento...</h3>
+			<h3 class="discoverTitle">🎥 Entretenimiento...</h3>
 			<div class="rowFlex">
 				<div class="colFlex main">
 					<img id="enterteinment" class="sectionImage" src="./img/toys.jpg">
@@ -70,7 +70,7 @@
 		</div>
 		</div>
 		<div class="line">
-			<h3 class="discoverTitle">Para ti 😎</h3>
+			<h3 class="discoverTitle">😎 Para ti </h3>
 			<div class="rowFlex">
 				<div class="colFlex main">
 					<img id="clothes" class="sectionImage" src="./img/clothes.jpg">
@@ -99,7 +99,7 @@
 			</div>
 		</div>
 		<div class="line">
-			<h3 class="discoverTitle">Descuentos</h3>
+			<h3 class="discoverTitle">💯 Descuentos</h3>
 			<div class="rowFlex">
 				<div class="colFlex main">
 					<img id="discounts" class="sectionImage" src="./img/40.jpg">
@@ -128,7 +128,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="category">
+	<section class="category" hidden="">
 		<button type="button" class="btn btn-success back">Regresar</button>
 		<!-- <h3 class="selectedTitle"></h3> -->
 		<div class="line">
@@ -234,7 +234,7 @@
 		<button type="button" class="btn btn-success back">Regresar</button>
 	</section>
 
-	<section class="productDetail">
+	<section class="productDetail" hidden="">
 		<button type="button" class="btn btn-success backCategory">Regresar</button>
 		<div class="divitionDetail">
 			<div class="leftDetail">
@@ -296,14 +296,17 @@
 				</div>
 
 				<div class="buttonsDetail">
-					<button type="button" class="btn btn-primary">Guardar</button>
-					<button type="button" class="btn btn-success">Comprar</button>
-					<button type="button" class="btn btn-warning">Reportar</button>
+					<button type="button" id="saveDetail" class="btn btn-primary">Guardar</button>
+					<button type="button" id="buyDetail" class="btn btn-success">Comprar</button>
+					<button type="button" id="reportDetail" class="btn btn-warning">Reportar</button>
 				</div>
 			</div>
 		</div>
 		<button type="button" class="btn btn-success backCategory">Regresar</button>
-		
+	</section>
+
+	<section class="boughtProduct">
+		<h2>Producto Comprado</h2>
 	</section>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="./js/navBar.js"></script>
