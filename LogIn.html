@@ -2,117 +2,121 @@
 <html>
 <head>
 	<title>Donago-go</title>
-	<!-- <link rel="stylesheet" href="./css/logInStyle.css"></style> -->
-	<link rel="stylesheet" href="./css/logInStyle.css"></style>
-	<link rel="stylesheet" href="./css/navStyle.css"></style>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/logInStyle.css">
+	<link rel="stylesheet" href="./css/navStyle.css">
+	<link rel="stylesheet" href="./css/searchStyle.css">
 </head>
 <body>
 	<div id="navbar"></div>
+	
+	<div class="search"></div>
 
-	<div class="container inside" hidden="">
-		<div class="row">
-			<div class="col-lg-6 signIn">
-				<h4>
-					Registro
-				</h4>
-				<div class="cont">
+	<div class="notSearch">
+		<div class="container inside" hidden="">
+			<div class="row">
+				<div class="col-lg-6 signIn">
+					<h4>
+						Registro
+					</h4>
+					<div class="cont">
+						<form class="form">
+							<div class="col-xs-4 top">
+								<label for="ex3">Nombre(s)</label>
+								<input name="name" id="name-reg" class="form-control" id="ex3" type="text">
+							</div>
+							<div class="col-xs-4 top">
+								<label for="ex3">Apellido(s)</label>
+								<input name="name" id="lname-reg" class="form-control" id="ex3" type="text">
+							</div>
+							<div class="col-xs-4 top">
+								<label for="ex3">Correo</label>
+								<input name="name" id="mail-reg" class="form-control" id="ex3" type="text">
+							</div>
+							<div class="col-xs-4 top">
+								<label for="ex3">Contraseña</label>
+								<input name="name" id="pwd-reg" class="form-control" id="ex3" type="password">
+							</div>
+							<div class="col-xs-4 top">
+								<label for="ex3">Confirmar contraseña</label>
+								<input name="name" id="conf-pwd-reg" class="form-control" id="ex3" type="password">
+							</div>
+							<div class="top">
+								<button id="logInBtn" type="button" class="btn btn-success signInBtn">Registrar</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="col-lg-6 logIn">
+					<h4>
+						Iniciar sesión
+					</h4>
 					<form class="form">
-						<div class="col-xs-4 top">
-							<label for="ex3">Nombre(s)</label>
-							<input name="name" id="name-reg" class="form-control" id="ex3" type="text">
-						</div>
-						<div class="col-xs-4 top">
-							<label for="ex3">Apellido(s)</label>
-							<input name="name" id="lname-reg" class="form-control" id="ex3" type="text">
-						</div>
-						<div class="col-xs-4 top">
-							<label for="ex3">Correo</label>
-							<input name="name" id="mail-reg" class="form-control" id="ex3" type="text">
-						</div>
-						<div class="col-xs-4 top">
-							<label for="ex3">Contraseña</label>
-							<input name="name" id="pwd-reg" class="form-control" id="ex3" type="password">
-						</div>
-						<div class="col-xs-4 top">
-							<label for="ex3">Confirmar contraseña</label>
-							<input name="name" id="conf-pwd-reg" class="form-control" id="ex3" type="password">
-						</div>
-						<div class="top">
-							<button id="logInBtn" type="button" class="btn btn-success signInBtn">Registrar</button>
+						<div class="cont">
+							<div class="col-xs-4 top">
+								<label for="ex3">Correo</label>
+								<input name="name" id="name" class="form-control" id="ex3" type="email">
+							</div>
+							<div class="col-xs-4 top">
+								<label for="ex3">Contraseña</label>
+								<input name="pwd" id="pwd" class="form-control" id="ex3" type="password">
+							</div>
+							<div class="top">
+								<button id="logInBtn" type="button" class="btn btn-success logInBtn">Iniciar Sesión</button>
+							</div>
 						</div>
 					</form>
 				</div>
 			</div>
-			<div class="col-lg-6 logIn">
-				<h4>
-					Iniciar sesión
-				</h4>
-				<form class="form">
-					<div class="cont">
-						<div class="col-xs-4 top">
-							<label for="ex3">Correo</label>
-							<input name="name" id="name" class="form-control" id="ex3" type="email">
-						</div>
-						<div class="col-xs-4 top">
-							<label for="ex3">Contraseña</label>
-							<input name="pwd" id="pwd" class="form-control" id="ex3" type="password">
-						</div>
-						<div class="top">
-							<button id="logInBtn" type="button" class="btn btn-success logInBtn">Iniciar Sesión</button>
-						</div>
-					</div>
-				</form>
-			</div>
 		</div>
-	</div>
 
-	<div class="container inside">
-		<h1>Nombre Usuario</h1>
-		
-		<section class="sectionUser">
-			<h3 class="titleUser">📦 Pedidos</h3>
-			<ul>
-				<li class="order">UGREEN Cable USB Micro USB Nylon Trenzado Rápido Cargador 1 Metro para Samsung Galaxy S7 S6 EDGE S5 Nota 5 4 3, Xiaomi, Huawei, HTC, Oneplus, LG, Nokia, PS4, Tablets, E lectores y Mas (2m, Negro)</li>
-				<li class="order">Rubie's T-Rex Jurassic World Disfraces inflables universales</li>
-				<li class="order">Funko Pop Movies How To Train Your Dragon 3 Toothless</li>
-				<li class="order">Funko Pop! Games: Pokémon - Charmander</li>
-			</ul>
-			<button type="button" class="btn btn-info">Ver todos los pedidos</button>
-		</section>
+		<div class="container inside">
+			<h1>Nombre Usuario</h1>
+			
+			<section class="sectionUser">
+				<h3 class="titleUser">📦 Pedidos</h3>
+				<ul>
+					<li class="order">UGREEN Cable USB Micro USB Nylon Trenzado Rápido Cargador 1 Metro para Samsung Galaxy S7 S6 EDGE S5 Nota 5 4 3, Xiaomi, Huawei, HTC, Oneplus, LG, Nokia, PS4, Tablets, E lectores y Mas (2m, Negro)</li>
+					<li class="order">Rubie's T-Rex Jurassic World Disfraces inflables universales</li>
+					<li class="order">Funko Pop Movies How To Train Your Dragon 3 Toothless</li>
+					<li class="order">Funko Pop! Games: Pokémon - Charmander</li>
+				</ul>
+				<button type="button" class="btn btn-info">Ver todos los pedidos</button>
+			</section>
 
-		<section class="sectionUser">
-			<h3 class="titleUser">🎁 Publicaciones</h3>
-			<ul>
-				<li class="order">Pegamento Kola Loka</li>
-				<li class="order">Sudadera de color negro</li>
-				<li class="order">Vajilla de marca haus blanca</li>
-			</ul>
-			<button type="button" class="btn btn-info">Ver todas las publicaciones</button>
-		</section>
+			<section class="sectionUser">
+				<h3 class="titleUser">🎁 Publicaciones</h3>
+				<ul>
+					<li class="order">Pegamento Kola Loka</li>
+					<li class="order">Sudadera de color negro</li>
+					<li class="order">Vajilla de marca haus blanca</li>
+				</ul>
+				<button type="button" class="btn btn-info">Ver todas las publicaciones</button>
+			</section>
 
-		<section class="sectionUser">
-			<h3 class="titleUser">📍 Direcciones</h3>
-			<div class="paragraph">Liverpool 3010, Narvarte, Monterrey, Nuevo León, México</div>
-			<div class="paragraph">Parque Tecnológico, Filósofos, Tecnológico, Monterrey, Nuevo León</div>
-			<button type="button" class="btn btn-info btn-space">Administrar direcciones</button>
-		</section>
+			<section class="sectionUser">
+				<h3 class="titleUser">📍 Direcciones</h3>
+				<div class="paragraph">Liverpool 3010, Narvarte, Monterrey, Nuevo León, México</div>
+				<div class="paragraph">Parque Tecnológico, Filósofos, Tecnológico, Monterrey, Nuevo León</div>
+				<button type="button" class="btn btn-info btn-space">Administrar direcciones</button>
+			</section>
 
-		<section class="sectionUser">
-			<h3 class="titleUser">💳 Opciones de pago</h3>
-			<div class="paragraph">Master Card con terminación 1234</div>
-			<div class="paragraph">American Express con terminación 5678 </div>
-			<button type="button" class="btn btn-info btn-space">Administrar opciones de pago</button>
-		</section>
+			<section class="sectionUser">
+				<h3 class="titleUser">💳 Opciones de pago</h3>
+				<div class="paragraph">Master Card con terminación 1234</div>
+				<div class="paragraph">American Express con terminación 5678 </div>
+				<button type="button" class="btn btn-info btn-space">Administrar opciones de pago</button>
+			</section>
 
-		<section class="sectionUser">
-			<h3 class="titleUser">⚙️ Configuración</h3>
-			<div class="paragraph">Nombre: Nombre Usuario</div>
-			<div class="paragraph">Apellido(s): Apellidos Usuario</div>
-			<div class="paragraph">Correo: correo@ejemplo.com</div>
-			<div class="paragraph">Contraseña: **********</div>
-			<button type="button" class="btn btn-info btn-space">Administrar configuracio</nbutton>
-		</section>
+			<section class="sectionUser">
+				<h3 class="titleUser">⚙️ Configuración</h3>
+				<div class="paragraph">Nombre: Nombre Usuario</div>
+				<div class="paragraph">Apellido(s): Apellidos Usuario</div>
+				<div class="paragraph">Correo: correo@ejemplo.com</div>
+				<div class="paragraph">Contraseña: **********</div>
+				<button type="button" class="btn btn-info btn-space">Administrar configuracio</nbutton>
+			</section>
+		</div>
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

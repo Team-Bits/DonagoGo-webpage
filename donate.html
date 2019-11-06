@@ -3,173 +3,179 @@
 <head>
 	<title>Donago-go</title>
 	<link rel="stylesheet" href="./css/donateStyle.css">
-	<link rel="stylesheet" href="./css/navStyle.css"></style>		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/navStyle.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/searchStyle.css">
 </head>
 <body>
+
 	<div id="navbar"></div>
 
-	<div class="cont">
-		<!-- https://getbootstrap.com/docs/4.0/components/navs/ -->
-		<ul class="nav nav-tabs" id="myTab" role="tablist">
-			<li class="nav-item">
-				<a class="nav-link active" id="description-tab" data-toggle="tab" href="#home" role="tab" aria-controls="description" aria-selected="true">Descripción</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" id="info-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Información</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" id="data-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Datos</a>
-			</li>
-		</ul>
-		<div class="tab-content" id="myTabContent">
-			<div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-				<form>
-					<div class="form-content">
-						<div class="form-group space">
-							<label class="form-label">Mi producto es... <span class="dot">*</span></label>
-							<input type="text" class="form-control" id="title" placeholder="ej. Sudadera adidas">
-						</div>
-						<div class="form-group space">
-							<label class="form-label">Lo describiría como... <span class="dot">*</span></label>
-							<textarea class="form-control" rows="5" id="description" placeholder="ej. Chamarra adidas de color negro en talla M, seis meses de uso."></textarea>
-						</div>
-						<div class="form-group division space">
-							<div class="left">
-								<label class="form-label">Cantidad disponible... <span class="dot">*</span></label>
-								<input type="number" class="form-control" id="quantity" placeholder="ej. 4">
+	<div class="search"></div>
+
+	<div class="notSearch">
+		<div class="cont">
+			<!-- https://getbootstrap.com/docs/4.0/components/navs/ -->
+			<ul class="nav nav-tabs" id="myTab" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link active" id="description-tab" data-toggle="tab" href="#home" role="tab" aria-controls="description" aria-selected="true">Descripción</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="info-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Información</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="data-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Datos</a>
+				</li>
+			</ul>
+			<div class="tab-content" id="myTabContent">
+				<div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+					<form>
+						<div class="form-content">
+							<div class="form-group space">
+								<label class="form-label">Mi producto es... <span class="dot">*</span></label>
+								<input type="text" class="form-control" id="title" placeholder="ej. Sudadera adidas">
 							</div>
-							<div class="center">
-								<label class="form-label">Su código universal... </label>
-								<input type="text" class="form-control" id="model" placeholder="ej. 12345678">
-								<label class="optional">*Opcional</label>
+							<div class="form-group space">
+								<label class="form-label">Lo describiría como... <span class="dot">*</span></label>
+								<textarea class="form-control" rows="5" id="descriptionText" placeholder="ej. Chamarra adidas de color negro en talla M, seis meses de uso."></textarea>
 							</div>
-							<div class="center">
-								<label class="form-label">Garantia hasta... </label>
-								<div>
-									<input type="date" class="form-control" name="guarantee" id="guarantee">
+							<div class="form-group division space">
+								<div class="left">
+									<label class="form-label">Cantidad disponible... <span class="dot">*</span></label>
+									<input type="number" class="form-control" id="quantity" placeholder="ej. 4">
 								</div>
-								<label class="optional">*Opcional</label>
-							</div>
-						</div>
-						<div class="form-group space">
-							<label class="form-label">Y así se ve... <span class="dot">*</span></label>
-							<div class="fit">
-								<!-- https://mdbootstrap.com/docs/jquery/forms/file-input/ -->
-								<div class="input-group">
-									<div class="input-group-prepend">
-										<span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+								<div class="center">
+									<label class="form-label">Su código universal... </label>
+									<input type="text" class="form-control" id="model" placeholder="ej. 12345678">
+									<label class="optional">*Opcional</label>
+								</div>
+								<div class="center">
+									<label class="form-label">Garantia hasta... </label>
+									<div>
+										<input type="date" class="form-control" name="guarantee" id="guarantee">
 									</div>
-									<div class="custom-file">
-										<input type="file" class="custom-file-input" id="inputGroupFile01"
-									aria-describedby="inputGroupFileAddon01">
-										<label class="custom-file-label" for="inputGroupFile01">Escoge archivo</label>
-									</div>
+									<label class="optional">*Opcional</label>
 								</div>
 							</div>
-						</div>
-						<dir class="form-group division-btn">
-							<dir class="right-btn"></dir>
-							<dir class="left-btn">
-								<button type="button" id="next1" class="btn btn-success">Siguiente</button>
+							<div class="form-group space">
+								<label class="form-label">Y así se ve... <span class="dot">*</span></label>
+								<div class="fit">
+									<!-- https://mdbootstrap.com/docs/jquery/forms/file-input/ -->
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+										</div>
+										<div class="custom-file">
+											<input type="file" class="custom-file-input" id="inputGroupFile01"
+										aria-describedby="inputGroupFileAddon01">
+											<label class="custom-file-label" for="inputGroupFile01">Escoge archivo</label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<dir class="form-group division-btn">
+								<dir class="right-btn"></dir>
+								<dir class="left-btn">
+									<button type="button" id="next1" class="btn btn-success">Siguiente</button>
+								</dir>
 							</dir>
-						</dir>
-					</div>
-				</form>
-			</div>
-			<div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="profile-tab">
-				<form>
-					<div class="form-content">
-						<div class="form-group division">
-							<div class="left">
-								<label class="form-label">La marca es... </label>
-								<input type="text" class="form-control" id="brand" placeholder="ej. Adidas">
-								<label class="optional">*Opcional</label>
-							</div>
-							<div class="center">
-								<label class="form-label">Con modelo... </label>
-								<input type="text" class="form-control" id="model" placeholder="ej. Firebird">
-								<label class="optional">*Opcional</label>
-							</div>
-							<div class="center">
-								<label class="form-label">Del año </label>
-								<input type="text" class="form-control" id="year" placeholder="ej. 2015">
-								<label class="optional">*Opcional</label>
-							</div>
 						</div>
-						<div class="form-group space">
-							<label class="form-label">El producto es... <span class="dot">*</span></label>
-							<select class="form-control" id="condition">
-								<option value="new">Seleccionar</option>
-								<option value="new">Nuevo</option>
-								<option value="used">Usado</option>
-							</select>
-						</div>
-						<div class="form-group space">
-							<label class="form-label">Y pertenece a la categoría... <span class="dot">*</span></label>
-							<select class="form-control" id="condition">
-								<option value="select">Seleccionar</option>
-								<option value="clothes">Ropa y accesorios</option>
-								<option value="tech">Tecnología</option>
-								<option value="home">Hogar y familia</option>
-								<option value="clean">Limpieza</option>
-								<option value="pets">Mascotas</option>
-								<option value="toys">Juguetes</option>
-								<option value="books">Libros y útiles</option>
-								<option value="furniture">Muebles</option>
-								<option value="food">Comida</option>
-								<option value="sports">Depotes</option>
-								<option value="electrodomestics">Electrodomesticos</option>
-								<option value="tools">Herramientas</option>
-							</select>
-						</div>
-						<div class="form-group space">
-							<div class="for-margin">
-								<label class="form-label">Cuesta... <span class="dot">*</span></label>
-								<input type="number" class="form-control" id="price" placeholder="ej. 300">
+					</form>
+				</div>
+				<div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="profile-tab">
+					<form>
+						<div class="form-content">
+							<div class="form-group division">
+								<div class="left">
+									<label class="form-label">La marca es... </label>
+									<input type="text" class="form-control" id="brand" placeholder="ej. Adidas">
+									<label class="optional">*Opcional</label>
+								</div>
+								<div class="center">
+									<label class="form-label">Con modelo... </label>
+									<input type="text" class="form-control" id="model" placeholder="ej. Firebird">
+									<label class="optional">*Opcional</label>
+								</div>
+								<div class="center">
+									<label class="form-label">Del año </label>
+									<input type="text" class="form-control" id="year" placeholder="ej. 2015">
+									<label class="optional">*Opcional</label>
+								</div>
+							</div>
+							<div class="form-group space">
+								<label class="form-label">El producto es... <span class="dot">*</span></label>
+								<select class="form-control" id="condition">
+									<option value="new">Seleccionar</option>
+									<option value="new">Nuevo</option>
+									<option value="used">Usado</option>
 								</select>
-								<label class="bottom">Información en Pesos mexicanos</label>
 							</div>
-							<div></div>
+							<div class="form-group space">
+								<label class="form-label">Y pertenece a la categoría... <span class="dot">*</span></label>
+								<select class="form-control" id="category">
+									<option value="select">Seleccionar</option>
+									<option value="clothes">Ropa y accesorios</option>
+									<option value="tech">Tecnología</option>
+									<option value="home">Hogar y familia</option>
+									<option value="clean">Limpieza</option>
+									<option value="pets">Mascotas</option>
+									<option value="toys">Juguetes</option>
+									<option value="books">Libros y útiles</option>
+									<option value="furniture">Muebles</option>
+									<option value="food">Comida</option>
+									<option value="sports">Depotes</option>
+									<option value="electrodomestics">Electrodomesticos</option>
+									<option value="tools">Herramientas</option>
+								</select>
+							</div>
+							<div class="form-group space">
+								<div class="for-margin">
+									<label class="form-label">Cuesta... <span class="dot">*</span></label>
+									<input type="number" class="form-control" id="price" placeholder="ej. 300">
+									<label class="bottom">Información en Pesos mexicanos</label>
+								</div>
+								<div></div>
+							</div>
+							<dir class="form-group division-btn">
+								<dir class="right-btn">
+									<button type="button" id="back2" class="btn btn-success">Regresar</button>
+								</dir>
+								<dir class="left-btn">
+									<button type="button" id="next2" class="btn btn-success">Siguiente</button>
+								</dir>
+							</dir>
 						</div>
-						<dir class="form-group division-btn">
-							<dir class="right-btn">
-								<button type="button" id="back2" class="btn btn-success">Regresar</button>
+					</form>
+				</div>
+				<div class="tab-pane fade" id="data" role="tabpanel" aria-labelledby="contact-tab">
+					<form>
+						<div class="form-content">
+							<div class="form-group space">
+								<label class="form-label">Lo pueden recoger en... <span class="dot">*</span></label>
+								<select class="form-control" id="address">
+									<option value="dir1">Liverpool 3010, Narvarte, Monterrey, Nuevo León</option>
+									<option value="dir2">Parque Tecnologico, Filósofos, Tecnológico, Monterrey, Nuevo León</option>
+								</select>
+							</div>
+							<div class="form-group space">
+								<label class="form-label">Mi numero de telefono es... <span class="dot">*</span></label>
+								<select class="form-control" id="phone">
+									<option value="num1">+52 1 (462) 107 3787</option>
+									<option value="num2">+52 1 (462) 177 4394</option>
+									<option value="num3">+52 1 (812) 112 7782</option>
+								</select>
+							</div>
+							<dir class="form-group division-btn">
+								<dir class="right-btn">
+									<button type="button" id="back3" class="btn btn-success">Regresar</button>
+								</dir>
+								<dir class="left-btn">
+									<button type="button" id="submit" class="btn btn-success">Publicar</button>
+								</dir>
 							</dir>
-							<dir class="left-btn">
-								<button type="button" id="next2" class="btn btn-success">Siguiente</button>
-							</dir>
-						</dir>
-					</div>
-				</form>
-			</div>
-			<div class="tab-pane fade" id="data" role="tabpanel" aria-labelledby="contact-tab">
-				<form>
-					<div class="form-content">
-						<div class="form-group space">
-							<label class="form-label">Lo pueden recoger en... <span class="dot">*</span></label>
-							<select class="form-control" id="address">
-								<option value="dir1">Liverpool 3010, Narvarte, Monterrey, Nuevo León</option>
-								<option value="dir2">Parque Tecnologico, Filósofos, Tecnológico, Monterrey, Nuevo León</option>
-							</select>
 						</div>
-						<div class="form-group space">
-							<label class="form-label">Mi numero de telefono es... <span class="dot">*</span></label>
-							<select class="form-control" id="phone">
-								<option value="num1">+52 1 (462) 107 3787</option>
-								<option value="num2">+52 1 (462) 177 4394</option>
-								<option value="num3">+52 1 (812) 112 7782</option>
-							</select>
-						</div>
-						<dir class="form-group division-btn">
-							<dir class="right-btn">
-								<button type="button" id="back3" class="btn btn-success">Regresar</button>
-							</dir>
-							<dir class="left-btn">
-								<button type="button" id="submit" class="btn btn-success">Publicar</button>
-							</dir>
-						</dir>
-					</div>
-				</form>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -198,10 +204,9 @@ Datos
 	Dirección de venta
 	Telefono
  -->
-
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="./js/nav.js"></script>
 	<script type="text/javascript" src="./js/navbar.js"></script>
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="./js/contController.js"></script>
 </body>
 </html>
