@@ -1,7 +1,6 @@
-console.log("Hello");
 $(".category").hide();
 $(".productDetail").hide();
-
+$(".boughtProduct").hide();
 
 function hide(id) {
 
@@ -19,8 +18,6 @@ $(".main").on("click", (e) => {
 	
 	e.preventDefault();
 	hide(e.target.id);
-
-	// window.scrollTo(0, 0);
 
 	window.scroll({
 		top: 0, 
@@ -73,4 +70,8 @@ $(".backCategory").on("click", (e) => {
 		left: 0, 
 		behavior: 'smooth'
 	});
+});
+
+$(".saveDetail").on("click", (e) => {
+	
 });

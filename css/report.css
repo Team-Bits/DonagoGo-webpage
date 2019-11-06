@@ -1,0 +1,23 @@
+* {
+	margin: 0%;
+}
+
+.reportHeader {
+	margin-top: 15%;
+	text-align: center;
+}
+
+.reportParagraph {
+	margin-top: 2%;
+	text-align: center;
+	font-size: 120%;
+}
+
+.reportReturnBtnDiv {
+	margin-top: 3%;
+	text-align: center;
+}
+
+.report-btn {
+	margin-top: 1%;
+}
