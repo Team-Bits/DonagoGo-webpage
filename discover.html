@@ -3,314 +3,316 @@
 <head>
 	<title>Donago-go</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="./css/discover.css"></style>
-	<link rel="stylesheet" href="./css/detail.css"></style>
-	<link rel="stylesheet" href="./css/navStyle.css"></style>
+	<link rel="stylesheet" href="./css/discover.css">
+	<link rel="stylesheet" href="./css/detail.css">
+	<link rel="stylesheet" href="./css/navStyle.css">
 </head>
 <body>
 	<div id="navbar"></div>
 	
-	<section class="search"></section>
+	<div class="search"></div>
+		
+	<div class="notSearch">
+		<section class="categories">
+			<div class="line">
+				<h3 class="discoverTitle">🏡 Para el hogar...</h3>
+				<div class="rowFlex">
+					<div class="colFlex main">
+						<img id="clean" class="sectionImage" src="./img/clean.png">
+						<div class="subTitle">
+							Limpieza
+						</div>
+					</div>
+					<div class="colFlex main">
+						<img class="sectionImage" id="furniture" src="./img/furniture.jpg">
+						<div class="subTitle">
+							Muebles
+						</div>
+					</div>
+					<div class="colFlex main">
+						<img id="electrodomestics" class="sectionImage" src="./img/electrodomesticos.jpg">
+						<div class="subTitle">
+							Electrodomesticos
+						</div>
+					</div>
+					<div class="colFlex main">
+						<img id="tools" class="sectionImage" src="./img/tools.jpg">
+						<div class="subTitle">
+							Herramientas
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="line">
+				<h3 class="discoverTitle">🎥 Entretenimiento...</h3>
+				<div class="rowFlex">
+					<div class="colFlex main">
+						<img id="enterteinment" class="sectionImage" src="./img/toys.jpg">
+						<div class="subTitle">
+							Juguetes
+						</div>
+					</div>
+					<div class="colFlex main">
+						<img id="tech" class="sectionImage" src="./img/tech.jpg">
+						<div class="subTitle">
+							Tecnología
+						</div>
+					</div>
+					<div class="colFlex main">
+						<img id="books" class="sectionImage" src="./img/books.jpg">
+						<div class="subTitle">
+							Libros y útiles
+						</div>
+					</div>
+					<div class="colFlex main">
+						<img id="sports" class="sectionImage" src="./img/sports.jpg">
+						<div class="subTitle">
+							Deportes
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="line">
+				<h3 class="discoverTitle">😎 Para ti </h3>
+				<div class="rowFlex">
+					<div class="colFlex main">
+						<img id="clothes" class="sectionImage" src="./img/clothes.jpg">
+						<div class="subTitle">
+							Ropa y accesorios
+						</div>
+					</div>
+					<div class="colFlex main">
+						<img id="pets" class="sectionImage" src="./img/pets.jpg">
+						<div class="subTitle">
+							Mascotas
+						</div>
+					</div>
+					<div class="colFlex main">
+						<img id="food" class="sectionImage" src="./img/cake.jpg">
+						<div class="subTitle">
+							Comida
+						</div>
+					</div>
+					<div class="colFlex main">
+						<img id="house" class="sectionImage" src="./img/home.jpg">
+						<div class="subTitle">
+							Hogar y familia
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="line">
+				<h3 class="discoverTitle">💯 Descuentos</h3>
+				<div class="rowFlex">
+					<div class="colFlex main">
+						<img id="discounts" class="sectionImage" src="./img/40.jpg">
+						<div class="subTitle">
+							¡Ajua! 
+						</div>
+					</div>
+					<div class="colFlex main">
+						<img id="half" class="sectionImage" src="./img/50.jpg">
+						<div class="subTitle">
+							A la mitad
+						</div>
+					</div>
+					<div class="colFlex main">
+						<img id="multiplication" class="sectionImage" src="./img/2x1.jpg">
+						<div class="subTitle">
+							Mas por menos
+						</div>
+					</div>
+					<div class="colFlex main">
+						<img id="free" class="sectionImage" src="./img/cat.jpg">
+						<div class="subTitle">
+							¡Gratis!
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="category" hidden="">
+			<button type="button" class="btn btn-success back">Regresar</button>
+			<!-- <h3 class="selectedTitle"></h3> -->
+			<div class="line">
+				<div class="rowFlex">
+					<div class="colFlex product">
+						<img id="" class="sectionImage" src="./img/black.jpg">
+						<div class="subTitle">
+							<h5>Lavadora</h5>
+							<p class="subInfo price">$500</p>
+							<p class="subInfo location">📍 Liverpool 3010, Narvarte. <br></p>
+						</div>
+					</div>
+					<div class="colFlex product">
+						<img id="" class="sectionImage" src="./img/black.jpg">
+						<div class="subTitle">
+							<h5>Lavadora</h5>
+							<p class="subInfo price">$500</p>
+							<p class="subInfo location">📍 Liverpool 3010, Narvarte. <br></p>
+						</div>
+					</div>
+					<div class="colFlex product">
+						<img id="" class="sectionImage" src="./img/black.jpg">
+						<div class="subTitle">
+							<h5>Lavadora</h5>
+							<p class="subInfo price">$500</p>
+							<p class="subInfo location">📍 Liverpool 3010, Narvarte. <br></p>
+						</div>
+					</div>
+					<div class="colFlex product">
+						<img id="" class="sectionImage" src="./img/black.jpg">
+						<div class="subTitle">
+							<h5>Lavadora</h5>
+							<p class="subInfo price">$500</p>
+							<p class="subInfo location">📍 Liverpool 3010, Narvarte. <br></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="line">
+				<div class="rowFlex">
+					<div class="colFlex product">
+						<img id="" class="sectionImage" src="./img/black.jpg">
+						<div class="subTitle">
+							<h5>Lavadora</h5>
+							<p class="subInfo price">$500</p>
+							<p class="subInfo location">📍 Liverpool 3010, Narvarte. <br></p>
+						</div>
+					</div>
+					<div class="colFlex product">
+						<img id="" class="sectionImage" src="./img/black.jpg">
+						<div class="subTitle">
+							<h5>Lavadora</h5>
+							<p class="subInfo price">$500</p>
+							<p class="subInfo location">📍 Liverpool 3010, Narvarte. <br></p>
+						</div>
+					</div>
+					<div class="colFlex product">
+						<img id="" class="sectionImage" src="./img/black.jpg">
+						<div class="subTitle">
+							<h5>Lavadora</h5>
+							<p class="subInfo price">$500</p>
+							<p class="subInfo location">📍 Liverpool 3010, Narvarte. <br></p>
+						</div>
+					</div>
+					<div class="colFlex product">
+						<img id="" class="sectionImage" src="./img/black.jpg">
+						<div class="subTitle">
+							<h5>Lavadora</h5>
+							<p class="subInfo price">$500</p>
+							<p class="subInfo location">📍 Liverpool 3010, Narvarte. <br></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="line">
+				<div class="rowFlex">
+					<div class="colFlex product">
+						<img id="" class="sectionImage" src="./img/black.jpg">
+						<div class="subTitle">
+							<h5>Lavadora</h5>
+							<p class="subInfo price">$500</p>
+							<p class="subInfo location">📍 Liverpool 3010, Narvarte. <br></p>
+						</div>
+					</div>
+					<div class="colFlex product">
+						<img id="" class="sectionImage" src="./img/black.jpg">
+						<div class="subTitle">
+							<h5>Lavadora</h5>
+							<p class="subInfo price">$500</p>
+							<p class="subInfo location">📍 Liverpool 3010, Narvarte. <br></p>
+						</div>
+					</div>
+					<div class="colFlex product">
+						<img id="" class="sectionImage" src="./img/black.jpg">
+						<div class="subTitle">
+							<h5>Lavadora</h5>
+							<p class="subInfo price">$500</p>
+							<p class="subInfo location">📍 Liverpool 3010, Narvarte. <br></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<button type="button" class="btn btn-success back">Regresar</button>
+		</section>
 
-	<section class="categories" hidden="">
-		<div class="line">
-			<h3 class="discoverTitle">🏡 Para el hogar...</h3>
-			<div class="rowFlex">
-				<div class="colFlex main">
-					<img id="clean" class="sectionImage" src="./img/clean.png">
-					<div class="subTitle">
-						Limpieza
-					</div>
+		<section class="productDetail" hidden="">
+			<button type="button" class="btn btn-success backCategory">Regresar</button>
+			<div class="divitionDetail">
+				<div class="leftDetail">
+					<img class="detailImage" src="./img/cable.jpg">
 				</div>
-				<div class="colFlex main">
-					<img class="sectionImage" id="furniture" src="./img/furniture.jpg">
-					<div class="subTitle">
-						Muebles
-					</div>
-				</div>
-				<div class="colFlex main">
-					<img id="electrodomestics" class="sectionImage" src="./img/electrodomesticos.jpg">
-					<div class="subTitle">
-						Electrodomesticos
-					</div>
-				</div>
-				<div class="colFlex main">
-					<img id="tools" class="sectionImage" src="./img/tools.jpg">
-					<div class="subTitle">
-						Herramientas
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="line">
-			<h3 class="discoverTitle">🎥 Entretenimiento...</h3>
-			<div class="rowFlex">
-				<div class="colFlex main">
-					<img id="enterteinment" class="sectionImage" src="./img/toys.jpg">
-					<div class="subTitle">
-						Juguetes
-					</div>
-				</div>
-				<div class="colFlex main">
-					<img id="tech" class="sectionImage" src="./img/tech.jpg">
-					<div class="subTitle">
-						Tecnología
-					</div>
-				</div>
-				<div class="colFlex main">
-					<img id="books" class="sectionImage" src="./img/books.jpg">
-					<div class="subTitle">
-						Libros y útiles
-					</div>
-				</div>
-				<div class="colFlex main">
-					<img id="sports" class="sectionImage" src="./img/sports.jpg">
-					<div class="subTitle">
-						Deportes
-					</div>
-				</div>
-			</div>
-		</div>
-		</div>
-		<div class="line">
-			<h3 class="discoverTitle">😎 Para ti </h3>
-			<div class="rowFlex">
-				<div class="colFlex main">
-					<img id="clothes" class="sectionImage" src="./img/clothes.jpg">
-					<div class="subTitle">
-						Ropa y accesorios
-					</div>
-				</div>
-				<div class="colFlex main">
-					<img id="pets" class="sectionImage" src="./img/pets.jpg">
-					<div class="subTitle">
-						Mascotas
-					</div>
-				</div>
-				<div class="colFlex main">
-					<img id="food" class="sectionImage" src="./img/cake.jpg">
-					<div class="subTitle">
-						Comida
-					</div>
-				</div>
-				<div class="colFlex main">
-					<img id="house" class="sectionImage" src="./img/home.jpg">
-					<div class="subTitle">
-						Hogar y familia
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="line">
-			<h3 class="discoverTitle">💯 Descuentos</h3>
-			<div class="rowFlex">
-				<div class="colFlex main">
-					<img id="discounts" class="sectionImage" src="./img/40.jpg">
-					<div class="subTitle">
-						¡Ajua! 
-					</div>
-				</div>
-				<div class="colFlex main">
-					<img id="half" class="sectionImage" src="./img/50.jpg">
-					<div class="subTitle">
-						A la mitad
-					</div>
-				</div>
-				<div class="colFlex main">
-					<img id="multiplication" class="sectionImage" src="./img/2x1.jpg">
-					<div class="subTitle">
-						Mas por menos
-					</div>
-				</div>
-				<div class="colFlex main">
-					<img id="free" class="sectionImage" src="./img/cat.jpg">
-					<div class="subTitle">
-						¡Gratis!
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="category" hidden="">
-		<button type="button" class="btn btn-success back">Regresar</button>
-		<!-- <h3 class="selectedTitle"></h3> -->
-		<div class="line">
-			<div class="rowFlex">
-				<div class="colFlex product">
-					<img id="" class="sectionImage" src="./img/black.jpg">
-					<div class="subTitle">
-						<h5>Lavadora</h5>
-						<p class="subInfo price">$500</p>
-						<p class="subInfo location">📍 Liverpool 3010, Narvarte. <br></p>
-					</div>
-				</div>
-				<div class="colFlex product">
-					<img id="" class="sectionImage" src="./img/black.jpg">
-					<div class="subTitle">
-						<h5>Lavadora</h5>
-						<p class="subInfo price">$500</p>
-						<p class="subInfo location">📍 Liverpool 3010, Narvarte. <br></p>
-					</div>
-				</div>
-				<div class="colFlex product">
-					<img id="" class="sectionImage" src="./img/black.jpg">
-					<div class="subTitle">
-						<h5>Lavadora</h5>
-						<p class="subInfo price">$500</p>
-						<p class="subInfo location">📍 Liverpool 3010, Narvarte. <br></p>
-					</div>
-				</div>
-				<div class="colFlex product">
-					<img id="" class="sectionImage" src="./img/black.jpg">
-					<div class="subTitle">
-						<h5>Lavadora</h5>
-						<p class="subInfo price">$500</p>
-						<p class="subInfo location">📍 Liverpool 3010, Narvarte. <br></p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="line">
-			<div class="rowFlex">
-				<div class="colFlex product">
-					<img id="" class="sectionImage" src="./img/black.jpg">
-					<div class="subTitle">
-						<h5>Lavadora</h5>
-						<p class="subInfo price">$500</p>
-						<p class="subInfo location">📍 Liverpool 3010, Narvarte. <br></p>
-					</div>
-				</div>
-				<div class="colFlex product">
-					<img id="" class="sectionImage" src="./img/black.jpg">
-					<div class="subTitle">
-						<h5>Lavadora</h5>
-						<p class="subInfo price">$500</p>
-						<p class="subInfo location">📍 Liverpool 3010, Narvarte. <br></p>
-					</div>
-				</div>
-				<div class="colFlex product">
-					<img id="" class="sectionImage" src="./img/black.jpg">
-					<div class="subTitle">
-						<h5>Lavadora</h5>
-						<p class="subInfo price">$500</p>
-						<p class="subInfo location">📍 Liverpool 3010, Narvarte. <br></p>
-					</div>
-				</div>
-				<div class="colFlex product">
-					<img id="" class="sectionImage" src="./img/black.jpg">
-					<div class="subTitle">
-						<h5>Lavadora</h5>
-						<p class="subInfo price">$500</p>
-						<p class="subInfo location">📍 Liverpool 3010, Narvarte. <br></p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="line">
-			<div class="rowFlex">
-				<div class="colFlex product">
-					<img id="" class="sectionImage" src="./img/black.jpg">
-					<div class="subTitle">
-						<h5>Lavadora</h5>
-						<p class="subInfo price">$500</p>
-						<p class="subInfo location">📍 Liverpool 3010, Narvarte. <br></p>
-					</div>
-				</div>
-				<div class="colFlex product">
-					<img id="" class="sectionImage" src="./img/black.jpg">
-					<div class="subTitle">
-						<h5>Lavadora</h5>
-						<p class="subInfo price">$500</p>
-						<p class="subInfo location">📍 Liverpool 3010, Narvarte. <br></p>
-					</div>
-				</div>
-				<div class="colFlex product">
-					<img id="" class="sectionImage" src="./img/black.jpg">
-					<div class="subTitle">
-						<h5>Lavadora</h5>
-						<p class="subInfo price">$500</p>
-						<p class="subInfo location">📍 Liverpool 3010, Narvarte. <br></p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<button type="button" class="btn btn-success back">Regresar</button>
-	</section>
+				<div class="rightDetail">
+					<h2>Un cable muy bonito</h2>
+					<p class="descriptionDetail">
+						Lo tenía porque compré el Aifon s9 plus ultramega pirruris. Pero pues ya salió el Aifon s11 y pues el que tengo ya no sirve pa pura 🍆. Como tiene nuevo cable, pues por eso ya no sirve este  
+					</p>
 
-	<section class="productDetail" hidden="">
-		<button type="button" class="btn btn-success backCategory">Regresar</button>
-		<div class="divitionDetail">
-			<div class="leftDetail">
-				<img class="detailImage" src="./img/cable.jpg">
-			</div>
-			<div class="rightDetail">
-				<h2>Un cable muy bonito</h2>
-				<p class="descriptionDetail">
-					Lo tenía porque compré el Aifon s9 plus ultramega pirruris. Pero pues ya salió el Aifon s11 y pues el que tengo ya no sirve pa pura 🍆. Como tiene nuevo cable, pues por eso ya no sirve este  
-				</p>
+					<div class="split">				
+						<div class="priceDetail">
+							<div>
+								<span class="priceDetailDescription">Precio en otras paginas:</span>
+								<span class="priceDetailPrice otherPrice"> $300</span>
+							</div>
+							<div>
+								<span class="priceDetailDescription">Precio en Donago-go:</span>
+								<span class="priceDetailPrice bestPrice">$120</span>
+							</div>
+							<div>
+								<span class="priceDetailDescription">Ahorras:</span>
+								<span class="priceDetailPrice difference">$180</span>
+							</div>
+							<div>
+								<span class="priceDetailDescription">Envío:</span>
+								<span class="priceDetailPrice send">$50</span>
+							</div>
+						</div>
 
-				<div class="split">				
-					<div class="priceDetail">
-						<div>
-							<span class="priceDetailDescription">Precio en otras paginas:</span>
-							<span class="priceDetailPrice otherPrice"> $300</span>
-						</div>
-						<div>
-							<span class="priceDetailDescription">Precio en Donago-go:</span>
-							<span class="priceDetailPrice bestPrice">$120</span>
-						</div>
-						<div>
-							<span class="priceDetailDescription">Ahorras:</span>
-							<span class="priceDetailPrice difference">$180</span>
-						</div>
-						<div>
-							<span class="priceDetailDescription">Envío:</span>
-							<span class="priceDetailPrice send">$50</span>
+						<div class="characteristicsDetail">
+							<div>
+								<span class="charDetail">Condición:</span>
+								<span>Usado</span>
+							</div>
+							<div>
+								<span class="charDetail">Cantidad disponible: </span>
+								<span class="valDetail">1</span>
+							</div>
+							<div>
+								<span class="charDetail">Garantía hasta: </span>
+								<span class="valDetail">1 Noviembre 2019</span>
+							</div>
+							<div>
+								<span class="charDetail">Marca: </span>
+								<span class="valDetail">UGREEN</span>
+							</div>
+							<div>
+								<span class="charDetail">Año: </span>
+								<span class="valDetail">2017</span>
+							</div>
 						</div>
 					</div>
 
-					<div class="characteristicsDetail">
-						<div>
-							<span class="charDetail">Condición:</span>
-							<span>Usado</span>
-						</div>
-						<div>
-							<span class="charDetail">Cantidad disponible: </span>
-							<span class="valDetail">1</span>
-						</div>
-						<div>
-							<span class="charDetail">Garantía hasta: </span>
-							<span class="valDetail">1 Noviembre 2019</span>
-						</div>
-						<div>
-							<span class="charDetail">Marca: </span>
-							<span class="valDetail">UGREEN</span>
-						</div>
-						<div>
-							<span class="charDetail">Año: </span>
-							<span class="valDetail">2017</span>
-						</div>
+					<div class="locationDetail">
+						<div class="titleDetail">Recoger en...</div>
+						<div class="identDetail">📍 Liverpool 3010, Narvarte. CP 64800. Monterrey, NL. México</div>
+					</div>
+
+					<div class="buttonsDetail">
+						<button type="button" id="saveDetail" class="btn btn-primary">Guardar</button>
+						<button type="button" id="buyDetail" class="btn btn-success">Comprar</button>
+						<button type="button" id="reportDetail" class="btn btn-warning">Reportar</button>
 					</div>
 				</div>
-
-				<div class="locationDetail">
-					<div class="titleDetail">Recoger en...</div>
-					<div class="identDetail">📍 Liverpool 3010, Narvarte. CP 64800. Monterrey, NL. México</div>
-				</div>
-
-				<div class="buttonsDetail">
-					<button type="button" id="saveDetail" class="btn btn-primary">Guardar</button>
-					<button type="button" id="buyDetail" class="btn btn-success">Comprar</button>
-					<button type="button" id="reportDetail" class="btn btn-warning">Reportar</button>
-				</div>
 			</div>
-		</div>
-		<button type="button" class="btn btn-success backCategory">Regresar</button>
-	</section>
+			<button type="button" class="btn btn-success backCategory">Regresar</button>
+		</section>
 
-	<section class="boughtProduct">
-		<h2>Producto Comprado</h2>
-	</section>
+		<section class="boughtProduct">
+			<h2>Producto Comprado</h2>
+		</section>
+	</div>
+	
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="./js/navBar.js"></script>
 	<script type="text/javascript" src="./js/nav.js"></script>
