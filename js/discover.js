@@ -1,11 +1,18 @@
-$(".category").hide();
+// $(".productDetail").hide();
+// $(".categories").show();
+// $(".category").hide();
+// $(".boughtProduct").hide();
+
 $(".productDetail").hide();
-$(".boughtProduct").hide();
+$(".categories").hide();
+$(".category").hide();
+$(".boughtProduct").show();
 
 function hide(id) {
 
 	$(".categories").hide();
 	$(".category").show();
+	$(".boughtProduct").hide();
 
 	window.scroll({
 		top: 0, 
@@ -30,9 +37,11 @@ $(".main").on("click", (e) => {
 $(".product").on("click", (e) => {
 	
 	e.preventDefault();
+	
 	$(".productDetail").show();
 	$(".categories").hide();
 	$(".category").hide();
+	$(".boughtProduct").hide();
 
 	window.scroll({
 		top: 0, 
@@ -48,6 +57,8 @@ $(".back").on("click", (e) => {
 	$(".categories").show();
 	$(".category").hide();
 	$(".productDetail").hide();
+	$(".boughtProduct").hide();
+
 
 	window.scroll({
 		top: 0, 
@@ -64,6 +75,7 @@ $(".backCategory").on("click", (e) => {
 	$(".categories").hide();
 	$(".category").show();
 	$(".productDetail").hide();
+	$(".boughtProduct").hide();
 
 	window.scroll({
 		top: 0, 
@@ -72,6 +84,12 @@ $(".backCategory").on("click", (e) => {
 	});
 });
 
-$(".saveDetail").on("click", (e) => {
+$("#buyDetail").on("click", (e) => {
 	
+	e.preventDefault();
+
+	$(".categories").hide();
+	$(".category").hide();
+	$(".productDetail").hide();
+	$(".boughtProduct").show();
 });

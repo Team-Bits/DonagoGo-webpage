@@ -10,6 +10,7 @@
 }
 
 #navbar {
+	position:absolute;
 	background-color: #0076A4; /* Black background color */
 	position: fixed; /* Make it stick/fixed */
 	top: 0; /* Stay on top */
