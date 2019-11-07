@@ -1,0 +1,23 @@
+* {
+	margin: 0%;
+}
+
+.publishHeader {
+	margin-top: 15%;
+	text-align: center;
+}
+
+.publishParagraph {
+	margin-top: 2%;
+	text-align: center;
+	font-size: 120%;
+}
+
+.publishReturnBtnDiv {
+	margin-top: 3%;
+	text-align: center;
+}
+
+.publish-btn {
+	margin-top: 1%;
+}

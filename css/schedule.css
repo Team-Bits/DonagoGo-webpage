@@ -1,0 +1,23 @@
+* {
+	margin: 0%;
+}
+
+.scheduleHeader {
+	margin-top: 15%;
+	text-align: center;
+}
+
+.scheduleParagraph {
+	margin-top: 2%;
+	text-align: center;
+	font-size: 120%;
+}
+
+.scheduleReturnBtnDiv {
+	margin-top: 3%;
+	text-align: center;
+}
+
+.schedule-btn {
+	margin-top: 1%;
+}

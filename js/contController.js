@@ -184,5 +184,5 @@ $("#back3").on ("click", function(event) {
 
 $("#submit").on ("click", (event) => {
 	event.preventDefault();
-	alert("Uploaded");
-})
+	window.location.href = "./publish.html";
+});
