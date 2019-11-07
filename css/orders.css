@@ -2,8 +2,44 @@
 	margin: 0;
 }
 
+.order-space {
+	margin: 10%;
+}
+
 .orders-title {
 	margin-top: 7%;
 	margin-left: 6%;
 }
 
+.orders-container {
+	display: flex;
+	margin-left: 7%;
+	margin-top: 5%; 
+}
+
+.orders-image {
+	width: 20%;
+}
+
+.orders-image-size {
+	width: 100%; 
+	height: auto;
+}
+
+.orders-info {
+	width: 100%;
+	margin-left: 10%;
+	padding-right: 10%;
+}
+
+.order-info-sub {
+	margin-left: 3%;
+}
+
+.order-info-buttons {
+	padding-top: 1%;
+}
+
+.btn {
+	margin-right: 3%;
+}
