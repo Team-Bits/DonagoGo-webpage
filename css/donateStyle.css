@@ -84,3 +84,21 @@
 	margin-bottom: 0%;
 	margin-left: 3%;
 }
+
+.flex-day-division {
+	display: flex;
+	flex-direction: row;
+	margin-left: 3%;
+}
+
+.flex-day-right {
+	width: 50%;
+}
+
+.flex-day-left {
+	width: 50%;
+}
+
+.donate-days {
+	margin-bottom: 0%;
+}
