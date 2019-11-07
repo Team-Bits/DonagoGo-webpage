@@ -92,4 +92,10 @@ $("#buyDetail").on("click", (e) => {
 	$(".category").hide();
 	$(".productDetail").hide();
 	$(".boughtProduct").show();
+
+	window.scroll({
+		top: 0, 
+		left: 0, 
+		behavior: 'smooth'
+	});
 });
