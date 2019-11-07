@@ -2,12 +2,44 @@
 	margin: 0;
 }
 
+.publication-space {
+	margin: 10%;
+}
+
 .publications-title {
 	margin-top: 7%;
 	margin-left: 6%;
 }
 
-.publication-container {
+.publications-container {
 	display: flex;
+	margin-left: 7%;
+	margin-top: 5%; 
 }
 
+.publications-image {
+	width: 20%;
+}
+
+.publications-image-size {
+	width: 100%; 
+	height: auto;
+}
+
+.publications-info {
+	width: 100%;
+	margin-left: 10%;
+	padding-right: 10%;
+}
+
+.publication-info-sub {
+	margin-left: 3%;
+}
+
+.publication-info-buttons {
+	padding-top: 1%;
+}
+
+.btn {
+	margin-right: 3%;
+}

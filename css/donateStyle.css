@@ -67,3 +67,20 @@
 	padding-left: 2%;
 	font-size: 90%;
 }
+
+.flex-division {
+	display: flex;
+}
+
+.flex-left {
+	width: 50%;
+}
+
+.flex-right {
+	width: 50%;
+}
+
+.checkbox-inline {
+	margin-bottom: 0%;
+	margin-left: 3%;
+}
