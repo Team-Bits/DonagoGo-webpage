@@ -38,7 +38,8 @@ let Products = [
 	// },
 
 	{
-		id: uuid.v4(),
+		// id: uuid.v4(),
+		id: "1",
 		userId : "1",
 		name : "Cable USB Micro",
 		description : "Lo tenía porque compré el Aifon s9 plus ultramega pirruris. Pero pues ya salió el Aifon s11 y pues el que tengo ya no sirve pa pura 🍆. Como tiene nuevo cable, pues por eso ya no sirve este",
@@ -56,7 +57,8 @@ let Products = [
 	},
 
 	{
-		id: uuid.v4(),
+		// id: uuid.v4(),
+		id: "2",
 		userId : "2",
 		name : "Chamarra",
 		description : "Chamarra de Cuero color negro. Mi mama la compro en internet hace 2 años (principios del 2018)",
@@ -74,7 +76,8 @@ let Products = [
 	},
 
 	{
-		id: uuid.v4(),
+		// id: uuid.v4(),
+		id: "3",
 		userId : "3",
 		name : "Iphone 12",
 		description : "Color Negro, Por adentro blanco. 2 años de uso",
@@ -92,7 +95,8 @@ let Products = [
 	},
 
 	{
-		id: uuid.v4(),
+		// id: uuid.v4(),
+		id: "4",
 		userId : "4",
 		name : "Macbook Pro",
 		description : "Macbook Pro, la compré 4 años de uso mas o menos. Sin detalles",
@@ -110,11 +114,12 @@ let Products = [
 	},
 
 	{
-		id: uuid.v4(),
+		// id: uuid.v4(),
+		id: "5",
 		userId : "5",
 		name : "Iphone XR",
 		description : "Lo consegui en Telcel, por mi cumpleaños. Tiene un crack de la mica, no del telefono",
-		image : "phone.jpg",
+		image : "bluePhone.jpg",
 		location : "Parque Fundidora",
 		timeCreated : new Date("December 17, 1995 03:24:00"),
 		quantity : 1,
@@ -128,7 +133,8 @@ let Products = [
 	},
 
 	{
-		id: uuid.v4(),
+		// id: uuid.v4(),
+		id: "6",
 		userId : "6",
 		name : "Cafe Timhortons",
 		description : "Chocolate caliente pequeño con poca azucar y costo 40 pesos. ",
@@ -146,20 +152,56 @@ let Products = [
 	}
 ];
 
-// let Users = [
+let Users = [
 
-// 	{
-// 		id : uuid.v4(),
-// 		name : "",
-// 		lastName : "",
-// 		email : "",
-// 		password : "",
-// 		idPurchases : [],
-// 		idSales : [],
-// 		phoneNumbers : [],
-// 		directions: []
-// 	},
-// ];
+	// {
+	// 	id : uuid.v4(),
+	// 	name : "",
+	// 	lastName : "",
+	// 	email : "",
+	// 	password : "",
+	// 	idPurchases : [],
+	// 	idSales : [],
+	// 	phoneNumbers : [],
+	// 	directions: []
+	// },
+
+	{
+		id : uuid.v4(),
+		name : "Adrián",
+		lastName : "García",
+		email : "adriangarlop@hotmail.com",
+		password : "admin",
+		idPurchases : ["1", "2"],
+		idSales : ["3", "4"],
+		phoneNumbers : ["+52 1 (462) 107 3787"],
+		directions: ["Liverpool 3010, Narvarte, Monterrey, Nuevo León", "Parque Fundidora, Monterrey, Nuevo León"]
+	},
+
+	{
+		id : uuid.v4(),
+		name : "Fernanda",
+		lastName : "Martínez",
+		email : "lucero-fmr@hotmail.com",
+		password : "admin",
+		idPurchases : [],
+		idSales : [],
+		phoneNumbers : ["+52 1 (462) 177 4394", "+52 1 (812) 112 7782"],
+		directions: ["Paseo de lasa aguilas 78, León, Guanajuato"]
+	},
+
+	{
+		id : uuid.v4(),
+		name : "Lucero",
+		lastName : "Manzanita",
+		email : "martinezlucero036@gmail.com",
+		password : "titania",
+		idPurchases : [],
+		idSales : [],
+		phoneNumbers : ["+52 1 (462) 177 4394", "+52 1 (812) 112 7782"],
+		directions: ["Guayabo 739, Irapuato, Guanajuato"]
+	}
+];
 
 let Purchases = [
 	{
@@ -196,16 +238,21 @@ let Purchases = [
 	}
 ];
 
-// Purchases
+// ----------------- Purchases ----------------
+
+// GET
 app.get('/purchases', (req, res, next) => {
 	return res.status(200).json(Purchases); 	
 });
 
-// Products
+// ----------------- Products -----------------
+
+// GET
 app.get('/products', (req, res, next) => {
 	return res.status(200).json(Products); 	
 });
 
+// POST
 app.post('/products', jsonParser, (req, res, next) => {
 
 	let createdProduct = {
