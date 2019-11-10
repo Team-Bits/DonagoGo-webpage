@@ -30,6 +30,7 @@ function getProducts(category) {
 
 			for (let i=0; i<categoryProducts.length/4; i++) {
 				
+
 				$(".category").append(
 					`
 						<div class="line">
@@ -38,6 +39,7 @@ function getProducts(category) {
 				);
 
 				for (let j=0; j<4; j++) {
+				 console.log(i, j, categoryProducts[4*i+j].image);
 					$(".rowFlex").append(
 						`
 							<div class="colFlex product">
@@ -107,12 +109,12 @@ function controller() {
 
 		e.preventDefault();
 
-		// location.reload();
+		location.reload();
 
-		$(".categories").show();
-		$(".category").hide();
-		$(".productDetail").hide();
-		$(".boughtProduct").hide();
+		// $(".categories").show();
+		// $(".category").hide();
+		// $(".productDetail").hide();
+		// $(".boughtProduct").hide();
 
 		window.scroll({
 			top: 0, 
