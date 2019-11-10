@@ -232,7 +232,7 @@ let Users = [
 		name : "Lucero",
 		lastName : "Manzanita",
 		email : "martinezlucero036@gmail.com",
-		password : "titania",
+		password : "admin",
 		idPurchases : [],
 		idSales : [],
 		phoneNumbers : ["+52 1 (462) 177 4394", "+52 1 (812) 112 7782"],
@@ -249,7 +249,8 @@ let Purchases = [
 		name : "Cafe Timhortons",
 		image : "coffee.jpg",
 		location : "Tecnologico de Monterrey Biblio piso 3",
-		timeSchedule : new Date("December 17, 1995 03:24:00")
+		daySchedule : "Jueves",
+		hourSchedule : "11:00 am"
 	},
 
 	{
@@ -260,7 +261,8 @@ let Purchases = [
 		name : "Cafe Timhortons",
 		image : "coffee.jpg",
 		location : "Tecnologico de Monterrey Biblio piso 3",
-		timeSchedule : new Date("December 17, 1995 03:24:00")
+		daySchedule : "Viernes",
+		hourSchedule : "12:00 pm"
 	},
 
 	{
@@ -271,9 +273,17 @@ let Purchases = [
 		name : "Iphone 12",
 		image : "phone.jpg",
 		location : "Parque Fundidora",
-		timeSchedule : new Date("December 17, 1995 03:24:00")
+		daySchedule : "Sabado",
+		hourSchedule : "6:00 pm"
 	}
 ];
+
+// ----------------- Users --------------------
+
+// Get
+app.get('/users', (req, res, next) => {
+	return res.status(200).json(Users); 	
+});
 
 // ----------------- Purchases ----------------
 
@@ -281,6 +291,10 @@ let Purchases = [
 app.get('/purchases', (req, res, next) => {
 	return res.status(200).json(Purchases); 	
 });
+
+// 
+
+
 
 // ----------------- Products -----------------
 
@@ -292,30 +306,46 @@ app.get('/products', (req, res, next) => {
 // POST
 app.post('/products', jsonParser, (req, res, next) => {
 
-	let createdProduct = {
-		id : uuid.v4(),
-		userId : req.body.userId,
-		name : req.body.name,
-		description : req.body.description,
-		image : req.body.image,
-		location : req.body.location,
-		timeCreated : req.body.timeCreated,
-		quantity : req.body.quantity,
-		universalCode : req.body.universalCode,
-		guarantee : req.body.guarantee,
-		brand : req.body.brand,
-		model : req.body.model,
-		year : req.body.year,
-		condition : req.body.condition,
-		category : req.body.category
-	};
+	// Validate product
 
-	Products.push(createdProduct);
+	let flag = true;
 
-	res.statusMessage = "Product was posted";
-	return res.status(200).json(createdPost);
+	// If all fields are correctly filled
+	if (req.body.title && req.body.descriptionText && req.body.quantity 
+			&& req.body.category) {
+
+		// Create the new post
+		let createdProduct = {
+			id : uuid.v4(),
+			userId : req.body.userId,
+			name : req.body.name,
+			description : req.body.description,
+			image : req.body.image,
+			location : req.body.location,
+			timeCreated : req.body.timeCreated,
+			quantity : req.body.quantity,
+			universalCode : req.body.universalCode,
+			guarantee : req.body.guarantee,
+			brand : req.body.brand,
+			model : req.body.model,
+			year : req.body.year,
+			condition : req.body.condition,
+			category : req.body.category
+		};
+
+		Products.push(createdProduct);
+
+		res.statusMessage = "Product was posted";
+		return res.status(200).json(createdPost);
+	}
+
+	return res.status(406).json({
+		code: 406,
+		message: "Missing field in body"
+	});
+
 });
 
 app.listen('8080', () => {
-	console.log("Lab7 running on port 8080");
+	console.log("Donago-go on port 8080");
 });
