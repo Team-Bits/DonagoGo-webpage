@@ -1,7 +1,7 @@
 {
   "name": "donagogo-webpage",
   "version": "1.0.0",
-  "description": "Donago-go web page",
+  "description": "Donago-go Web Page",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,6 +19,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "morgan": "file:node_modules/morgan"
+    "morgan": "^1.9.1",
+    "uuid": "^3.3.3"
   }
 }

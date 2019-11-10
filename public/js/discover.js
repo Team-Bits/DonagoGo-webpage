@@ -7,95 +7,152 @@ $(".boughtProduct").hide();
 // $(".categories").hide();
 // $(".category").hide();
 // $(".boughtProduct").show();
+ 
+function getProducts(category) {
 
-function hide(id) {
+	let categoryProducts = [];
 
-	$(".categories").hide();
-	$(".category").show();
-	$(".boughtProduct").hide();
+	$.ajax({
 
-	window.scroll({
-		top: 0, 
-		left: 0, 
-		behavior: 'smooth'
+		url: "/products",
+		method: "GET",
+		dataType: "json",
+
+		success: function(responseJSON) {
+			
+			$(".category").empty();
+			$(".category").append(`<button type="button" class="btn btn-success back">Regresar</button>`);
+
+			for (let i=0; i<responseJSON.length; i++) {
+				if (responseJSON[i].category == category)
+					categoryProducts.push(responseJSON[i]);
+			}
+
+			for (let i=0; i<categoryProducts.length/4; i++) {
+				
+				$(".category").append(
+					`
+						<div class="line">
+							<div class="rowFlex">
+					`
+				);
+
+				for (let j=0; j<4; j++) {
+					$(".rowFlex").append(
+						`
+							<div class="colFlex product">
+								<img id="" class="sectionImage" src="./img/${categoryProducts[4*i+j].image}">
+								<div class="subTitle">
+									<h5>${categoryProducts[4*i+j].name}</h5>
+									<p class="subInfo location">📍 ${categoryProducts[4*i+j].location}<br></p>
+								</div>
+							</div>
+						`
+					);
+				}
+
+				$(".category").append(
+					`				
+						</div>
+					</div>		
+					`
+				);
+			}			
+
+			controller();
+		},
+
+		error: function(err) {
+			console.log("Juguito de Chale: ", err);
+		}
 	});
 }
- 
-$(".main").on("click", (e) => {
+
+function controller() {
+	$(".main").on("click", (e) => {
 	
-	e.preventDefault();
-	hide(e.target.id);
+		e.preventDefault();
 
-	window.scroll({
-		top: 0, 
-		left: 0, 
-		behavior: 'smooth'
+		$(".categories").hide();
+		$(".category").show();
+		$(".boughtProduct").hide();
+
+		getProducts(e.target.id);
+
+		window.scroll({
+			top: 0, 
+			left: 0, 
+			behavior: 'smooth'
+		});
+
 	});
 
-});
+	$(".product").on("click", (e) => {
+		
+		e.preventDefault();
+		
+		$(".productDetail").show();
+		$(".categories").hide();
+		$(".category").hide();
+		$(".boughtProduct").hide();
 
-$(".product").on("click", (e) => {
-	
-	e.preventDefault();
-	
-	$(".productDetail").show();
-	$(".categories").hide();
-	$(".category").hide();
-	$(".boughtProduct").hide();
-
-	window.scroll({
-		top: 0, 
-		left: 0, 
-		behavior: 'smooth'
+		window.scroll({
+			top: 0, 
+			left: 0, 
+			behavior: 'smooth'
+		});
 	});
-});
 
-$(".back").on("click", (e) => {
+	$(".back").on("click", (e) => {
 
-	e.preventDefault();
+		e.preventDefault();
 
-	$(".categories").show();
-	$(".category").hide();
-	$(".productDetail").hide();
-	$(".boughtProduct").hide();
+		// location.reload();
 
+		$(".categories").show();
+		$(".category").hide();
+		$(".productDetail").hide();
+		$(".boughtProduct").hide();
 
-	window.scroll({
-		top: 0, 
-		left: 0, 
-		behavior: 'smooth'
+		window.scroll({
+			top: 0, 
+			left: 0, 
+			behavior: 'smooth'
+		});
 	});
-});
 
 
-$(".backCategory").on("click", (e) => {
+	$(".backCategory").on("click", (e) => {
 
-	e.preventDefault();
+		e.preventDefault();
 
-	$(".categories").hide();
-	$(".category").show();
-	$(".productDetail").hide();
-	$(".boughtProduct").hide();
+		$(".categories").hide();
+		$(".category").show();
+		$(".productDetail").hide();
+		$(".boughtProduct").hide();
 
-	window.scroll({
-		top: 0, 
-		left: 0, 
-		behavior: 'smooth'
+		window.scroll({
+			top: 0, 
+			left: 0, 
+			behavior: 'smooth'
+		});
 	});
-});
 
-$("#buyDetail").on("click", (e) => {
-	
-	e.preventDefault();
+	$("#buyDetail").on("click", (e) => {
+		
+		e.preventDefault();
 
-	$(".categories").hide();
-	$(".category").hide();
-	$(".productDetail").hide();
-	$(".boughtProduct").show();
+		$(".categories").hide();
+		$(".category").hide();
+		$(".productDetail").hide();
+		$(".boughtProduct").show();
 
-	window.scroll({
-		top: 0, 
-		left: 0, 
-		behavior: 'smooth'
-	});
-});
+		window.scroll({
+			top: 0, 
+			left: 0, 
+			behavior: 'smooth'
+		});
+	});	
+}
+
+controller();
