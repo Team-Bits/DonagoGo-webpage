@@ -20,22 +20,22 @@ app.use( morgan( "dev" ) );
 
 let Products = [
 
-	// {
-	// 	id: uuid.v4(),
-	// 	name : "",
-	// 	description : "",
-	// 	image : "",
-	// 	location : "",
-	// 	timeCreated : new Date(""),
-	// 	quantity : 1,
-	// 	universalCode : "",
-	// 	guarantee : new Date(""),
-	// 	brand : "",
-	// 	model : "",
-	// 	year : "",
-	// 	condition : "",
-	// 	category : "",
-	// },
+	{
+		id: uuid.v4(),
+		name : "",
+		description : "",
+		image : "",
+		location : "",
+		timeCreated : new Date(""),
+		quantity : 1,
+		universalCode : "",
+		guarantee : new Date(""),
+		brand : "",
+		model : "",
+		year : "",
+		condition : "",
+		category : "",
+	},
 
 	{
 		// id: uuid.v4(),
@@ -78,7 +78,7 @@ let Products = [
 	{
 		// id: uuid.v4(),
 		id: "3",
-		userId : "3",
+		userId : "1",
 		name : "Iphone 12",
 		description : "Color Negro, Por adentro blanco. 2 años de uso",
 		image : "phone.jpg",
@@ -97,7 +97,7 @@ let Products = [
 	{
 		// id: uuid.v4(),
 		id: "4",
-		userId : "4",
+		userId : "3",
 		name : "Macbook Pro",
 		description : "Macbook Pro, la compré 4 años de uso mas o menos. Sin detalles",
 		image : "oldLap.jpg",
@@ -116,7 +116,7 @@ let Products = [
 	{
 		// id: uuid.v4(),
 		id: "5",
-		userId : "5",
+		userId : "1",
 		name : "Iphone XR",
 		description : "Lo consegui en Telcel, por mi cumpleaños. Tiene un crack de la mica, no del telefono",
 		image : "bluePhone.jpg",
@@ -135,7 +135,7 @@ let Products = [
 	{
 		// id: uuid.v4(),
 		id: "6",
-		userId : "6",
+		userId : "2",
 		name : "Cafe Timhortons",
 		description : "Chocolate caliente pequeño con poca azucar y costo 40 pesos. ",
 		image : "coffee.jpg",
@@ -149,6 +149,43 @@ let Products = [
 		year : "2019",
 		condition : "Usado",
 		category : "food"
+	},
+
+	{
+		// id: uuid.v4(),
+		id: "7",
+		userId : "3",
+		name : "",
+		description : "",
+		image : "",
+		location : "",
+		timeCreated : new Date(""),
+		quantity : 1,
+		universalCode : "",
+		guarantee : new Date(""),
+		brand : "",
+		model : "",
+		year : "",
+		condition : "",
+		category : "",
+	},
+
+	{
+		// id: uuid.v4(),
+		id: "",
+		name : "",
+		description : "",
+		image : "",
+		location : "",
+		timeCreated : new Date(""),
+		quantity : 1,
+		universalCode : "",
+		guarantee : new Date(""),
+		brand : "",
+		model : "",
+		year : "",
+		condition : "",
+		category : "",
 	}
 ];
 
