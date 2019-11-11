@@ -71,6 +71,7 @@ function getProducts(category) {
 }
 
 function controller() {
+	
 	$(".main").on("click", (e) => {
 	
 		e.preventDefault();
@@ -93,6 +94,8 @@ function controller() {
 		
 		e.preventDefault();
 		
+		console.log(e.target.id);
+
 		$(".productDetail").show();
 		$(".categories").hide();
 		$(".category").hide();

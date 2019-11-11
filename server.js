@@ -21,23 +21,6 @@ app.use( morgan( "dev" ) );
 let Products = [
 
 	{
-		id: uuid.v4(),
-		name : "",
-		description : "",
-		image : "",
-		location : "",
-		timeCreated : new Date(""),
-		quantity : 1,
-		universalCode : "",
-		guarantee : new Date(""),
-		brand : "",
-		model : "",
-		year : "",
-		condition : "",
-		category : "",
-	},
-
-	{
 		// id: uuid.v4(),
 		id: "1",
 		userId : "1",
@@ -53,7 +36,8 @@ let Products = [
 		model : "",
 		year : "2017",
 		condition : "Usado",
-		category : "tech"
+		category : "tech",
+		bought : false
 	},
 
 	{
@@ -72,7 +56,8 @@ let Products = [
 		model : "",
 		year : "",
 		condition : "Usado",
-		category : "clothes"
+		category : "clothes",
+		bought : false
 	},
 
 	{
@@ -91,7 +76,8 @@ let Products = [
 		model : "12",
 		year : "",
 		condition : "Usado",
-		category : "tech"
+		category : "tech",
+		bought : false
 	},
 
 	{
@@ -110,7 +96,8 @@ let Products = [
 		model : "Macbook Pro",
 		year : "2015",
 		condition : "Usado",
-		category : "tech"
+		category : "tech",
+		bought : false
 	},
 
 	{
@@ -129,7 +116,8 @@ let Products = [
 		model : "XR",
 		year : "2019",
 		condition : "Usado",
-		category : "tech"
+		category : "tech",
+		bought : false	
 	},
 
 	{
@@ -148,7 +136,8 @@ let Products = [
 		model : "Chocolate Caliente mexicano",
 		year : "2019",
 		condition : "Usado",
-		category : "food"
+		category : "food",
+		bought : false
 	},
 
 	{
@@ -168,6 +157,7 @@ let Products = [
 		year : "",
 		condition : "",
 		category : "",
+		bought : false
 	},
 
 	{
@@ -186,6 +176,7 @@ let Products = [
 		year : "",
 		condition : "",
 		category : "",
+		bought : false
 	}
 ];
 
