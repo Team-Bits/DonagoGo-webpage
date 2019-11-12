@@ -302,8 +302,8 @@ app.post('/products', jsonParser, (req, res, next) => {
 	let flag = true;
 
 	// If all fields are correctly filled
-	if (req.body.title && req.body.descriptionText && req.body.quantity 
-			&& req.body.category) {
+	// if (req.body.title && req.body.descriptionText && req.body.quantity 
+	// 		&& req.body.category) {
 
 		// Create the new post
 		let createdProduct = {
@@ -321,14 +321,15 @@ app.post('/products', jsonParser, (req, res, next) => {
 			model : req.body.model,
 			year : req.body.year,
 			condition : req.body.condition,
-			category : req.body.category
+			category : req.body.category,
+			bought : req.body.bought
 		};
 
 		Products.push(createdProduct);
 
 		res.statusMessage = "Product was posted";
 		return res.status(200).json(createdPost);
-	}
+	// }
 
 	return res.status(406).json({
 		code: 406,
