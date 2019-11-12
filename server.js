@@ -308,7 +308,7 @@ app.post('/products', jsonParser, (req, res, next) => {
 		// Create the new post
 		let createdProduct = {
 			id : uuid.v4(),
-			userId : req.body.userId,
+			userId : "1",
 			name : req.body.name,
 			description : req.body.description,
 			image : req.body.image,

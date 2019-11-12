@@ -1,5 +1,21 @@
 function postDonation(newDonation) {
 
+	$.ajax({
+	
+		url: "/products",
+		method: "POST",
+		data: JSON.stringify(newPost),
+		dataType: "JSON",
+		contentType: "application/json",
+
+		success: function(responseJson) {
+			console.log("success: ", responseJson);
+		},
+
+		error: function(err) {
+			console.log("juguito de chale ", err);
+		}
+	});
 }
 
 function contController() {
@@ -192,7 +208,7 @@ function contController() {
 		
 		event.preventDefault();
 
-		console.log($("#category").val());
+		console.log($("#location").val());
 
 		if ($("#name").val() && $("#descriptionText").val() && $("#quantity").val() && $("#condition").val() != "select") {
 			
@@ -200,7 +216,7 @@ function contController() {
 				name : $("#name").val(),
 				description : $("#descriptionText").val(),
 				image : "phone.jpg",
-				location : "",
+				location : $("#location").val(),
 				timeCreated : new Date(),
 				quantity : $("#quantity").val(),
 				universalCode : $("#universalCode").val(),
@@ -212,6 +228,8 @@ function contController() {
 				category : $("#category").val(),
 				bought : false
 			};
+
+			postDonation(newDonation);
 
 			console.log("Something is in the box");
 		}
