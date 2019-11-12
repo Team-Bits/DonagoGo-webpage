@@ -328,7 +328,7 @@ app.post('/products', jsonParser, (req, res, next) => {
 		Products.push(createdProduct);
 
 		res.statusMessage = "Product was posted";
-		return res.status(200).json(createdPost);
+		return res.status(200).json(createdProduct);
 	// }
 
 	return res.status(406).json({

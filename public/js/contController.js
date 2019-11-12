@@ -208,54 +208,52 @@ function contController() {
 		
 		event.preventDefault();
 
-		// console.log($("#location").val());
-
-		// if ($("#name").val() && $("#descriptionText").val() && $("#quantity").val() && $("#condition").val() != "select") {
+		if ($("#name").val() && $("#descriptionText").val() && $("#quantity").val() && $("#condition").val() != "select") {
 			
-			// let newDonation = {
-				
-			// 	name : $("#name").val(),
-			// 	description : $("#descriptionText").val(),
-			// 	image : "phone.jpg",
-			// 	location : $("#location").val(),
-			// 	timeCreated : new Date(),
-			// 	quantity : $("#quantity").val(),
-			// 	universalCode : $("#universalCode").val(),
-			// 	guarantee : $("#guarantee").val(),
-			// 	brand : $("#brand").val(),
-			// 	model : $("#model").val(),
-			// 	year : $("#year").val(),
-			// 	condition : $("#condition").val(),
-			// 	category : $("#category").val(),
-			// 	bought : false
-			// };
-
 			let newDonation = {
 				
-				name : "Camara",
-				description : "Fotografica",
+				name : $("#name").val(),
+				description : $("#descriptionText").val(),
 				image : "phone.jpg",
-				location : "Aqui",
+				location : $("#location").val(),
 				timeCreated : new Date(),
-				quantity : 1,
-				universalCode : "",
-				guarantee : "",
-				brand : "",
-				model : "",
-				year : "2000",
-				condition : "Nuevo",
-				category : "tech",
+				quantity : $("#quantity").val(),
+				universalCode : $("#universalCode").val(),
+				guarantee : $("#guarantee").val(),
+				brand : $("#brand").val(),
+				model : $("#model").val(),
+				year : $("#year").val(),
+				condition : $("#condition").val(),
+				category : $("#category").val(),
 				bought : false
 			};
 
+			// let newDonation = {
+				
+			// 	name : "Camara",
+			// 	description : "Fotografica",
+			// 	image : "phone.jpg",
+			// 	location : "Aqui",
+			// 	timeCreated : new Date(),
+			// 	quantity : 1,
+			// 	universalCode : "",
+			// 	guarantee : "",
+			// 	brand : "",
+			// 	model : "",
+			// 	year : "2000",
+			// 	condition : "Nuevo",
+			// 	category : "tech",
+			// 	bought : false
+			// };
+
 			postDonation(newDonation);
 
-			console.log("Something is in the box");
-		// }
+			window.location.href = "./publish.html"
+		}
 
-		// else {
-		// 	window.alert("Aun te hace falta llenar un dato");
-		// }
+		else {
+			window.alert("Aun te hace falta llenar un dato");
+		}
 	});
 }
 
