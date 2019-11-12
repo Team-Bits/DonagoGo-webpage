@@ -31,11 +31,14 @@ function searchEndPoint(userQuery) {
 			var name, description, brand, model, condition, category;
 			var namePos, descriptionPos, brandPos, modelPos, conditionPos, categoryPos;
 
+
 			$(".search").append(
 				`
 					<content class="searches-content">
 				`
 			);
+			
+			$(".searches-content").empty();
 
 			for (let i=0; i<responseJSON.length; i++) {
 
@@ -66,7 +69,6 @@ function searchEndPoint(userQuery) {
 									<div class="search-info-description search-info-sub">📘 ${responseJSON[i].description}</div>
 									<div class="search-info-condition search-info-sub">💯 ${responseJSON[i].condition}</div>
 									<div class="search-info-location search-info-sub">📍 ⠀${responseJSON[i].location}</div>
-									
 								</div>
 							</div>
 						`
@@ -80,6 +82,9 @@ function searchEndPoint(userQuery) {
 					<div class="space"></div>
 				`
 			);
+
+			main();
+
 		},
 
 		error: function(err) {
@@ -88,21 +93,29 @@ function searchEndPoint(userQuery) {
 	});
 }
 
-$("#nav-search-btn").on("click", function(e) {
+function main() {
 
-	e.preventDefault();
+	$("#nav-search-btn").on("click", function(e) {
 
-	$(".search").empty();
-	$(".search").show();
-	$(".notSearch").hide();
+		e.preventDefault();
 
-	$(".search").append(
-		`
-			<h2 class="searchTitle">🔎 Resultados de ${$("#ex1").val()}...</h2>
-		`
-	);
+		$(".search").empty();
+		$(".search").show();
+		$(".notSearch").hide();
 
-	let userQuery = $("#ex1").val().toLowerCase();
+		$(".search").append(
+			`
+				<h2 class="searchTitle">🔎 Resultados de ${$("#ex1").val()}...</h2>
+			`
+		);
 
-	searchEndPoint(userQuery);
-});
+		let userQuery = $("#ex1").val().toLowerCase();
+
+		searchEndPoint(userQuery);
+	});
+
+	$(".searches-container").on("click", function(e) {
+		
+		console.log(e.target.id);
+	});
+} main();
