@@ -1,188 +1,225 @@
-// Show description tab and hide the other two
-$("#description-tab").on ("click", function(event) { 
+function postDonation(newDonation) {
 
-	event.preventDefault();
-	
-	// Modify tab
-	$("#info-tab").removeClass("active");
-	$("#info-tab").attr("aria-selected","false");
-	
-	$("#data-tab").removeClass("active");
-	$("#data-tab").attr("aria-selected","false");
+}
 
-	$("#description-tab").addClass("active");
-	$("#description-tab").attr("aria-selected","true");
+function contController() {
 
-	// Modify info tab
-	$("#info").removeClass("show");
-	$("#info").removeClass("active");
+	// Show description tab and hide the other two
+	$("#description-tab").on ("click", function(event) { 
 
-	$("#data").removeClass("show");
-	$("#data").removeClass("active");
+		event.preventDefault();
+		
+		// Modify tab
+		$("#info-tab").removeClass("active");
+		$("#info-tab").attr("aria-selected","false");
+		
+		$("#data-tab").removeClass("active");
+		$("#data-tab").attr("aria-selected","false");
 
-	$("#description").addClass("show");
-	$("#description").addClass("active");
-});
+		$("#description-tab").addClass("active");
+		$("#description-tab").attr("aria-selected","true");
 
-// Show info tab and hide the other two
-$("#info-tab").on ("click", function(event) { 
+		// Modify info tab
+		$("#info").removeClass("show");
+		$("#info").removeClass("active");
 
-	event.preventDefault();
-	
-	// Modify tab
-	$("#description-tab").removeClass("active");
-	$("#description-tab").attr("aria-selected","false");
+		$("#data").removeClass("show");
+		$("#data").removeClass("active");
 
-	$("#data-tab").removeClass("active");
-	$("#data-tab").attr("aria-selected","false");
+		$("#description").addClass("show");
+		$("#description").addClass("active");
+	});
 
-	$("#info-tab").addClass("active");
-	$("#info-tab").attr("aria-selected","true");
+	// Show info tab and hide the other two
+	$("#info-tab").on ("click", function(event) { 
 
-	// Modify info tab
-	$("#description").removeClass("show");
-	$("#description").removeClass("active");
+		event.preventDefault();
+		
+		// Modify tab
+		$("#description-tab").removeClass("active");
+		$("#description-tab").attr("aria-selected","false");
 
-	$("#data").removeClass("show");
-	$("#data").removeClass("active");
+		$("#data-tab").removeClass("active");
+		$("#data-tab").attr("aria-selected","false");
 
-	$("#info").addClass("show");
-	$("#info").addClass("active");
-});
+		$("#info-tab").addClass("active");
+		$("#info-tab").attr("aria-selected","true");
 
-// Show data tab and hide the other two
-$("#data-tab").on ("click", function(event) { 
+		// Modify info tab
+		$("#description").removeClass("show");
+		$("#description").removeClass("active");
 
-	event.preventDefault();
-	
-	// Modify tab
-	$("#description-tab").removeClass("active");
-	$("#description-tab").attr("aria-selected","false");
+		$("#data").removeClass("show");
+		$("#data").removeClass("active");
 
-	$("#info-tab").removeClass("active");
-	$("#info-tab").attr("aria-selected","false");
+		$("#info").addClass("show");
+		$("#info").addClass("active");
+	});
 
-	$("#data-tab").addClass("active");
-	$("#data-tab").attr("aria-selected","true");
+	// Show data tab and hide the other two
+	$("#data-tab").on ("click", function(event) { 
 
-	// Modify info tab
-	$("#description").removeClass("show");
-	$("#description").removeClass("active");
+		event.preventDefault();
+		
+		// Modify tab
+		$("#description-tab").removeClass("active");
+		$("#description-tab").attr("aria-selected","false");
 
-	$("#info").removeClass("show");
-	$("#info").removeClass("active");
+		$("#info-tab").removeClass("active");
+		$("#info-tab").attr("aria-selected","false");
 
-	$("#data").addClass("show");
-	$("#data").addClass("active");
-});
+		$("#data-tab").addClass("active");
+		$("#data-tab").attr("aria-selected","true");
 
-// Change tab using buttons
+		// Modify info tab
+		$("#description").removeClass("show");
+		$("#description").removeClass("active");
 
-// Show description tab and hide the other two
-$("#next1").on ("click", function(event) { 
+		$("#info").removeClass("show");
+		$("#info").removeClass("active");
 
-	event.preventDefault();
-	
-	// Modify tab
-	$("#description-tab").removeClass("active");
-	$("#description-tab").attr("aria-selected","false");
+		$("#data").addClass("show");
+		$("#data").addClass("active");
+	});
 
-	$("#data-tab").removeClass("active");
-	$("#data-tab").attr("aria-selected","false");
+	// Change tab using buttons
 
-	$("#info-tab").addClass("active");
-	$("#info-tab").attr("aria-selected","true");
+	// Show description tab and hide the other two
+	$("#next1").on ("click", function(event) { 
 
-	// Modify info tab
-	$("#description").removeClass("show");
-	$("#description").removeClass("active");
+		event.preventDefault();
+		
+		// Modify tab
+		$("#description-tab").removeClass("active");
+		$("#description-tab").attr("aria-selected","false");
 
-	$("#data").removeClass("show");
-	$("#data").removeClass("active");
+		$("#data-tab").removeClass("active");
+		$("#data-tab").attr("aria-selected","false");
 
-	$("#info").addClass("show");
-	$("#info").addClass("active");
-});
+		$("#info-tab").addClass("active");
+		$("#info-tab").attr("aria-selected","true");
 
-// Show data tab and hide the other two
-$("#next2").on ("click", function(event) { 
+		// Modify info tab
+		$("#description").removeClass("show");
+		$("#description").removeClass("active");
 
-	event.preventDefault();
-	
-	// Modify tab
-	$("#description-tab").removeClass("active");
-	$("#description-tab").attr("aria-selected","false");
+		$("#data").removeClass("show");
+		$("#data").removeClass("active");
 
-	$("#info-tab").removeClass("active");
-	$("#info-tab").attr("aria-selected","false");
+		$("#info").addClass("show");
+		$("#info").addClass("active");
+	});
 
-	$("#data-tab").addClass("active");
-	$("#data-tab").attr("aria-selected","true");
+	// Show data tab and hide the other two
+	$("#next2").on ("click", function(event) { 
 
-	// Modify info tab
-	$("#description").removeClass("show");
-	$("#description").removeClass("active");
+		event.preventDefault();
+		
+		// Modify tab
+		$("#description-tab").removeClass("active");
+		$("#description-tab").attr("aria-selected","false");
 
-	$("#info").removeClass("show");
-	$("#info").removeClass("active");
+		$("#info-tab").removeClass("active");
+		$("#info-tab").attr("aria-selected","false");
 
-	$("#data").addClass("show");
-	$("#data").addClass("active");
-});
+		$("#data-tab").addClass("active");
+		$("#data-tab").attr("aria-selected","true");
 
-// Show description tab and hide the other two
-$("#back2").on ("click", function(event) { 
+		// Modify info tab
+		$("#description").removeClass("show");
+		$("#description").removeClass("active");
 
-	event.preventDefault();
+		$("#info").removeClass("show");
+		$("#info").removeClass("active");
 
-	// Modify tab
-	$("#info-tab").removeClass("active");
-	$("#info-tab").attr("aria-selected","false");
-	
-	$("#data-tab").removeClass("active");
-	$("#data-tab").attr("aria-selected","false");
+		$("#data").addClass("show");
+		$("#data").addClass("active");
+	});
 
-	$("#description-tab").addClass("active");
-	$("#description-tab").attr("aria-selected","true");
+	// Show description tab and hide the other two
+	$("#back2").on ("click", function(event) { 
 
-	// Modify info tab
-	$("#info").removeClass("show");
-	$("#info").removeClass("active");
+		event.preventDefault();
 
-	$("#data").removeClass("show");
-	$("#data").removeClass("active");
+		// Modify tab
+		$("#info-tab").removeClass("active");
+		$("#info-tab").attr("aria-selected","false");
+		
+		$("#data-tab").removeClass("active");
+		$("#data-tab").attr("aria-selected","false");
 
-	$("#description").addClass("show");
-	$("#description").addClass("active");
-});
+		$("#description-tab").addClass("active");
+		$("#description-tab").attr("aria-selected","true");
 
-// Show info tab and hide the other two
-$("#back3").on ("click", function(event) { 
+		// Modify info tab
+		$("#info").removeClass("show");
+		$("#info").removeClass("active");
 
-	event.preventDefault();
+		$("#data").removeClass("show");
+		$("#data").removeClass("active");
 
-	// Modify tab
-	$("#description-tab").removeClass("active");
-	$("#description-tab").attr("aria-selected","false");
+		$("#description").addClass("show");
+		$("#description").addClass("active");
+	});
 
-	$("#data-tab").removeClass("active");
-	$("#data-tab").attr("aria-selected","false");
+	// Show info tab and hide the other two
+	$("#back3").on ("click", function(event) { 
 
-	$("#info-tab").addClass("active");
-	$("#info-tab").attr("aria-selected","true");
+		event.preventDefault();
 
-	// Modify info tab
-	$("#description").removeClass("show");
-	$("#description").removeClass("active");
+		// Modify tab
+		$("#description-tab").removeClass("active");
+		$("#description-tab").attr("aria-selected","false");
 
-	$("#data").removeClass("show");
-	$("#data").removeClass("active");
+		$("#data-tab").removeClass("active");
+		$("#data-tab").attr("aria-selected","false");
 
-	$("#info").addClass("show");
-	$("#info").addClass("active");
-});
+		$("#info-tab").addClass("active");
+		$("#info-tab").attr("aria-selected","true");
 
-$("#submit").on ("click", (event) => {
-	event.preventDefault();
-	window.location.href = "./publish.html";
-});
+		// Modify info tab
+		$("#description").removeClass("show");
+		$("#description").removeClass("active");
+
+		$("#data").removeClass("show");
+		$("#data").removeClass("active");
+
+		$("#info").addClass("show");
+		$("#info").addClass("active");
+	});
+
+	$("#submit").on ("click", (event) => {
+		
+		event.preventDefault();
+
+		console.log($("#category").val());
+
+		if ($("#name").val() && $("#descriptionText").val() && $("#quantity").val() && $("#condition").val() != "select") {
+			
+			let newDonation = {
+				name : $("#name").val(),
+				description : $("#descriptionText").val(),
+				image : "phone.jpg",
+				location : "",
+				timeCreated : new Date(),
+				quantity : $("#quantity").val(),
+				universalCode : $("#universalCode").val(),
+				guarantee : $("#guarantee").val(),
+				brand : $("#brand").val(),
+				model : $("#model").val(),
+				year : $("#year").val(),
+				condition : $("#condition").val(),
+				category : $("#category").val(),
+				bought : false
+			};
+
+			console.log("Something is in the box");
+		}
+
+		else {
+			window.alert("Aun te hace falta llenar un dato");
+		}
+	});
+}
+
+contController();

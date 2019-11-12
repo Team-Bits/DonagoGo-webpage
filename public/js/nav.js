@@ -85,9 +85,7 @@ function searchEndPoint(userQuery) {
 		error: function(err) {
 			console.log("Juguito de Chale", errors)
 		}
-
 	});
-
 }
 
 $("#nav-search-btn").on("click", function(e) {
