@@ -1,188 +1,260 @@
-// Show description tab and hide the other two
-$("#description-tab").on ("click", function(event) { 
+function postDonation(newDonation) {
 
-	event.preventDefault();
+	$.ajax({
 	
-	// Modify tab
-	$("#info-tab").removeClass("active");
-	$("#info-tab").attr("aria-selected","false");
-	
-	$("#data-tab").removeClass("active");
-	$("#data-tab").attr("aria-selected","false");
+		url: "/products",
+		method: "POST",
+		data: JSON.stringify(newDonation),
+		dataType: "JSON",
+		contentType: "application/json",
 
-	$("#description-tab").addClass("active");
-	$("#description-tab").attr("aria-selected","true");
+		success: function(responseJson) {
+			console.log("success: ", responseJson);
+		},
 
-	// Modify info tab
-	$("#info").removeClass("show");
-	$("#info").removeClass("active");
+		error: function(err) {
+			console.log("juguito de chale ", err);
+		}
+	});
+}
 
-	$("#data").removeClass("show");
-	$("#data").removeClass("active");
+function contController() {
 
-	$("#description").addClass("show");
-	$("#description").addClass("active");
-});
+	// Show description tab and hide the other two
+	$("#description-tab").on ("click", function(event) { 
 
-// Show info tab and hide the other two
-$("#info-tab").on ("click", function(event) { 
+		event.preventDefault();
+		
+		// Modify tab
+		$("#info-tab").removeClass("active");
+		$("#info-tab").attr("aria-selected","false");
+		
+		$("#data-tab").removeClass("active");
+		$("#data-tab").attr("aria-selected","false");
 
-	event.preventDefault();
-	
-	// Modify tab
-	$("#description-tab").removeClass("active");
-	$("#description-tab").attr("aria-selected","false");
+		$("#description-tab").addClass("active");
+		$("#description-tab").attr("aria-selected","true");
 
-	$("#data-tab").removeClass("active");
-	$("#data-tab").attr("aria-selected","false");
+		// Modify info tab
+		$("#info").removeClass("show");
+		$("#info").removeClass("active");
 
-	$("#info-tab").addClass("active");
-	$("#info-tab").attr("aria-selected","true");
+		$("#data").removeClass("show");
+		$("#data").removeClass("active");
 
-	// Modify info tab
-	$("#description").removeClass("show");
-	$("#description").removeClass("active");
+		$("#description").addClass("show");
+		$("#description").addClass("active");
+	});
 
-	$("#data").removeClass("show");
-	$("#data").removeClass("active");
+	// Show info tab and hide the other two
+	$("#info-tab").on ("click", function(event) { 
 
-	$("#info").addClass("show");
-	$("#info").addClass("active");
-});
+		event.preventDefault();
+		
+		// Modify tab
+		$("#description-tab").removeClass("active");
+		$("#description-tab").attr("aria-selected","false");
 
-// Show data tab and hide the other two
-$("#data-tab").on ("click", function(event) { 
+		$("#data-tab").removeClass("active");
+		$("#data-tab").attr("aria-selected","false");
 
-	event.preventDefault();
-	
-	// Modify tab
-	$("#description-tab").removeClass("active");
-	$("#description-tab").attr("aria-selected","false");
+		$("#info-tab").addClass("active");
+		$("#info-tab").attr("aria-selected","true");
 
-	$("#info-tab").removeClass("active");
-	$("#info-tab").attr("aria-selected","false");
+		// Modify info tab
+		$("#description").removeClass("show");
+		$("#description").removeClass("active");
 
-	$("#data-tab").addClass("active");
-	$("#data-tab").attr("aria-selected","true");
+		$("#data").removeClass("show");
+		$("#data").removeClass("active");
 
-	// Modify info tab
-	$("#description").removeClass("show");
-	$("#description").removeClass("active");
+		$("#info").addClass("show");
+		$("#info").addClass("active");
+	});
 
-	$("#info").removeClass("show");
-	$("#info").removeClass("active");
+	// Show data tab and hide the other two
+	$("#data-tab").on ("click", function(event) { 
 
-	$("#data").addClass("show");
-	$("#data").addClass("active");
-});
+		event.preventDefault();
+		
+		// Modify tab
+		$("#description-tab").removeClass("active");
+		$("#description-tab").attr("aria-selected","false");
 
-// Change tab using buttons
+		$("#info-tab").removeClass("active");
+		$("#info-tab").attr("aria-selected","false");
 
-// Show description tab and hide the other two
-$("#next1").on ("click", function(event) { 
+		$("#data-tab").addClass("active");
+		$("#data-tab").attr("aria-selected","true");
 
-	event.preventDefault();
-	
-	// Modify tab
-	$("#description-tab").removeClass("active");
-	$("#description-tab").attr("aria-selected","false");
+		// Modify info tab
+		$("#description").removeClass("show");
+		$("#description").removeClass("active");
 
-	$("#data-tab").removeClass("active");
-	$("#data-tab").attr("aria-selected","false");
+		$("#info").removeClass("show");
+		$("#info").removeClass("active");
 
-	$("#info-tab").addClass("active");
-	$("#info-tab").attr("aria-selected","true");
+		$("#data").addClass("show");
+		$("#data").addClass("active");
+	});
 
-	// Modify info tab
-	$("#description").removeClass("show");
-	$("#description").removeClass("active");
+	// Change tab using buttons
 
-	$("#data").removeClass("show");
-	$("#data").removeClass("active");
+	// Show description tab and hide the other two
+	$("#next1").on ("click", function(event) { 
 
-	$("#info").addClass("show");
-	$("#info").addClass("active");
-});
+		event.preventDefault();
+		
+		// Modify tab
+		$("#description-tab").removeClass("active");
+		$("#description-tab").attr("aria-selected","false");
 
-// Show data tab and hide the other two
-$("#next2").on ("click", function(event) { 
+		$("#data-tab").removeClass("active");
+		$("#data-tab").attr("aria-selected","false");
 
-	event.preventDefault();
-	
-	// Modify tab
-	$("#description-tab").removeClass("active");
-	$("#description-tab").attr("aria-selected","false");
+		$("#info-tab").addClass("active");
+		$("#info-tab").attr("aria-selected","true");
 
-	$("#info-tab").removeClass("active");
-	$("#info-tab").attr("aria-selected","false");
+		// Modify info tab
+		$("#description").removeClass("show");
+		$("#description").removeClass("active");
 
-	$("#data-tab").addClass("active");
-	$("#data-tab").attr("aria-selected","true");
+		$("#data").removeClass("show");
+		$("#data").removeClass("active");
 
-	// Modify info tab
-	$("#description").removeClass("show");
-	$("#description").removeClass("active");
+		$("#info").addClass("show");
+		$("#info").addClass("active");
+	});
 
-	$("#info").removeClass("show");
-	$("#info").removeClass("active");
+	// Show data tab and hide the other two
+	$("#next2").on ("click", function(event) { 
 
-	$("#data").addClass("show");
-	$("#data").addClass("active");
-});
+		event.preventDefault();
+		
+		// Modify tab
+		$("#description-tab").removeClass("active");
+		$("#description-tab").attr("aria-selected","false");
 
-// Show description tab and hide the other two
-$("#back2").on ("click", function(event) { 
+		$("#info-tab").removeClass("active");
+		$("#info-tab").attr("aria-selected","false");
 
-	event.preventDefault();
+		$("#data-tab").addClass("active");
+		$("#data-tab").attr("aria-selected","true");
 
-	// Modify tab
-	$("#info-tab").removeClass("active");
-	$("#info-tab").attr("aria-selected","false");
-	
-	$("#data-tab").removeClass("active");
-	$("#data-tab").attr("aria-selected","false");
+		// Modify info tab
+		$("#description").removeClass("show");
+		$("#description").removeClass("active");
 
-	$("#description-tab").addClass("active");
-	$("#description-tab").attr("aria-selected","true");
+		$("#info").removeClass("show");
+		$("#info").removeClass("active");
 
-	// Modify info tab
-	$("#info").removeClass("show");
-	$("#info").removeClass("active");
+		$("#data").addClass("show");
+		$("#data").addClass("active");
+	});
 
-	$("#data").removeClass("show");
-	$("#data").removeClass("active");
+	// Show description tab and hide the other two
+	$("#back2").on ("click", function(event) { 
 
-	$("#description").addClass("show");
-	$("#description").addClass("active");
-});
+		event.preventDefault();
 
-// Show info tab and hide the other two
-$("#back3").on ("click", function(event) { 
+		// Modify tab
+		$("#info-tab").removeClass("active");
+		$("#info-tab").attr("aria-selected","false");
+		
+		$("#data-tab").removeClass("active");
+		$("#data-tab").attr("aria-selected","false");
 
-	event.preventDefault();
+		$("#description-tab").addClass("active");
+		$("#description-tab").attr("aria-selected","true");
 
-	// Modify tab
-	$("#description-tab").removeClass("active");
-	$("#description-tab").attr("aria-selected","false");
+		// Modify info tab
+		$("#info").removeClass("show");
+		$("#info").removeClass("active");
 
-	$("#data-tab").removeClass("active");
-	$("#data-tab").attr("aria-selected","false");
+		$("#data").removeClass("show");
+		$("#data").removeClass("active");
 
-	$("#info-tab").addClass("active");
-	$("#info-tab").attr("aria-selected","true");
+		$("#description").addClass("show");
+		$("#description").addClass("active");
+	});
 
-	// Modify info tab
-	$("#description").removeClass("show");
-	$("#description").removeClass("active");
+	// Show info tab and hide the other two
+	$("#back3").on ("click", function(event) { 
 
-	$("#data").removeClass("show");
-	$("#data").removeClass("active");
+		event.preventDefault();
 
-	$("#info").addClass("show");
-	$("#info").addClass("active");
-});
+		// Modify tab
+		$("#description-tab").removeClass("active");
+		$("#description-tab").attr("aria-selected","false");
 
-$("#submit").on ("click", (event) => {
-	event.preventDefault();
-	window.location.href = "./publish.html";
-});
+		$("#data-tab").removeClass("active");
+		$("#data-tab").attr("aria-selected","false");
+
+		$("#info-tab").addClass("active");
+		$("#info-tab").attr("aria-selected","true");
+
+		// Modify info tab
+		$("#description").removeClass("show");
+		$("#description").removeClass("active");
+
+		$("#data").removeClass("show");
+		$("#data").removeClass("active");
+
+		$("#info").addClass("show");
+		$("#info").addClass("active");
+	});
+
+	$("#submit").on ("click", (event) => {
+		
+		event.preventDefault();
+
+		if ($("#name").val() && $("#descriptionText").val() && $("#quantity").val() && $("#condition").val() != "select") {
+			
+			let newDonation = {
+				
+				name : $("#name").val(),
+				description : $("#descriptionText").val(),
+				image : "phone.jpg",
+				location : $("#location").val(),
+				timeCreated : new Date(),
+				quantity : $("#quantity").val(),
+				universalCode : $("#universalCode").val(),
+				guarantee : $("#guarantee").val(),
+				brand : $("#brand").val(),
+				model : $("#model").val(),
+				year : $("#year").val(),
+				condition : $("#condition").val(),
+				category : $("#category").val(),
+				bought : false
+			};
+
+			// let newDonation = {
+				
+			// 	name : "Camara",
+			// 	description : "Fotografica",
+			// 	image : "phone.jpg",
+			// 	location : "Aqui",
+			// 	timeCreated : new Date(),
+			// 	quantity : 1,
+			// 	universalCode : "",
+			// 	guarantee : "",
+			// 	brand : "",
+			// 	model : "",
+			// 	year : "2000",
+			// 	condition : "Nuevo",
+			// 	category : "tech",
+			// 	bought : false
+			// };
+
+			postDonation(newDonation);
+
+			window.location.href = "./publish.html"
+		}
+
+		else {
+			window.alert("Aun te hace falta llenar un dato");
+		}
+	});
+}
+
+contController();

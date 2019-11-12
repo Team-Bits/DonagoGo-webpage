@@ -21,28 +21,11 @@ app.use( morgan( "dev" ) );
 let Products = [
 
 	{
-		id: uuid.v4(),
-		name : "",
-		description : "",
-		image : "",
-		location : "",
-		timeCreated : new Date(""),
-		quantity : 1,
-		universalCode : "",
-		guarantee : new Date(""),
-		brand : "",
-		model : "",
-		year : "",
-		condition : "",
-		category : "",
-	},
-
-	{
 		// id: uuid.v4(),
 		id: "1",
 		userId : "1",
 		name : "Cable USB Micro",
-		description : "Lo tenía porque compré el Aifon s9 plus ultramega pirruris. Pero pues ya salió el Aifon s11 y pues el que tengo ya no sirve pa pura 🍆. Como tiene nuevo cable, pues por eso ya no sirve este",
+		description : "Lo tenía porque compré el Aifon s9 plus ultramega pirruris. Pero pues ya salió el Aifon s11 y pues el que tengo ya no sirve. Como tiene nuevo cable, pues por eso ya no sirve este",
 		image : "cable.jpg",
 		location : "Parque Fundidora",
 		timeCreated : new Date("December 17, 1995 03:24:00"),
@@ -53,7 +36,8 @@ let Products = [
 		model : "",
 		year : "2017",
 		condition : "Usado",
-		category : "tech"
+		category : "tech",
+		bought : false
 	},
 
 	{
@@ -61,7 +45,7 @@ let Products = [
 		id: "2",
 		userId : "2",
 		name : "Chamarra",
-		description : "Chamarra de Cuero color negro. Mi mama la compro en internet hace 2 años (principios del 2018)",
+		description : "Chamarra de Cuero color negro. Mi mama la compro en internet hace 2 años (principios del 2018) pero nunca la use",
 		image : "jacket.jpg",
 		location : "Parque Fundidora",
 		timeCreated : new Date("December 17, 1995 03:24:00"),
@@ -71,8 +55,9 @@ let Products = [
 		brand : "Elite",
 		model : "",
 		year : "",
-		condition : "Usado",
-		category : "clothes"
+		condition : "Nuevo",
+		category : "clothes",
+		bought : false
 	},
 
 	{
@@ -91,7 +76,8 @@ let Products = [
 		model : "12",
 		year : "",
 		condition : "Usado",
-		category : "tech"
+		category : "tech",
+		bought : false
 	},
 
 	{
@@ -110,7 +96,8 @@ let Products = [
 		model : "Macbook Pro",
 		year : "2015",
 		condition : "Usado",
-		category : "tech"
+		category : "tech",
+		bought : false
 	},
 
 	{
@@ -129,7 +116,8 @@ let Products = [
 		model : "XR",
 		year : "2019",
 		condition : "Usado",
-		category : "tech"
+		category : "tech",
+		bought : false	
 	},
 
 	{
@@ -148,7 +136,8 @@ let Products = [
 		model : "Chocolate Caliente mexicano",
 		year : "2019",
 		condition : "Usado",
-		category : "food"
+		category : "food",
+		bought : false
 	},
 
 	{
@@ -168,6 +157,7 @@ let Products = [
 		year : "",
 		condition : "",
 		category : "",
+		bought : false
 	},
 
 	{
@@ -186,6 +176,7 @@ let Products = [
 		year : "",
 		condition : "",
 		category : "",
+		bought : false
 	}
 ];
 
@@ -316,13 +307,13 @@ app.post('/products', jsonParser, (req, res, next) => {
 	let flag = true;
 
 	// If all fields are correctly filled
-	if (req.body.title && req.body.descriptionText && req.body.quantity 
-			&& req.body.category) {
+	// if (req.body.title && req.body.descriptionText && req.body.quantity 
+	// 		&& req.body.category) {
 
 		// Create the new post
 		let createdProduct = {
 			id : uuid.v4(),
-			userId : req.body.userId,
+			userId : "1",
 			name : req.body.name,
 			description : req.body.description,
 			image : req.body.image,
@@ -335,14 +326,15 @@ app.post('/products', jsonParser, (req, res, next) => {
 			model : req.body.model,
 			year : req.body.year,
 			condition : req.body.condition,
-			category : req.body.category
+			category : req.body.category,
+			bought : req.body.bought
 		};
 
 		Products.push(createdProduct);
 
 		res.statusMessage = "Product was posted";
-		return res.status(200).json(createdPost);
-	}
+		return res.status(200).json(createdProduct);
+	// }
 
 	return res.status(406).json({
 		code: 406,

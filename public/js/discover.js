@@ -39,11 +39,11 @@ function getProducts(category) {
 				);
 
 				for (let j=0; j<4; j++) {
-				 console.log(i, j, categoryProducts[4*i+j].image);
+				 // console.log(i, j, categoryProducts[4*i+j].image);
 					$(".rowFlex").append(
 						`
 							<div class="colFlex product">
-								<img id="" class="sectionImage" src="./img/${categoryProducts[4*i+j].image}">
+								<img id="${categoryProducts[4*i+j].id}" class="sectionImage" src="./img/${categoryProducts[4*i+j].image}">
 								<div class="subTitle">
 									<h5>${categoryProducts[4*i+j].name}</h5>
 									<p class="subInfo location">📍 ${categoryProducts[4*i+j].location}<br></p>
@@ -70,7 +70,108 @@ function getProducts(category) {
 	});
 }
 
+function getOneProduct(id) {
+
+	$.ajax({
+		url : "/products",
+		method: "GET",
+		dataType: "json",
+
+		success: function(responseJSON) {
+
+			$(".productDetail").empty();
+			$(".productDetail").append('<button type="button" class="btn btn-success backCategory">Regresar</button>');
+
+			let selectedProduct;
+
+			for (let i=0; i<responseJSON.length; i++) 
+				if (responseJSON[i].id == id)
+					selectedProduct = responseJSON[i];
+
+			$(".productDetail").append(
+				`
+					<div class="divitionDetail">
+						<div class="leftDetail">
+							<img class="detailImage" src="./img/${selectedProduct.image}">
+						</div>
+						<div class="rightDetail">
+							<h2>${selectedProduct.name}</h2>
+							<p class="descriptionDetail">
+								${selectedProduct.description}  
+							</p>
+
+							<div class="split">
+								<div class="characteristicsDetail">
+									<div>
+										<span class="charDetail">Condición:</span>
+										<span>${selectedProduct.condition}</span>
+									</div>
+									<div>
+										<span class="charDetail">Cantidad disponible: </span>
+										<span class="valDetail">${selectedProduct.quantity}</span>
+									</div>
+
+
+									${(selectedProduct.guaranty == "") ? `` :
+
+										`
+										<div>
+											<span class="charDetail">Garantía hasta: </span>
+											<span class="valDetail">${selectedProduct.guaranty}</span>
+										</div>
+										`
+									}
+
+																		
+									${(selectedProduct.brand == "") ? `` :
+										`	
+										<div>
+											<span class="charDetail">Marca: </span>
+											<span class="valDetail">${selectedProduct.brand}</span>
+										</div>
+										`
+									}
+
+									${(selectedProduct.year == "") ? `` :
+										`
+											<div>
+												<span class="charDetail">Año: </span>
+												<span class="valDetail">${selectedProduct.year}</span>
+											</div>
+										`
+									}
+									
+								</div>
+							</div>
+
+							<div class="locationDetail">
+								<div class="titleDetail">Recoger en...</div>
+								<div class="identDetail">📍 ${selectedProduct.location}</div>
+							</div>
+
+							<div class="buttonsDetail">
+								<a href="./save.html"><button type="button" id="saveDetail" href="./save.html" class="btn btn-primary">Guardar</button></a>
+								<button type="button" id="buyDetail" class="btn btn-success">Adquirir</button>
+								<a href="./report.html"><button type="button" id="reportDetail" class="btn btn-warning">Reportar</button></a>
+							</div>
+						</div>
+					</div>
+				`
+
+			);
+
+			$(".productDetail").append('<button type="button" class="btn btn-success backCategory">Regresar</button>');
+			controller();
+		},
+
+		error: function(err) {
+			console.log("Juguito de Chale: ", err);	
+		}
+	});
+}
+
 function controller() {
+	
 	$(".main").on("click", (e) => {
 	
 		e.preventDefault();
@@ -93,6 +194,10 @@ function controller() {
 		
 		e.preventDefault();
 		
+		console.log(e.target.id);
+
+		getOneProduct(e.target.id);
+
 		$(".productDetail").show();
 		$(".categories").hide();
 		$(".category").hide();

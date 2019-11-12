@@ -33,7 +33,7 @@
 						<div class="form-content">
 							<div class="form-group space">
 								<label class="form-label">Mi producto es... <span class="dot">*</span></label>
-								<input type="text" class="form-control" id="title" placeholder="ej. Sudadera adidas">
+								<input type="text" class="form-control" id="name" placeholder="ej. Sudadera adidas">
 							</div>
 							<div class="form-group space">
 								<label class="form-label">Lo describiría como... <span class="dot">*</span></label>
@@ -46,7 +46,7 @@
 								</div>
 								<div class="center">
 									<label class="form-label">Su código universal... </label>
-									<input type="text" class="form-control" id="model" placeholder="ej. 12345678">
+									<input type="text" class="form-control" id="universalCode" placeholder="ej. 12345678">
 									<label class="optional">*Opcional</label>
 								</div>
 								<div class="center">
@@ -63,7 +63,7 @@
 									<!-- https://mdbootstrap.com/docs/jquery/forms/file-input/ -->
 									<div class="input-group">
 										<div class="input-group-prepend">
-											<span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+											<span class="input-group-text" id="inputGroupFileAddon01">Subir</span>
 										</div>
 										<div class="custom-file">
 											<input type="file" class="custom-file-input" id="productPhoto"
@@ -105,15 +105,15 @@
 							<div class="form-group space">
 								<label class="form-label">El producto es... <span class="dot">*</span></label>
 								<select class="form-control" id="condition">
-									<option value="">Seleccionar</option>
-									<option value="new">Nuevo</option>
-									<option value="used">Usado</option>
+									<option value="select">Seleccionar</option>
+									<option value="Nuevo">Nuevo</option>
+									<option value="Usado">Usado</option>
 								</select>
 							</div>
 							<div class="form-group space">
 								<label class="form-label">Y pertenece a la categoría... <span class="dot">*</span></label>
 								<select class="form-control" id="category">
-									<option value="">Seleccionar</option>
+									<option value="select">Seleccionar</option>
 									<option value="clothes">Ropa y accesorios</option>
 									<option value="tech">Tecnología</option>
 									<option value="home">Hogar y familia</option>
@@ -144,9 +144,10 @@
 						<div class="form-content">
 							<div class="form-group space">
 								<label class="form-label">Lo pueden recoger en... <span class="dot">*</span></label>
-								<select class="form-control" id="address">
-									<option value="dir1">Liverpool 3010, Narvarte, Monterrey, Nuevo León</option>
-									<option value="dir2">Parque Tecnologico, Filósofos, Tecnológico, Monterrey, Nuevo León</option>
+								<select class="form-control" id="location">
+									<option value="Parque Fundidora, Acceso 2, Avenida Fundidora y, Adolfo Prieto S/N, Obrera, 64010 Monterrey, N.L.">Parque Fundidora, Acceso 2, Avenida Fundidora y, Adolfo Prieto S/N, Obrera, 64010 Monterrey, N.L.</option>
+									<option value="Tecnológico de Monterrey, Campus Monterrey, BiblioTEC piso 1">Tecnológico de Monterrey, Campus Monterrey, BiblioTEC piso 1</option>
+									<option value="Fashion Drive, Av. Diego Rivera 1000, Zona San Agustín, 66260 San Pedro Garza García, N.L.">Fashion Drive, Av. Diego Rivera 1000, Zona San Agustín, 66260 San Pedro Garza García, N.L.</option>
 								</select>
 							</div>
 							<div class="form-group space">
