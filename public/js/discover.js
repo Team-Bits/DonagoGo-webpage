@@ -46,7 +46,6 @@ function getProducts(category) {
 								<img id="${categoryProducts[4*i+j].id}" class="sectionImage" src="./img/${categoryProducts[4*i+j].image}">
 								<div class="subTitle">
 									<h5>${categoryProducts[4*i+j].name}</h5>
-									<p class="subInfo location">📍 ${categoryProducts[4*i+j].location}<br></p>
 								</div>
 							</div>
 						`

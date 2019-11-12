@@ -19,7 +19,7 @@ function getProducts(id) {
 									<img class="orders-image-size" src="./img/${responseJSON[i].image}">
 								</div>
 								<div class="orders-info">
-									<h6 class="order-info-title">${responseJSON[i].name}</h6>
+									<h3 class="order-info-title">${responseJSON[i].name}</h3>
 									<div class="order-info-location order-info-sub">📍⠀${responseJSON[i].location}</div>
 									<div class="order-info order-info-sub">📅 Recoger el ${responseJSON[i].timeSchedule}</div>
 									<div class="order-info-buttons order-info-sub">

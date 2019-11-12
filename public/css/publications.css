@@ -48,3 +48,9 @@
 	margin-top: 2%;
 	margin-left: 6%;	
 }
+
+.publications-image-size {
+	object-fit: cover;
+	width: 350px; 
+	height: 300px;
+}

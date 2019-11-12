@@ -68,3 +68,17 @@
 	margin-top: 10%;
 	margin-left: 1%;
 }
+
+.detailImage {
+	object-fit: cover;
+	width: 750px; 
+	height: 500px;
+}
+
+.divitionDetail {
+	margin-left: 3.5%;
+}
+
+.rightDetail {
+	margin-left: 2%;
+}

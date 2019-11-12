@@ -302,44 +302,30 @@ app.get('/products', (req, res, next) => {
 // POST
 app.post('/products', jsonParser, (req, res, next) => {
 
-	// Validate product
+	// Create the new post
+	let createdProduct = {
+		id : uuid.v4(),
+		userId : "1",
+		name : req.body.name,
+		description : req.body.description,
+		image : req.body.image,
+		location : req.body.location,
+		timeCreated : req.body.timeCreated,
+		quantity : req.body.quantity,
+		universalCode : req.body.universalCode,
+		guarantee : req.body.guarantee,
+		brand : req.body.brand,
+		model : req.body.model,
+		year : req.body.year,
+		condition : req.body.condition,
+		category : req.body.category,
+		bought : req.body.bought
+	};
 
-	let flag = true;
+	Products.push(createdProduct);
 
-	// If all fields are correctly filled
-	// if (req.body.title && req.body.descriptionText && req.body.quantity 
-	// 		&& req.body.category) {
-
-		// Create the new post
-		let createdProduct = {
-			id : uuid.v4(),
-			userId : "1",
-			name : req.body.name,
-			description : req.body.description,
-			image : req.body.image,
-			location : req.body.location,
-			timeCreated : req.body.timeCreated,
-			quantity : req.body.quantity,
-			universalCode : req.body.universalCode,
-			guarantee : req.body.guarantee,
-			brand : req.body.brand,
-			model : req.body.model,
-			year : req.body.year,
-			condition : req.body.condition,
-			category : req.body.category,
-			bought : req.body.bought
-		};
-
-		Products.push(createdProduct);
-
-		res.statusMessage = "Product was posted";
-		return res.status(200).json(createdProduct);
-	// }
-
-	return res.status(406).json({
-		code: 406,
-		message: "Missing field in body"
-	});
+	res.statusMessage = "Product was posted";
+	return res.status(200).json(createdProduct);
 
 });
 
