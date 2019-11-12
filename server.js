@@ -1,19 +1,20 @@
 let express = require( "express" );
 let morgan = require( "morgan" );
 let uuid = require("uuid");
-
 let bodyParser = require( "body-parser" );
+let mongoose = require( "mongoose" );
+
 let jsonParser = bodyParser.json();
 
-// let mongoose = require( "mongoose" );
+let { Products } = require('./model');
+let { Users } = require('./model');
+let { Purchases } = require('./model');
 
-// let { Products } = require('./model');
-// let { Users } = require('./model');
-// let { Purchases } = require('./model');
+let {DATABASE_URL, PORT} = require("./config");
 
 let app = express();
 
-// mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise;
 
 app.use( express.static( "public" ) );
 app.use( morgan( "dev" ) );
@@ -332,3 +333,47 @@ app.post('/products', jsonParser, (req, res, next) => {
 app.listen('8080', () => {
 	console.log("Donago-go on port 8080");
 });
+
+function runServer(PORT, DATABASE_URL){
+ return new Promise( (resolve, reject ) => {
+ mongoose.connect(databaseUrl, response => {
+ if ( response ){
+ return reject(response);
+ }
+ else{
+ server = app.listen(port, () => {
+ console.log( "App is running on port " + port );
+ resolve();
+ })
+ .on( 'error', err => {
+ mongoose.disconnect();
+ return reject(err);
+ })
+ }
+ });
+ });
+}
+
+function closeServer(){
+ return mongoose.disconnect()
+ .then(() => {
+ return new Promise((resolve, reject) => {
+ console.log('Closing the server');
+ server.close( err => {
+ if (err){
+ return reject(err);
+ }
+ else{
+ resolve();
+ }
+ });
+ });
+ });
+}
+
+runServer( 8181, "mongodb://localhost/studentsDB" )
+ .catch( err => {
+ console.log( err );
+ });
+
+module.exports = { app, runServer, closeServer };
