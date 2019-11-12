@@ -292,9 +292,14 @@ app.get('/purchases', (req, res, next) => {
 	return res.status(200).json(Purchases); 	
 });
 
-// 
+// Post
+app.post('/purchases' , (req, res, next) => {
 
+	let newPurchase = {
+		
+	}
 
+});
 
 // ----------------- Products -----------------
 
