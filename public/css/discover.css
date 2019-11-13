@@ -71,8 +71,9 @@
 
 .detailImage {
 	object-fit: cover;
-	width: 750px; 
-	height: 500px;
+	width: 610px; 
+	/*width: 750px; */
+	height: 450px;
 }
 
 .divitionDetail {
@@ -81,4 +82,8 @@
 
 .rightDetail {
 	margin-left: 2%;
+}
+
+.backCategory-botom {
+	margin-top: 1%
 }

@@ -110,23 +110,31 @@ function getOneProduct(id) {
 										<span class="valDetail">${selectedProduct.quantity}</span>
 									</div>
 
-
-									${(selectedProduct.guaranty == "") ? `` :
+									${(selectedProduct.universalCode == "") ? `` :
 
 										`
 										<div>
-											<span class="charDetail">Garantía hasta: </span>
-											<span class="valDetail">${selectedProduct.guaranty}</span>
+											<span class="charDetail">Código Universal: </span>
+											<span class="valDetail">${selectedProduct.universalCode}</span>
 										</div>
 										`
 									}
-
 																		
 									${(selectedProduct.brand == "") ? `` :
 										`	
 										<div>
 											<span class="charDetail">Marca: </span>
 											<span class="valDetail">${selectedProduct.brand}</span>
+										</div>
+										`
+									}
+
+									${(selectedProduct.model == "") ? `` :
+
+										`
+										<div>
+											<span class="charDetail">Modelo: </span>
+											<span class="valDetail">${selectedProduct.model}</span>
 										</div>
 										`
 									}
@@ -159,7 +167,7 @@ function getOneProduct(id) {
 
 			);
 
-			$(".productDetail").append('<button type="button" class="btn btn-success backCategory">Regresar</button>');
+			$(".productDetail").append('<button type="button" class="btn btn-success backCategory backCategory-botom">Regresar</button>');
 			controller();
 		},
 
