@@ -31,6 +31,8 @@ function searchEndPoint(userQuery) {
 			var name, description, brand, model, condition, category;
 			var namePos, descriptionPos, brandPos, modelPos, conditionPos, categoryPos;
 
+			$(".search").empty();
+			$(".search").append(`<h2 class="searchTitle">🔎 Resultados de ${$("#ex1").val()}...</h2>`);
 
 			$(".search").append(
 				`
@@ -103,19 +105,12 @@ function main() {
 		$(".search").show();
 		$(".notSearch").hide();
 
-		$(".search").append(
-			`
-				<h2 class="searchTitle">🔎 Resultados de ${$("#ex1").val()}...</h2>
-			`
-		);
-
 		let userQuery = $("#ex1").val().toLowerCase();
 
 		searchEndPoint(userQuery);
 	});
 
-	$(".searches-container").on("click", function(e) {
-		
+	$(".searches-container").on("click", function(e) {		
 		console.log(e.target.id);
 	});
 } main();
