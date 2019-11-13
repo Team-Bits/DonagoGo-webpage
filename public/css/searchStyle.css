@@ -66,3 +66,167 @@
 	width: 250px; 
 	height: 210px;
 }
+
+* {
+	margin: 0%;
+}
+
+.backCategory {
+	margin-bottom: 1%;
+	margin-left: 3.3%;
+}
+
+.detailImage {
+	/*width: 280%;
+	height: 200%;*/
+}
+
+.divitionDetail {
+	display: flex;
+}
+
+.rightDetail {
+	margin-right: 2%;
+}
+
+.descriptionDetail {
+	padding-top: 2%;
+}
+
+.split {
+	display: flex;
+	justify-content: space-between;
+	font-size: 110%;
+	margin-top: 5%;
+}
+
+.priceDetail {
+	margin-left: 5%;
+}
+
+.characteristicsDetail {
+	margin-right: 15%;
+}
+
+.otherPrice {
+	color: red;
+	font-weight: bold;
+}
+
+.bestPrice {
+	color: green;
+	font-weight: bold;
+}
+
+.difference {
+	color: #E9DF32;
+	font-weight: bold;
+}
+
+.send {
+	font-weight: bold;
+}
+
+.charDetail {
+	font-weight: bold;
+}
+
+.btn-warning {
+	color: white;
+}
+
+.buttonsDetail {
+	padding-top: 10%;
+	display: flex;
+	justify-content: space-between;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.titleDetail {
+	padding-top: 5%;
+	padding-left: 5%;
+	font-size: 120%;
+}
+
+.identDetail {
+	font-size: 110%;
+	padding-top: 1%;
+	padding-left: 8%;
+}
+
+.boughtProduct {
+	margin: 10%;
+	text-align: center;
+}
+
+.detailGetHeader {
+	margin-top: 15%;
+	text-align: center;
+}
+
+.detailGetParagraph {
+	margin-top: 2%;
+	text-align: center;
+	font-size: 120%;
+}
+
+.detailGetReturnBtnDiv {
+	margin-top: 3%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.detailGet-btn {
+	margin-top: 1%;
+}
+
+.detailGetFormsContainer {
+	display: flex;
+	justify-content: space-around;
+}
+
+.detailGetFormsLabel {
+	text-align: left;
+}
+
+.detailGetFormsMap {
+	margin-top: 3%;
+}
+
+#detailGetScheduleDay {
+	margin-bottom: 40%;
+	/*margin-top: 10%;*/
+}
+
+#detailGetFormsLabelDay {
+	margin-top: 15%;
+}
+
+.detailGetFormsMapLabel {
+	font-weight: bold;
+}
+
+.detailGetFormsLabel {
+	font-weight: bold;
+}
+
+.detailGetFormsButton {
+	margin-top: 27%;
+}
+
+.detailGetChat {
+	margin-top: 5%;
+}
+
+.detailGetChatTitle {
+	text-align: left;
+	margin-left: 6%;
+	margin-bottom: 1%;
+}
+
+.detailGetChatParagraph {
+	text-align: left;
+	margin-left: 6%;
+	margin-bottom: 1%;
+}

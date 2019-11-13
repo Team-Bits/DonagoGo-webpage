@@ -16,6 +16,111 @@ $("#navbar").append(
 	`
 );
 
+function SearchSearch(id) {
+
+	$.ajax({
+
+		url: "/products",
+		method: "GET",
+		dataType: "json",
+
+		success: function(responseJSON) {
+			
+			$(".search").empty();
+			$(".search").append('<button type="button" class="btn btn-success back-search">Regresar</button>')
+
+			let selectedProduct;
+
+			for (let i=0; i<responseJSON.length; i++) 
+				if (responseJSON[i].id == id)
+					selectedProduct = responseJSON[i];
+					
+			$(".search").append(
+				`
+					<div class="divitionSearch">
+						<div class="leftSearch">
+							<img class="searchImage" src="./img/${selectedProduct.image}">
+						</div>
+						<div class="rightSearch">
+							<h2>${selectedProduct.name}</h2>
+							<p class="descriptionSearch">
+								${selectedProduct.description}  
+							</p>
+
+							<div class="split">
+								<div class="characteristicsSearch">
+									<div>
+										<span class="charSearch">Condición:</span>
+										<span>${selectedProduct.condition}</span>
+									</div>
+									<div>
+										<span class="charSearch">Cantidad disponible: </span>
+										<span class="valSearch">${selectedProduct.quantity}</span>
+									</div>
+
+									${(selectedProduct.universalCode == "") ? `` :
+
+										`
+										<div>
+											<span class="charSearch">Código Universal: </span>
+											<span class="valSearch">${selectedProduct.universalCode}</span>
+										</div>
+										`
+									}
+																		
+									${(selectedProduct.brand == "") ? `` :
+										`	
+										<div>
+											<span class="charSearch">Marca: </span>
+											<span class="valSearch">${selectedProduct.brand}</span>
+										</div>
+										`
+									}
+
+									${(selectedProduct.model == "") ? `` :
+
+										`
+										<div>
+											<span class="charSearch">Modelo: </span>
+											<span class="valSearch">${selectedProduct.model}</span>
+										</div>
+										`
+									}
+
+									${(selectedProduct.year == "") ? `` :
+										`
+											<div>
+												<span class="charSearch">Año: </span>
+												<span class="valSearch">${selectedProduct.year}</span>
+											</div>
+										`
+									}
+									
+								</div>
+							</div>
+
+							<div class="locationSearch">
+								<div class="titleSearch">Recoger en...</div>
+								<div class="identSearch">📍 ${selectedProduct.location}</div>
+							</div>
+
+							<div class="buttonsSearch">
+								<a href="./save.html"><button type="button" id="saveSearch" href="./save.html" class="btn btn-primary">Guardar</button></a>
+								<button type="button" id="buySearch" class="btn btn-success">Adquirir</button>
+								<a href="./report.html"><button type="button" id="reportSearch" class="btn btn-warning">Reportar</button></a>
+							</div>
+						</div>
+					</div>	
+				`
+			);
+		},
+
+		error: function(err) {
+			console.log("Juguito de chale", err);
+		}
+	});
+}
+
 function searchEndPoint(userQuery) {
 
 	var found = [];
@@ -63,14 +168,14 @@ function searchEndPoint(userQuery) {
 					$(".search").append(
 						`
 							<div class="searches-container" id="${responseJSON[i].id}">
-								<div class="searches-image">
-									<img class="searches-image-size" src="./img/${responseJSON[i].image}">
+								<div class="searches-image" >
+									<img class="searches-image-size" id="${responseJSON[i].id}" src="./img/${responseJSON[i].image}">
 								</div>
-								<div class="searches-info">
-									<h5 class="search-info-title">${responseJSON[i].name}</h5>
-									<div class="search-info-description search-info-sub">📘 ${responseJSON[i].description}</div>
-									<div class="search-info-condition search-info-sub">💯 ${responseJSON[i].condition}</div>
-									<div class="search-info-location search-info-sub">📍 ⠀${responseJSON[i].location}</div>
+								<div class="searches-info" id="${responseJSON[i].id}">
+									<h5 class="search-info-title" id="${responseJSON[i].id}">${responseJSON[i].name}</h5>
+									<div class="search-info-description search-info-sub" id="${responseJSON[i].id}">📘 ${responseJSON[i].description}</div>
+									<div class="search-info-condition search-info-sub" id="${responseJSON[i].id}">💯 ${responseJSON[i].condition}</div>
+									<div class="search-info-location search-info-sub" id="${responseJSON[i].id}">📍 ⠀${responseJSON[i].location}</div>
 								</div>
 							</div>
 						`
@@ -101,16 +206,21 @@ function main() {
 
 		e.preventDefault();
 
-		$(".search").empty();
-		$(".search").show();
-		$(".notSearch").hide();
+		if ($("#ex1").val()) {
 
-		let userQuery = $("#ex1").val().toLowerCase();
+			$(".search").empty();
+			$(".search").show();
+			$(".notSearch").hide();
 
-		searchEndPoint(userQuery);
+			let userQuery = $("#ex1").val().toLowerCase();
+
+			searchEndPoint(userQuery);
+		}
 	});
 
 	$(".searches-container").on("click", function(e) {		
-		console.log(e.target.id);
+
+		SearchSearch(e.target.id);
+
 	});
 } main();
