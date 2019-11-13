@@ -39,7 +39,6 @@ function getProducts(category) {
 				);
 
 				for (let j=0; j<4; j++) {
-				 // console.log(i, j, categoryProducts[4*i+j].image);
 					$(".rowFlex").append(
 						`
 							<div class="colFlex product">

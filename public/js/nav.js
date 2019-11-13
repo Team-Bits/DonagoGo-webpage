@@ -37,77 +37,79 @@ function SearchSearch(id) {
 					
 			$(".search").append(
 				`
-					<div class="divitionSearch">
-						<div class="leftSearch">
-							<img class="searchImage" src="./img/${selectedProduct.image}">
-						</div>
-						<div class="rightSearch">
-							<h2>${selectedProduct.name}</h2>
-							<p class="descriptionSearch">
-								${selectedProduct.description}  
-							</p>
+					<div class="divition-all">
+						<div class="divitionDetail">
+							<div class="leftDetail">
+								<img class="detailImage" src="./img/${selectedProduct.image}">
+							</div>
+							<div class="rightDetail">
+								<h2>${selectedProduct.name}</h2>
+								<p class="descriptionDetail">
+									${selectedProduct.description}  
+								</p>
 
-							<div class="split">
-								<div class="characteristicsSearch">
-									<div>
-										<span class="charSearch">Condición:</span>
-										<span>${selectedProduct.condition}</span>
-									</div>
-									<div>
-										<span class="charSearch">Cantidad disponible: </span>
-										<span class="valSearch">${selectedProduct.quantity}</span>
-									</div>
-
-									${(selectedProduct.universalCode == "") ? `` :
-
-										`
+								<div class="split">
+									<div class="characteristicsDetail">
 										<div>
-											<span class="charSearch">Código Universal: </span>
-											<span class="valSearch">${selectedProduct.universalCode}</span>
+											<span class="charDetail">Condición:</span>
+											<span>${selectedProduct.condition}</span>
 										</div>
-										`
-									}
-																		
-									${(selectedProduct.brand == "") ? `` :
-										`	
 										<div>
-											<span class="charSearch">Marca: </span>
-											<span class="valSearch">${selectedProduct.brand}</span>
+											<span class="charDetail">Cantidad disponible: </span>
+											<span class="valDetail">${selectedProduct.quantity}</span>
 										</div>
-										`
-									}
 
-									${(selectedProduct.model == "") ? `` :
+										${(selectedProduct.universalCode == "") ? `` :
 
-										`
-										<div>
-											<span class="charSearch">Modelo: </span>
-											<span class="valSearch">${selectedProduct.model}</span>
-										</div>
-										`
-									}
-
-									${(selectedProduct.year == "") ? `` :
-										`
+											`
 											<div>
-												<span class="charSearch">Año: </span>
-												<span class="valSearch">${selectedProduct.year}</span>
+												<span class="charDetail">Código Universal: </span>
+												<span class="valDetail">${selectedProduct.universalCode}</span>
 											</div>
-										`
-									}
-									
+											`
+										}
+																			
+										${(selectedProduct.brand == "") ? `` :
+											`	
+											<div>
+												<span class="charDetail">Marca: </span>
+												<span class="valDetail">${selectedProduct.brand}</span>
+											</div>
+											`
+										}
+
+										${(selectedProduct.model == "") ? `` :
+
+											`
+											<div>
+												<span class="charDetail">Modelo: </span>
+												<span class="valDetail">${selectedProduct.model}</span>
+											</div>
+											`
+										}
+
+										${(selectedProduct.year == "") ? `` :
+											`
+												<div>
+													<span class="charDetail">Año: </span>
+													<span class="valDetail">${selectedProduct.year}</span>
+												</div>
+											`
+										}
+										
+									</div>
 								</div>
-							</div>
 
-							<div class="locationSearch">
-								<div class="titleSearch">Recoger en...</div>
-								<div class="identSearch">📍 ${selectedProduct.location}</div>
-							</div>
+								<div class="locationDetail">
+									<div class="titleDetail">Recoger en...</div>
+									<div class="identDetail">📍 ${selectedProduct.location}</div>
+								</div>
 
-							<div class="buttonsSearch">
-								<a href="./save.html"><button type="button" id="saveSearch" href="./save.html" class="btn btn-primary">Guardar</button></a>
-								<button type="button" id="buySearch" class="btn btn-success">Adquirir</button>
-								<a href="./report.html"><button type="button" id="reportSearch" class="btn btn-warning">Reportar</button></a>
+								<div class="buttonsDetail">
+									<a href="./save.html"><button type="button" id="saveDetail" href="./save.html" class="btn btn-primary">Guardar</button></a>
+									<button type="button" id="buyDetail" class="btn btn-success">Adquirir</button>
+									<a href="./report.html"><button type="button" id="reportDetail" class="btn btn-warning">Reportar</button></a>
+								</div>
 							</div>
 						</div>
 					</div>	
@@ -173,9 +175,11 @@ function searchEndPoint(userQuery) {
 								</div>
 								<div class="searches-info" id="${responseJSON[i].id}">
 									<h5 class="search-info-title" id="${responseJSON[i].id}">${responseJSON[i].name}</h5>
-									<div class="search-info-description search-info-sub" id="${responseJSON[i].id}">📘 ${responseJSON[i].description}</div>
-									<div class="search-info-condition search-info-sub" id="${responseJSON[i].id}">💯 ${responseJSON[i].condition}</div>
-									<div class="search-info-location search-info-sub" id="${responseJSON[i].id}">📍 ⠀${responseJSON[i].location}</div>
+									<ul>
+										<li class="search-info-description search-info-sub" id="${responseJSON[i].id}">${responseJSON[i].description}</li>
+										<li class="search-info-condition search-info-sub" id="${responseJSON[i].id}">${responseJSON[i].condition}</li>
+										<li class="search-info-location search-info-sub" id="${responseJSON[i].id}">${responseJSON[i].location}</li>
+									</ul>
 								</div>
 							</div>
 						`
