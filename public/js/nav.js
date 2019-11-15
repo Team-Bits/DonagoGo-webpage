@@ -27,7 +27,6 @@ function SearchSearch(id) {
 		success: function(responseJSON) {
 			
 			$(".search").empty();
-			$(".search").append('<button type="button" class="btn btn-success back-search">Regresar</button>')
 
 			let selectedProduct;
 
@@ -35,86 +34,85 @@ function SearchSearch(id) {
 				if (responseJSON[i].id == id)
 					selectedProduct = responseJSON[i];
 					
-			$(".search").append(
-				`
-					<div class="divition-all">
-						<div class="divitionDetail">
-							<div class="leftDetail">
-								<img class="detailImage" src="./img/${selectedProduct.image}">
-							</div>
-							<div class="rightDetail">
-								<h2>${selectedProduct.name}</h2>
-								<p class="descriptionDetail">
-									${selectedProduct.description}  
-								</p>
+			$(".search").append(`
+				<div class="divition-all">
+					<div class="divitionDetail">
+						<div class="leftDetail">
+							<img class="detailImage" src="./img/${selectedProduct.image}">
+						</div>
+						<div class="rightDetail">
+							<h2>${selectedProduct.name}</h2>
+							<p class="descriptionDetail">
+								${selectedProduct.description}  
+							</p>
 
-								<div class="split">
-									<div class="characteristicsDetail">
-										<div>
-											<span class="charDetail">Condición:</span>
-											<span>${selectedProduct.condition}</span>
-										</div>
-										<div>
-											<span class="charDetail">Cantidad disponible: </span>
-											<span class="valDetail">${selectedProduct.quantity}</span>
-										</div>
-
-										${(selectedProduct.universalCode == "") ? `` :
-
-											`
-											<div>
-												<span class="charDetail">Código Universal: </span>
-												<span class="valDetail">${selectedProduct.universalCode}</span>
-											</div>
-											`
-										}
-																			
-										${(selectedProduct.brand == "") ? `` :
-											`	
-											<div>
-												<span class="charDetail">Marca: </span>
-												<span class="valDetail">${selectedProduct.brand}</span>
-											</div>
-											`
-										}
-
-										${(selectedProduct.model == "") ? `` :
-
-											`
-											<div>
-												<span class="charDetail">Modelo: </span>
-												<span class="valDetail">${selectedProduct.model}</span>
-											</div>
-											`
-										}
-
-										${(selectedProduct.year == "") ? `` :
-											`
-												<div>
-													<span class="charDetail">Año: </span>
-													<span class="valDetail">${selectedProduct.year}</span>
-												</div>
-											`
-										}
-										
+							<div class="split">
+								<div class="characteristicsDetail">
+									<div>
+										<span class="charDetail">Condición:</span>
+										<span>${selectedProduct.condition}</span>
 									</div>
-								</div>
+									<div>
+										<span class="charDetail">Cantidad disponible: </span>
+										<span class="valDetail">${selectedProduct.quantity}</span>
+									</div>
 
-								<div class="locationDetail">
-									<div class="titleDetail">Recoger en...</div>
-									<div class="identDetail">📍 ${selectedProduct.location}</div>
-								</div>
+									${(selectedProduct.universalCode == "") ? `` :
 
-								<div class="buttonsDetail">
-									<a href="./save.html"><button type="button" id="saveDetail" href="./save.html" class="btn btn-primary">Guardar</button></a>
-									<button type="button" id="buyDetail" class="btn btn-success">Adquirir</button>
-									<a href="./report.html"><button type="button" id="reportDetail" class="btn btn-warning">Reportar</button></a>
+										`
+										<div>
+											<span class="charDetail">Código Universal: </span>
+											<span class="valDetail">${selectedProduct.universalCode}</span>
+										</div>
+										`
+									}
+																		
+									${(selectedProduct.brand == "") ? `` :
+										`	
+										<div>
+											<span class="charDetail">Marca: </span>
+											<span class="valDetail">${selectedProduct.brand}</span>
+										</div>
+										`
+									}
+
+									${(selectedProduct.model == "") ? `` :
+
+										`
+										<div>
+											<span class="charDetail">Modelo: </span>
+											<span class="valDetail">${selectedProduct.model}</span>
+										</div>
+										`
+									}
+
+									${(selectedProduct.year == "") ? `` :
+										`
+											<div>
+												<span class="charDetail">Año: </span>
+												<span class="valDetail">${selectedProduct.year}</span>
+											</div>
+										`
+									}
+									
 								</div>
+							</div>
+
+							<div class="locationDetail">
+								<div class="titleDetail">Recoger en...</div>
+								<div class="identDetail">📍 ${selectedProduct.location}</div>
+							</div>
+
+							<div class="buttonsDetail">
+								<a href="./save.html"><button type="button" id="saveDetail" href="./save.html" class="btn btn-primary">Guardar</button></a>
+								<button type="button" id="buyDetail" class="btn btn-success">Adquirir</button>
+								<a href="./report.html"><button type="button" id="reportDetail" class="btn btn-warning">Reportar</button></a>
 							</div>
 						</div>
-					</div>	
-				`
-			);
+					</div>
+					<button type="button" class="btn btn-success btn-top">Regresar</button>
+				</div>		
+			`);
 		},
 
 		error: function(err) {
