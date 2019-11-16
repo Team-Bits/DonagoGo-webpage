@@ -36,33 +36,33 @@ function SearchSearch(id) {
 					
 			$(".search").append(`
 				<div class="divition-all">
-					<div class="divitionDetail">
-						<div class="leftDetail">
-							<img class="detailImage" src="./img/${selectedProduct.image}">
+					<div class="divitionSearch">
+						<div class="leftSearch">
+							<img class="searchImage" src="./img/${selectedProduct.image}">
 						</div>
-						<div class="rightDetail">
+						<div class="rightSearch">
 							<h2>${selectedProduct.name}</h2>
-							<p class="descriptionDetail">
+							<p class="descriptionSearch">
 								${selectedProduct.description}  
 							</p>
 
 							<div class="split">
-								<div class="characteristicsDetail">
+								<div class="characteristicsSearch">
 									<div>
-										<span class="charDetail">Condición:</span>
+										<span class="charSearch">Condición:</span>
 										<span>${selectedProduct.condition}</span>
 									</div>
 									<div>
-										<span class="charDetail">Cantidad disponible: </span>
-										<span class="valDetail">${selectedProduct.quantity}</span>
+										<span class="charSearch">Cantidad disponible: </span>
+										<span class="valSearch">${selectedProduct.quantity}</span>
 									</div>
 
 									${(selectedProduct.universalCode == "") ? `` :
 
 										`
 										<div>
-											<span class="charDetail">Código Universal: </span>
-											<span class="valDetail">${selectedProduct.universalCode}</span>
+											<span class="charSearch">Código Universal: </span>
+											<span class="valSearch">${selectedProduct.universalCode}</span>
 										</div>
 										`
 									}
@@ -70,8 +70,8 @@ function SearchSearch(id) {
 									${(selectedProduct.brand == "") ? `` :
 										`	
 										<div>
-											<span class="charDetail">Marca: </span>
-											<span class="valDetail">${selectedProduct.brand}</span>
+											<span class="charSearch">Marca: </span>
+											<span class="valSearch">${selectedProduct.brand}</span>
 										</div>
 										`
 									}
@@ -80,8 +80,8 @@ function SearchSearch(id) {
 
 										`
 										<div>
-											<span class="charDetail">Modelo: </span>
-											<span class="valDetail">${selectedProduct.model}</span>
+											<span class="charSearch">Modelo: </span>
+											<span class="valSearch">${selectedProduct.model}</span>
 										</div>
 										`
 									}
@@ -89,8 +89,8 @@ function SearchSearch(id) {
 									${(selectedProduct.year == "") ? `` :
 										`
 											<div>
-												<span class="charDetail">Año: </span>
-												<span class="valDetail">${selectedProduct.year}</span>
+												<span class="charSearch">Año: </span>
+												<span class="valSearch">${selectedProduct.year}</span>
 											</div>
 										`
 									}
@@ -98,15 +98,15 @@ function SearchSearch(id) {
 								</div>
 							</div>
 
-							<div class="locationDetail">
-								<div class="titleDetail">Recoger en...</div>
-								<div class="identDetail">📍 ${selectedProduct.location}</div>
+							<div class="locationSearch">
+								<div class="titleSearch">Recoger en...</div>
+								<div class="identSearch">📍 ${selectedProduct.location}</div>
 							</div>
 
-							<div class="buttonsDetail">
-								<a href="./save.html"><button type="button" id="saveDetail" href="./save.html" class="btn btn-primary">Guardar</button></a>
-								<button type="button" id="buyDetail" class="btn btn-success">Adquirir</button>
-								<a href="./report.html"><button type="button" id="reportDetail" class="btn btn-warning">Reportar</button></a>
+							<div class="buttonsSearch">
+								<a href="./save.html"><button type="button" id="saveSearch" href="./save.html" class="btn btn-primary">Guardar</button></a>
+								<button type="button" id="buySearch" class="btn btn-success">Adquirir</button>
+								<a href="./report.html"><button type="button" id="reportSearch" class="btn btn-warning">Reportar</button></a>
 							</div>
 						</div>
 					</div>
@@ -222,7 +222,12 @@ function main() {
 
 	$(".searches-container").on("click", function(e) {		
 
-		SearchSearch(e.target.id);
+		window.scroll({
+			top: 0, 
+			left: 0, 
+			behavior: 'smooth'
+		});
 
+		SearchSearch(e.target.id);
 	});
 } main();

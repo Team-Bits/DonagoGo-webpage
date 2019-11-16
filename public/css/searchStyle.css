@@ -77,20 +77,21 @@
 	margin-left: 3.3%;
 }
 
-.detailImage {
-	/*width: 280%;
-	height: 200%;*/
+.searchImage {
+	object-fit: cover;
+	width: 600px; 
+	height: 500px;
 }
 
-.divitionDetail {
+.divitionSearch {
 	display: flex;
 }
 
-.rightDetail {
+.rightSearch {
 	margin-right: 2%;
 }
 
-.descriptionDetail {
+.descriptionSearch {
 	padding-top: 2%;
 }
 
@@ -101,11 +102,11 @@
 	margin-top: 5%;
 }
 
-.priceDetail {
+.priceSearch {
 	margin-left: 5%;
 }
 
-.characteristicsDetail {
+.characteristicsSearch {
 	margin-right: 15%;
 }
 
@@ -128,7 +129,7 @@
 	font-weight: bold;
 }
 
-.charDetail {
+.charSearch {
 	font-weight: bold;
 }
 
@@ -136,7 +137,7 @@
 	color: white;
 }
 
-.buttonsDetail {
+.buttonsSearch {
 	padding-top: 10%;
 	display: flex;
 	justify-content: space-between;
@@ -144,13 +145,13 @@
 	margin-right: 5%;
 }
 
-.titleDetail {
+.titleSearch {
 	padding-top: 5%;
 	padding-left: 5%;
 	font-size: 120%;
 }
 
-.identDetail {
+.identSearch {
 	font-size: 110%;
 	padding-top: 1%;
 	padding-left: 8%;
@@ -161,72 +162,72 @@
 	text-align: center;
 }
 
-.detailGetHeader {
+.SearchGetHeader {
 	margin-top: 15%;
 	text-align: center;
 }
 
-.detailGetParagraph {
+.SearchGetParagraph {
 	margin-top: 2%;
 	text-align: center;
 	font-size: 120%;
 }
 
-.detailGetReturnBtnDiv {
+.SearchGetReturnBtnDiv {
 	margin-top: 3%;
 	display: flex;
 	justify-content: space-around;
 }
 
-.detailGet-btn {
+.SearchGet-btn {
 	margin-top: 1%;
 }
 
-.detailGetFormsContainer {
+.SearchGetFormsContainer {
 	display: flex;
 	justify-content: space-around;
 }
 
-.detailGetFormsLabel {
+.SearchGetFormsLabel {
 	text-align: left;
 }
 
-.detailGetFormsMap {
+.SearchGetFormsMap {
 	margin-top: 3%;
 }
 
-#detailGetScheduleDay {
+#SearchGetScheduleDay {
 	margin-bottom: 40%;
 	/*margin-top: 10%;*/
 }
 
-#detailGetFormsLabelDay {
+#SearchGetFormsLabelDay {
 	margin-top: 15%;
 }
 
-.detailGetFormsMapLabel {
+.SearchGetFormsMapLabel {
 	font-weight: bold;
 }
 
-.detailGetFormsLabel {
+.SearchGetFormsLabel {
 	font-weight: bold;
 }
 
-.detailGetFormsButton {
+.SearchGetFormsButton {
 	margin-top: 27%;
 }
 
-.detailGetChat {
+.SearchGetChat {
 	margin-top: 5%;
 }
 
-.detailGetChatTitle {
+.SearchGetChatTitle {
 	text-align: left;
 	margin-left: 6%;
 	margin-bottom: 1%;
 }
 
-.detailGetChatParagraph {
+.SearchGetChatParagraph {
 	text-align: left;
 	margin-left: 6%;
 	margin-bottom: 1%;
@@ -235,4 +236,13 @@
 .btn-top {
 	margin-top: 5%;
 	margin-left: 3.5%;
+}
+
+.leftSearch {
+	margin-left: 2%;
+	margin-right: 2%;
+}
+
+.divition-all {
+	margin-top: 10%;
 }
