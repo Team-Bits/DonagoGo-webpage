@@ -214,7 +214,7 @@ function contController() {
 				
 				name : $("#name").val(),
 				description : $("#descriptionText").val(),
-				image : "phone.jpg",
+				image : $("#myImg").attr('src'),
 				location : $("#location").val(),
 				timeCreated : new Date(),
 				quantity : $("#quantity").val(),
