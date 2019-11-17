@@ -1,6 +1,8 @@
 let express = require( "express" );
 let morgan = require( "morgan" );
 let uuid = require("uuid");
+var fs = require("fs");
+var multer  = require('multer');
 
 let bodyParser = require( "body-parser" );
 let jsonParser = bodyParser.json();
@@ -289,7 +291,6 @@ app.post('/purchases' , (req, res, next) => {
 	let newPurchase = {
 		
 	}
-
 });
 
 // ----------------- Products -----------------
