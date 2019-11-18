@@ -8,7 +8,7 @@ let productSchema = mongoose.Schema ({
 	userId 				:		{type: String, require: false},
 	name 					:		{type: String, require: true},
 	description		:		{type: String, require: true},
-	image					:		{data: Buffer, contentType: String, require: false},
+	image					:		{type: String, require: false},
 	location 			:		{type: String, require: false},
 	timeCreated		:		{type: String, require: false},
 	quantity 			:		{type: Number, require: false},
@@ -22,7 +22,7 @@ let productSchema = mongoose.Schema ({
 	bought 				:		{type: Boolean, require: false} 
 });
 
-let Product = mongoose.model('Product-product', productSchema)
+let Product = mongoose.model('products', productSchema);
 
 let Products = {
 	

@@ -299,17 +299,9 @@ Datos
 					$("#label-photo-update").empty();
 					$("#label-photo-update").append(this.files[0].name);
 
-					console.log(this.files[0]);
+					console.log($("#label-photo-update").html());
 
-					$("#test-image").empty();
-					$("#test-image").append(`
-						<img id="myImg" src="${this.files[0]}" alt="your image" height=200 width=100>
-					`);
-
-					img = document.getElementById('myImg');  
-					img.src = URL.createObjectURL(this.files[0]);
 					$("#test-image").hide();
-					console.log($("#myImg").attr('src'));
 				}
 			});
 		});

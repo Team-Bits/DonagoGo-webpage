@@ -3,18 +3,14 @@ let express = require( "express" );
 let morgan = require( "morgan" );
 let uuid = require("uuid");
 
-var fs = require("fs");
-var multer  = require('multer');
-
 let bodyParser = require( "body-parser" );
 let jsonParser = bodyParser.json();
 
 mongoose.Promise = global.Promise;
 
-let {Products} = require('./model');
 // let {Users} = require('./model');
 // let {Purchases} = require('./model');
-
+let {Products} = require('./model');
 let {DATABASE_URL, PORT} = require('./config');
 
 let app = express();
@@ -22,7 +18,7 @@ let app = express();
 app.use(express.static("public"));
 app.use(morgan("dev"));
 app.use((req, res, next) => {
-	res.header("Access-Control-Allow-Origin", '*');
+	res.header("Access-Control-Allow-Origin", "*");
 	next();
 });
 

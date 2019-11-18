@@ -38,7 +38,7 @@ function SearchSearch(id) {
 				<div class="divition-all">
 					<div class="divitionSearch">
 						<div class="leftSearch">
-							<img class="searchImage" src="${selectedProduct.image}">
+							<img class="searchImage" src="./img/${selectedProduct.image}">
 						</div>
 						<div class="rightSearch">
 							<h2>${selectedProduct.name}</h2>
