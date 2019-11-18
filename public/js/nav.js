@@ -1,7 +1,7 @@
 $("#navbar").append(
 	`	
 		<div class="nav-align">
-			<a href="./logIn.html">LogIn/SignUp</a>
+			<a href="./LogIn.html">LogIn/SignUp</a>
 			<a href="./index.html">Home</a>
 			<a href="./discover.html">Descubre</a>
 			<a href="./donate.html">Publicar</a>
