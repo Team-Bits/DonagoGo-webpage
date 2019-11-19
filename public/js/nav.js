@@ -1,20 +1,18 @@
-$("#navbar").append(
-	`	
-		<div class="nav-align">
-			<a href="./LogIn.html">LogIn/SignUp</a>
-			<a href="./index.html">Home</a>
-			<a href="./discover.html">Descubre</a>
-			<a href="./donate.html">Publicar</a>
-			<a href="./help.html">Ayuda</a>
-			<div class="form-group row">
-				<div class="nav-divide">
-					<input class="form-control nav-input" placeholder="" id="ex1" type="text">
-					<button type="button" class="btn btn-success nav-btn" id="nav-search-btn">Buscar</button>
-				</div>
+$("#navbar").append(`	
+	<div class="nav-align">
+		<a href="./LogIn.html">LogIn/SignUp</a>
+		<a href="./index.html">Home</a>
+		<a href="./discover.html">Descubre</a>
+		<a href="./donate.html">Publicar</a>
+		<a href="./help.html">Ayuda</a>
+		<div class="form-group row">
+			<div class="nav-divide">
+				<input class="form-control nav-input" placeholder="" id="ex1" type="text">
+				<button type="button" class="btn btn-success nav-btn" id="nav-search-btn">Buscar</button>
 			</div>
 		</div>
-	`
-);
+	</div>
+`);
 
 function SearchSearch(id) {
 
@@ -165,23 +163,21 @@ function searchEndPoint(userQuery) {
 
 				if (namePos != -1 || descriptionPos != -1 || brandPos != -1 || modelPos != -1 || conditionPos != -1 || categoryPos != -1) {
 					
-					$(".search").append(
-						`
-							<div class="searches-container" id="${responseJSON[i].id}">
-								<div class="searches-image" >
-									<img class="searches-image-size" id="${responseJSON[i].id}" src="./img/${responseJSON[i].image}">
-								</div>
-								<div class="searches-info" id="${responseJSON[i].id}">
-									<h5 class="search-info-title" id="${responseJSON[i].id}">${responseJSON[i].name}</h5>
-									<ul>
-										<li class="search-info-description search-info-sub" id="${responseJSON[i].id}">${responseJSON[i].description}</li>
-										<li class="search-info-condition search-info-sub" id="${responseJSON[i].id}">${responseJSON[i].condition}</li>
-										<li class="search-info-location search-info-sub" id="${responseJSON[i].id}">${responseJSON[i].location}</li>
-									</ul>
-								</div>
+					$(".search").append(`
+						<div class="searches-container" id="${responseJSON[i].id}">
+							<div class="searches-image" >
+								<img class="searches-image-size" id="${responseJSON[i].id}" src="./img/${responseJSON[i].image}">
 							</div>
-						`
-					);
+							<div class="searches-info" id="${responseJSON[i].id}">
+								<h5 class="search-info-title" id="${responseJSON[i].id}">${responseJSON[i].name}</h5>
+								<ul>
+									<li class="search-info-description search-info-sub" id="${responseJSON[i].id}">${responseJSON[i].description}</li>
+									<li class="search-info-condition search-info-sub" id="${responseJSON[i].id}">${responseJSON[i].condition}</li>
+									<li class="search-info-location search-info-sub" id="${responseJSON[i].id}">${responseJSON[i].location}</li>
+								</ul>
+							</div>
+						</div>
+					`);
 				}
 			}
 

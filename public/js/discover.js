@@ -2,11 +2,6 @@ $(".productDetail").hide();
 $(".categories").show();
 $(".category").hide();
 $(".boughtProduct").hide();
-
-// $(".productDetail").hide();
-// $(".categories").hide();
-// $(".category").hide();
-// $(".boughtProduct").show();
  
 function getProducts(category) {
 
