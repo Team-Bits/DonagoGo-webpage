@@ -1,13 +1,15 @@
-let mongoose = require('mongoose');
-let express = require('express');
-let morgan = require('morgan');
+let mongoose = require( "mongoose" );
+let express = require( "express" );
+let morgan = require( "morgan" );
 let uuid = require("uuid");
 
-let bodyParser = require('body-parser');
-let jPar = bodyParser.json();
+let bodyParser = require( "body-parser" );
+let jsonParser = bodyParser.json();
 
 mongoose.Promise = global.Promise;
 
+// let {Users} = require('./model');
+// let {Purchases} = require('./model');
 let {Products} = require('./model');
 let {DATABASE_URL, PORT} = require('./config');
 
@@ -21,9 +23,7 @@ app.use((req, res, next) => {
 });
 
 // ----------------- Users --------------------
-
 // ----------------- Purchases ----------------
-
 // ----------------- Products -----------------
 
 // GET
