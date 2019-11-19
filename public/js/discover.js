@@ -63,7 +63,7 @@ function getProducts(category) {
 						<div class="rowFlex">
 				`);
 
-				for (j=0; j<categoryProducts.length%4-1; j++) {
+				for (j=0; j<categoryProducts.length%4; j++) {
 					
 					if (categoryProducts[4*i+j] != undefined) {
 						$(".rowFlex").last().append(`
