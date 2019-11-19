@@ -41,22 +41,22 @@ app.get('/products', (req, res, next) => {
 app.post('/products', jsonParser, (req, res, next) => {
 
 	let createdProduct = {
-		id 						: 		uuid.v4(), 
-		userId				: 		"1",
-		name					: 		req.body.name,
-		description		: 		req.body.description,
-		image 				: 		req.body.image,
-		location 			: 		req.body.location,
-		timeCreated 	: 		req.body.timeCreated,
-		quantity 			: 		req.body.quantity,
-		universalCode	: 		req.body.universalCode,
-		guarantee 		: 		req.body.guarantee,
-		brand 				: 		req.body.brand,
-		model 				: 		req.body.model,
-		year 					: 		req.body.year,
-		condition 		: 		req.body.condition,
-		category 			: 		req.body.category,
-		bought 				: 		req.body.bought
+		id: uuid.v4(), 
+		userId: "1",
+		name: req.body.name,
+		description: req.body.description,
+		image: req.body.image,
+		location: req.body.location,
+		timeCreated: req.body.timeCreated,
+		quantity: req.body.quantity,
+		universalCode: req.body.universalCode,
+		guarantee: req.body.guarantee,
+		brand: req.body.brand,
+		model: req.body.model,
+		year: req.body.year,
+		condition: req.body.condition,
+		category: req.body.category,
+		bought: req.body.bought
 	};
 
 	Products.post(createdProduct).then(product => {
