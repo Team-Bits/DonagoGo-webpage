@@ -35,6 +35,9 @@ function getProducts(category) {
 					`);
 
 					for (j=0; j<4; j++) {
+						
+						console.log(4*i+j);
+
 						$(".rowFlex").append(`
 							<div class="colFlex product">
 								<img id="${categoryProducts[4*i+j].id}" class="sectionImage" src="./img/${categoryProducts[4*i+j].image}">
