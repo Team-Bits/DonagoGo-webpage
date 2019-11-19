@@ -14,6 +14,7 @@ function postDonation(newDonation) {
 		},
 
 		error: function(err) {
+			console.log(newDonation);
 			console.log("juguito de chale ", err);
 		}
 	});
