@@ -20,6 +20,8 @@ function getProducts(category) {
 
 		success: function(responseJSON) {
 			
+			let i=0, j=0;
+
 			$(".category").empty();
 			$(".category").append(`<button type="button" class="btn btn-success back">Regresar</button>`);
 
@@ -28,36 +30,56 @@ function getProducts(category) {
 					categoryProducts.push(responseJSON[i]);
 			}
 
-			for (let i=0; i<categoryProducts.length/4; i++) {
-				
+			if (categoryProducts.length >= 4) {
 
-				$(".category").append(
-					`
+				for (i=0; i<categoryProducts.length/4; i++) {
+
+					$(".category").append(`
 						<div class="line">
 							<div class="rowFlex">
-					`
-				);
+					`);
 
-				for (let j=0; j<4; j++) {
-					$(".rowFlex").append(
-						`
+					for (j=0; j<4; j++) {
+						$(".rowFlex").append(`
 							<div class="colFlex product">
 								<img id="${categoryProducts[4*i+j].id}" class="sectionImage" src="./img/${categoryProducts[4*i+j].image}">
 								<div class="subTitle">
 									<h5>${categoryProducts[4*i+j].name}</h5>
 								</div>
 							</div>
-						`
-					);
-				}
+						`);
+					}
 
-				$(".category").append(
-					`				
+					$(".category").append(`				
 						</div>
 					</div>		
-					`
-				);
-			}			
+					`);
+				}
+			}
+
+			if (categoryProducts.length > 0 && 4*i != categoryProducts.length) {
+
+				$(".category").append(`
+					<div class="line">
+						<div class="rowFlex">
+				`);
+
+				for (j=0; j<categoryProducts.length%4; j++) {
+					$(".rowFlex").append(`
+						<div class="colFlex product">
+							<img id="${categoryProducts[4*i+j].id}" class="sectionImage" src="./img/${categoryProducts[4*i+j].image}">
+							<div class="subTitle">
+								<h5>${categoryProducts[4*i+j].name}</h5>
+							</div>
+						</div>
+					`);
+				}
+
+				$(".category").append(`				
+					</div>
+				</div>		
+				`);
+			}
 
 			controller();
 		},
