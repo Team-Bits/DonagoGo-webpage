@@ -50,13 +50,13 @@ let Products = {
 	// 	});
 	// },
 
-	delete: function(productID) {
-		return Product.findOneAndRemove({id:productID}).then(product => {
-			return product;
-		}).catch(error => {
-			throw Error(error);
-		});
-	}
+	// delete: function(productID) {
+	// 	return Product.findOneAndRemove({id:productID}).then(product => {
+	// 		return product;
+	// 	}).catch(error => {
+	// 		throw Error(error);
+	// 	});
+	// }
 };
 
 module.exports = {Product};
