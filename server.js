@@ -24,19 +24,7 @@ app.use((req, res, next) => {
 
 // ----------------- Users --------------------
 
-// Get
-app.get('/users', (req, res, next) => {	
-});
-
 // ----------------- Purchases ----------------
-
-// Get
-app.get('/purchases', (req, res, next) => {
-});
-
-// Post
-app.post('/purchases' , (req, res, next) => {
-});
 
 // ----------------- Products -----------------
 
