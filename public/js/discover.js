@@ -36,19 +36,18 @@ function getProducts(category) {
 
 					for (j=0; j<4; j++) {
 
-						console.log(4*i+j);
-
-						$(".rowFlex").append(`
-							<div class="colFlex product">
-								<img id="${categoryProducts[4*i+j].id}" class="sectionImage" src="./img/${categoryProducts[4*i+j].image}">
-								<div class="subTitle">
-									<h5>${categoryProducts[4*i+j].name}</h5>
+						if (4*i+j < categoryProducts.length/4) {
+							$(".rowFlex").append(`
+								<div class="colFlex product">
+									<img id="${categoryProducts[4*i+j].id}" class="sectionImage" src="./img/${categoryProducts[4*i+j].image}">
+									<div class="subTitle">
+										<h5>${categoryProducts[4*i+j].name}</h5>
+									</div>
 								</div>
-							</div>
-						`);
-					}
+							`);
+						}
 
-					console.log("Finish line");
+					}
 
 					$(".category").append(`				
 						</div>
@@ -64,7 +63,7 @@ function getProducts(category) {
 						<div class="rowFlex">
 				`);
 
-				for (j=0; j<categoryProducts.length%4; j++) {
+				for (j=0; j<categoryProducts.length%4-1; j++) {
 					$(".rowFlex").append(`
 						<div class="colFlex product">
 							<img id="${categoryProducts[4*i+j].id}" class="sectionImage" src="./img/${categoryProducts[4*i+j].image}">
