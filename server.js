@@ -83,7 +83,7 @@ app.post('/products', jsonParser, (req, res, next) => {
 	}).catch(error => {
 		return res.status(500).json({
 			message: "Something went wrong with the DB",
-			status: 500
+			status: 502
 		})
 	});
 });
