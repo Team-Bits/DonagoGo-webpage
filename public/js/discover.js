@@ -37,7 +37,7 @@ function getProducts(category) {
 					for (j=0; j<4; j++) {
 
 						if (categoryProducts[4*i+j] != undefined) {
-							$(".rowFlex").append(`
+							$(".rowFlex").last().append(`
 								<div class="colFlex product">
 									<img id="${categoryProducts[4*i+j].id}" class="sectionImage" src="./img/${categoryProducts[4*i+j].image}">
 									<div class="subTitle">
