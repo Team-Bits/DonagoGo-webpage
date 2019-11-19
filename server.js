@@ -8,8 +8,6 @@ let jsonParser = bodyParser.json();
 
 mongoose.Promise = global.Promise;
 
-// let {Users} = require('./model');
-// let {Purchases} = require('./model');
 let {Products} = require('./model');
 let {DATABASE_URL, PORT} = require('./config');
 

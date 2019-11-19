@@ -211,7 +211,7 @@ function contController() {
 		if ($("#name").val() && $("#descriptionText").val() && $("#quantity").val() && $("#condition").val() != "select") {
 			
 			let newDonation = {
-				
+				id : "",
 				name : $("#name").val(),
 				description : $("#descriptionText").val(),
 				image : $("#label-photo-update").html(),

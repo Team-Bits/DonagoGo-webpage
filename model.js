@@ -10,7 +10,7 @@ let productSchema = mongoose.Schema ({
 	description		:		{type: String, require: true},
 	image					:		{type: String, require: false},
 	location 			:		{type: String, require: false},
-	timeCreated		:		{type: String, require: false},
+	timeCreated		:		{type: Date, require: false},
 	quantity 			:		{type: Number, require: false},
 	universalCode	:		{type: String, require: false},
 	guarantee			:		{type: String, require: false},
