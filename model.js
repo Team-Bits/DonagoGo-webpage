@@ -27,34 +27,34 @@ let Product = mongoose.model('products', productSchema);
 let Products = {
 	
 	get: function(){
-		return product.find().then(products => {
+		return Product.find().then(products => {
 			return products;
 		}).catch(error => {
-			throw Error( error );
+			throw Error(error);
 		});
 	},
 
-	post: function(newProduct) {
-		return product.create(newProduct).then(product => {
+	post: function(createdProduct) {
+		return Product.create(createdProduct).then(product => {
 			return product;
 		}).catch(error => {
-			throw Error( error );
+			throw Error(error);
 		});
 	},
 
-	update: function(updatedproduct) {
-		return product.findOneAndUpdate({id:updatedproduct.id}, {$set:{updatedproduct}}).then(product => {
+	update: function(updatedProduct) {
+		return Product.updateOne({id:updatedProduct.id}, updatedProduct).then(product => {
 			return product;
 		}).catch(error => {
-			throw Error( error );
+			throw Error(error);
 		});
 	},
 
 	delete: function(productID) {
-		return product.findOneAndRemove({id:productID}).then(product => {
+		return Product.findOneAndRemove({id:productID}).then(product => {
 			return product;
 		}).catch(error => {
-			throw Error( error );
+			throw Error(error);
 		});
 	}
 };

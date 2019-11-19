@@ -1,15 +1,13 @@
-let mongoose = require( "mongoose" );
-let express = require( "express" );
-let morgan = require( "morgan" );
+let mongoose = require('mongoose');
+let express = require('express');
+let morgan = require('morgan');
 let uuid = require("uuid");
 
-let bodyParser = require( "body-parser" );
-let jsonParser = bodyParser.json();
+let bodyParser = require('body-parser');
+let jPar = bodyParser.json();
 
 mongoose.Promise = global.Promise;
 
-// let {Users} = require('./model');
-// let {Purchases} = require('./model');
 let {Products} = require('./model');
 let {DATABASE_URL, PORT} = require('./config');
 
@@ -37,7 +35,7 @@ app.get('/products', (req, res, next) => {
 		return res.status(500).json({
 			status : 500,
 			message : "Something went wrong"
-		})
+})
 	});	
 });
 
