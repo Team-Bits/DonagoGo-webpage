@@ -212,6 +212,7 @@ function contController() {
 			
 			let newDonation = {
 				id : "",
+				userId : "1",
 				name : $("#name").val(),
 				description : $("#descriptionText").val(),
 				image : $("#label-photo-update").html(),
@@ -219,7 +220,7 @@ function contController() {
 				timeCreated : new Date(),
 				quantity : $("#quantity").val(),
 				universalCode : $("#universalCode").val(),
-				guarantee : $("#guarantee").val(),
+				guarantee : new Date(),
 				brand : $("#brand").val(),
 				model : $("#model").val(),
 				year : $("#year").val(),

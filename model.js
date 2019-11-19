@@ -4,16 +4,16 @@ mongoose.Promise = global.Promise;
 
 let productSchema = mongoose.Schema ({
 
-	id 						:		{type: String, require: true},
+	id 						:		{type: String, require: false},
 	userId 				:		{type: String, require: false},
-	name 					:		{type: String, require: true},
-	description		:		{type: String, require: true},
+	name 					:		{type: String, require: false},
+	description		:		{type: String, require: false},
 	image					:		{type: String, require: false},
 	location 			:		{type: String, require: false},
 	timeCreated		:		{type: Date, require: false},
 	quantity 			:		{type: Number, require: false},
 	universalCode	:		{type: String, require: false},
-	guarantee			:		{type: String, require: false},
+	guarantee			:		{type: Date, require: false},
 	brand 				:		{type: String, require: false},
 	model 				:		{type: String, require: false},
 	year 					:		{type: String, require: false},
