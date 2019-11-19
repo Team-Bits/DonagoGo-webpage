@@ -222,7 +222,7 @@ function contController() {
 				timeCreated : new Date(),
 				quantity : $("#quantity").val(),
 				universalCode : $("#universalCode").val(),
-				guarantee : new Date(),
+				guarantee : $("guarantee").val(),
 				brand : $("#brand").val(),
 				model : $("#model").val(),
 				year : $("#year").val(),
