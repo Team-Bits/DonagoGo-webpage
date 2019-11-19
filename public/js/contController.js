@@ -10,6 +10,7 @@ function postDonation(newDonation) {
 
 		success: function(responseJson) {
 			console.log("success: ", responseJson);
+			window.location.href = "./publish.html"
 		},
 
 		error: function(err) {
@@ -248,8 +249,6 @@ function contController() {
 			// };
 
 			postDonation(newDonation);
-
-			window.location.href = "./publish.html"
 		}
 
 		else {
