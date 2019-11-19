@@ -42,21 +42,21 @@ let Products = {
 		});
 	},
 
-	// update: function(updatedProduct) {
-	// 	return Product.updateOne({id:updatedProduct.id}, updatedProduct).then(product => {
-	// 		return product;
-	// 	}).catch(error => {
-	// 		throw Error(error);
-	// 	});
-	// },
+	update: function(updatedProduct) {
+		return Product.updateOne({id:updatedProduct.id}, updatedProduct).then(product => {
+			return product;
+		}).catch(error => {
+			throw Error(error);
+		});
+	},
 
-	// delete: function(productID) {
-	// 	return Product.findOneAndRemove({id:productID}).then(product => {
-	// 		return product;
-	// 	}).catch(error => {
-	// 		throw Error(error);
-	// 	});
-	// }
+	delete: function(productID) {
+		return Product.findOneAndRemove({id:productID}).then(product => {
+			return product;
+		}).catch(error => {
+			throw Error(error);
+		});
+	}
 };
 
 module.exports = {Product};
