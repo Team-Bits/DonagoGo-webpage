@@ -40,42 +40,23 @@ app.get('/products', (req, res, next) => {
 // POST
 app.post('/products', jsonParser, (req, res, next) => {
 
-	// let createdProduct = {
-	// 	id: uuid.v4(), 
-	// 	userId: "1",
-	// 	name: req.body.name,
-	// 	description: req.body.description,
-	// 	image: req.body.image,
-	// 	location: req.body.location,
-	// 	timeCreated: req.body.timeCreated,
-	// 	quantity: req.body.quantity,
-	// 	universalCode: req.body.universalCode,
-	// 	guarantee: req.body.guarantee,
-	// 	brand: req.body.brand,
-	// 	model: req.body.model,
-	// 	year: req.body.year,
-	// 	condition: req.body.condition,
-	// 	category: req.body.category,
-	// 	bought: req.body.bought
-	// };
-
 	let createdProduct = {
-		id: "1", 
-		userId: "2",
-		name: "2",
-		description: "3",
-		image: "4",
-		location: "5",
+		id: uuid.v4(), 
+		userId: "1",
+		name: req.body.name,
+		description: req.body.description,
+		image: req.body.image,
+		location: req.body.location,
 		timeCreated: req.body.timeCreated,
-		quantity: 6,
-		universalCode: "7",
+		quantity: req.body.quantity,
+		universalCode: req.body.universalCode,
 		guarantee: req.body.guarantee,
-		brand: "8",
-		model: "9",
-		year: "10",
-		condition: "11",
-		category: "12",
-		bought: "13"
+		brand: req.body.brand,
+		model: req.body.model,
+		year: req.body.year,
+		condition: req.body.condition,
+		category: req.body.category,
+		bought: req.body.bought
 	};
 
 	Products.post(createdProduct).then(product => {
@@ -83,7 +64,7 @@ app.post('/products', jsonParser, (req, res, next) => {
 	}).catch(error => {
 		return res.status(500).json({
 			message: "Something went wrong with the DB",
-			status: 502
+			status: 500
 		})
 	});
 });

@@ -59,4 +59,4 @@ let Products = {
 	}
 };
 
-module.exports = {Product};
+module.exports = {Products};
