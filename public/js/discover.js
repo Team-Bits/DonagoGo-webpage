@@ -32,11 +32,12 @@ function getProducts(category) {
 					$(".category").append(`
 						<div class="line">
 							<div class="rowFlex">
-					`);
+					`); 
 
 					for (j=0; j<4; j++) {
 						
-						console.log(4*i+j);
+						if (j > 4)
+							continue;
 
 						$(".rowFlex").append(`
 							<div class="colFlex product">
@@ -46,6 +47,8 @@ function getProducts(category) {
 								</div>
 							</div>
 						`);
+
+
 					}
 
 					$(".category").append(`				
