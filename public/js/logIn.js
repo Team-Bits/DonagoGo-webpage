@@ -23,9 +23,10 @@ function userIsIn() {
 			else {
 				$(".user-registration").hide();
 				$(".user-information").show();
+				$(".user-information").empty();
 
 				$(".user-information").append(`
-					<h1>${log.name} ${log.lastname}</h1>
+					<h1>${log.name}</h1>
 					<section class="sectionUser">
 						<h3 class="titleUser">📦 Pedidos</h3>
 						<a href="./orders.html"><button type="button" class="btn btn-info">Ver todos los pedidos</button></a>
