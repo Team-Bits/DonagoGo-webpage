@@ -1,6 +1,21 @@
 function createUser(newUser) {
 
-	
+	$.ajax({
+
+		url: "/users",
+		method: "POST",
+		data: JSON.stringify(newUser),
+		dataType: "JSON",
+		contentType: "application/json",
+
+		success: function(responseJSON) {
+			console.log("success: ", responseJSON);
+		},
+
+		error: function(error) {
+			console.log("Juguito de chale: ", error);
+		}
+	});
 }
 
 function main() {
@@ -24,7 +39,9 @@ function main() {
 				password	: 	$("#pwd-reg").val(),	
 			}
 
+			console.log(1);
 			createUser(newUser);
+			console.log(2);
 		}
 	});
 } main();
