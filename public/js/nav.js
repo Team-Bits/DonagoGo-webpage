@@ -31,6 +31,8 @@ function isLogedIn() {
 					</div>
 				</div>
 			`);	
+
+			main();
 		},
 
 		error: function(error) {
@@ -253,4 +255,4 @@ function main() {
 
 		SearchSearch(e.target.id);
 	});
-} main();
+}
