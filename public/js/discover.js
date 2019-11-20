@@ -45,7 +45,6 @@ function getProducts(category) {
 								</div>
 							`);
 						}
-
 					}
 
 					$(".category").append(`				
@@ -114,7 +113,7 @@ function getOneProduct(id) {
 					<div class="leftDetail">
 						<img class="detailImage" src="./img/${selectedProduct.image}">
 					</div>
-					<div class="rightDetail">
+					<div id="${selectedProduct.id}" class="rightDetail">
 						<h2>${selectedProduct.name}</h2>
 						<p class="descriptionDetail">
 							${selectedProduct.description}  
@@ -213,7 +212,6 @@ function controller() {
 			left: 0, 
 			behavior: 'smooth'
 		});
-
 	});
 
 	$(".product").on("click", (e) => {
@@ -275,10 +273,14 @@ function controller() {
 		
 		e.preventDefault();
 
+		let idProduct = 
+
 		$(".categories").hide();
 		$(".category").hide();
 		$(".productDetail").hide();
 		$(".boughtProduct").show();
+
+		$(".detail-title").attr('id', );
 
 		window.scroll({
 			top: 0, 

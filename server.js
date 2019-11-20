@@ -10,6 +10,8 @@ mongoose.Promise = global.Promise;
 
 let {Products} = require('./product-model');
 let {Users} = require('./user-model');
+let {Purchases} = require('./purchase-model');
+
 let {DATABASE_URL, PORT} = require('./config');
 
 let app = express();
@@ -49,7 +51,7 @@ app.post('/users', jsonParser, (req, res, next) => {
 		idPurchases 	: 	[],
 		idSales 			: 	[],
 		phoneNumbers	: 	[],
-		directions 		: 	[],
+		directions 		: 	[]
 	};
 
 	Users.post(createdUser).then(user => {
@@ -75,7 +77,40 @@ app.put("/users/:email", jsonParser, (req, res, next) => {
 });
 
 // ----------------- Purchases ----------------
+// GET
+app.get('/purchases', (req, res, next) => {
 
+	Purchases.get().then(Purchase => {
+		return res.status(200).json(Purchase);
+	}).catch(error => {
+		return res.status(500).json({
+			status : 500,
+			message : "Something went wrong"
+		});
+	});	
+});
+
+// POST
+app.post('/purchases', jsonParser, (req, res, next) => {
+
+	let createdPurchase = {
+		
+		id 							:		uuid.v4(),
+		userPurchaseId	:		req.body.userPurchaseId,
+		userSaleId			:		req.body.userSaleId,
+		productId 			:		req.body.productId,
+		timeOfPurchase 	:		req.body.timeOfPurchase
+	};
+
+	Purchases.post(createdPurchase).then(purchase => {
+		return res.status(201).json(purchase);
+	}).catch(error => {
+		return res.status(500).json({
+			message: "Something went wrong with the DB",
+			status: 500
+		})
+	});
+});
 
 // ----------------- Products -----------------
 
