@@ -136,7 +136,7 @@ function logUser(userLogged) {
 		success: function(responseJSON) {
 			
 			for (let i=0; i<responseJSON.length; i++) {
- 				if (responseJSON[i].email == userLogged.email && responseJSON[i].password == userLogged.password);{
+ 				if (responseJSON[i].email == userLogged.email && responseJSON[i].password == userLogged.password) {
 					foundUser = responseJSON[i];
  				}
 			}
@@ -190,7 +190,7 @@ function logOutUser() {
 		success: function(responseJSON) {
 			
 			for (let i=0; i<responseJSON.length; i++) {
- 				if (responseJSON[i].email == userLogged.email && responseJSON[i].password == userLogged.password);{
+ 				if (responseJSON[i].logged) {
 					foundUser = responseJSON[i];
  				}
 			}
@@ -250,6 +250,9 @@ function main() {
 
 	$("#logOutBtn").on("click", function() {
 
+		console.log("out");
+
+		logOutUser();
 
 	});
 
