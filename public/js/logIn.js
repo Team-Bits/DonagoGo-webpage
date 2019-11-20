@@ -26,8 +26,6 @@ function createUser(newUser) {
 // Make a server call to log in the user
 function logUser(userLogged) {
 
-	console.log(userLogged);
-
 	$.ajax({
 
 		url: `/users/${userLogged.email}`,
@@ -93,9 +91,7 @@ function main() {
 			phoneNumbers	: 	[],
 			directions 		: 	[]
 		};
-
 		console.log(userLogged);
-		logUser(userLogged);
 	});
 
 } main();

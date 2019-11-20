@@ -72,14 +72,14 @@ app.put("/users/:email", jsonParser, (req, res, next) => {
 	}
 
 	if (req.params.email != req.body.email) {
-		return res.status(409).json({
-			code: 409,
+		return res.status(408).json({
+			code: 408,
 			message: "Email does not match"
 		});
 	}
 
 	if (req.params.password != req.body.password) {
-		return res.status(409).json({
+		return res.status(408).json({
 			code: 408,
 			message: "Password does not match"
 		});
