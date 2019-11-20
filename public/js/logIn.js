@@ -59,9 +59,11 @@ function userIsIn() {
 					</section>
 
 					<section class="sectionUser">
-						<button id="logOutBtn" type="button" class="btn btn-danger btn-space">Cerrar sesióna</nbutton>
+						<button id="logOutBtn" type="button" class="btn btn-danger btn-space">Cerrar sesión</nbutton>
 					</section>
 				`);
+
+				main();
 			}
 		},
 
