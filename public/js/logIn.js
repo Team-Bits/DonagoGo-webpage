@@ -30,7 +30,7 @@ function logUser(userLogged) {
 
 	$.ajax({
 
-		url: "/users",
+		url: `/users/${userLogged.email}`,
 		method: "PUT",
 		data: JSON.stringify(userLogged),
 		dataType: "JSON",

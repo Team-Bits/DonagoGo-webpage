@@ -62,7 +62,7 @@ app.post('/users', jsonParser, (req, res, next) => {
 	});
 });
 
-app.put("/user-log/:id", jsonParser, (req, res, next) => {
+app.put("/users/:email", jsonParser, (req, res, next) => {
 
 	if (!req.body.email) {
 		return res.status(406).json({
