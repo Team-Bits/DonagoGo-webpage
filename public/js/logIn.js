@@ -49,11 +49,6 @@ function userIsIn() {
 					</section>
 
 					<section class="sectionUser">
-						<h3 class="titleUser">💳 Opciones de pago</h3>
-						<button type="button" class="btn btn-info btn-space">Administrar opciones de pago</button>
-					</section>
-
-					<section class="sectionUser">
 						<h3 class="titleUser">⚙️ Configuración</h3>
 						<button type="button" class="btn btn-info btn-space">Administrar configuracio</nbutton>
 					</section>
