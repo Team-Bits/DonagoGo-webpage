@@ -128,9 +128,11 @@ function logUser(userLogged) {
 
 		success: function(responseJSON) {
 			
-			for (let i=0; i<responseJSON.length; i++)
-				if (responseJSON[i].email == userLogged.email && responseJSON[i].password == userLogged.password);
+			for (let i=0; i<responseJSON.length; i++) {
+ 				if (responseJSON[i].email == userLogged.email && responseJSON[i].password == userLogged.password);{
 					foundUser = responseJSON[i];
+ 				}
+			}
 
 			if (foundUser != "")
 				updateUser(foundUser);
