@@ -1,18 +1,43 @@
-$("#navbar").append(`	
-	<div class="nav-align">
-		<a href="./LogIn.html">LogIn/SignUp</a>
-		<a href="./index.html">Home</a>
-		<a href="./discover.html">Descubre</a>
-		<a href="./donate.html">Publicar</a>
-		<a href="./help.html">Ayuda</a>
-		<div class="form-group row">
-			<div class="nav-divide">
-				<input class="form-control nav-input" placeholder="" id="ex1" type="text">
-				<button type="button" class="btn btn-success nav-btn" id="nav-search-btn">Buscar</button>
-			</div>
-		</div>
-	</div>
-`);
+function isLogedIn() {
+
+	$.ajax({
+
+		url: "/users",
+		method: "GET",
+		dataType: "json",
+
+		success: function(responseJSON) {
+
+			let log = "";
+
+			for (let i=0; i<responseJSON.length; i++)
+				if (responseJSON[i].logged)
+					log = responseJSON[i];
+
+			$("#navbar").append(`	
+				<div class="nav-align">
+					<a href="./LogIn.html">
+						${(log == "") ? `LogIn/SignUp` : `${log.name}`} 
+					</a>
+					<a href="./index.html">Home</a>
+					<a href="./discover.html">Descubre</a>
+					<a href="./donate.html">Publicar</a>
+					<a href="./help.html">Ayuda</a>
+					<div class="form-group row">
+						<div class="nav-divide">
+							<input class="form-control nav-input" placeholder="" id="ex1" type="text">
+							<button type="button" class="btn btn-success nav-btn" id="nav-search-btn">Buscar</button>
+						</div>
+					</div>
+				</div>
+			`);	
+		},
+
+		error: function(error) {
+			console.log("Error en navbar", error);
+		}
+	});
+} isLogedIn();
 
 function SearchSearch(id) {
 
