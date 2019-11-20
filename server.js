@@ -9,7 +9,7 @@ let jsonParser = bodyParser.json();
 mongoose.Promise = global.Promise;
 
 let {Products} = require('./model');
-let {Users} = require('./model');
+// let {Users} = require('./model');
 let {DATABASE_URL, PORT} = require('./config');
 
 let app = express();
@@ -23,86 +23,85 @@ app.use((req, res, next) => {
 
 // ----------------- Users --------------------
 
-// GET
-app.get('/users', (req, res, next) => {
+// // GET
+// app.get('/users', (req, res, next) => {
 
-	Users.get().then(User => {
-		return res.status(200).json(User);
-	}).catch(error => {
-		return res.status(500).json({
-			status : 500,
-			message : "Something went wrong"
-		});
-	});	
-});
+// 	Users.get().then(User => {
+// 		return res.status(200).json(User);
+// 	}).catch(error => {
+// 		return res.status(500).json({
+// 			status : 500,
+// 			message : "Something went wrong"
+// 		});
+// 	});	
+// });
 
-// POST
-app.post('/users', jsonParser, (req, res, next) => {
+// // POST
+// app.post('/users', jsonParser, (req, res, next) => {
 
-	let createdUser = {
-		id 						:		uuid.v4(),
-		name 					:		req.body.name,
-		lastName			:		req.body.lastName,
-		email 				:		req.body.email,
-		password 			:		req.body.password,
-		logged				: 	false,
-		idPurchases 	: 	[],
-		idSales 			: 	[],
-		phoneNumbers	: 	[],
-		directions 		: 	[],
-	};
+// 	let createdUser = {
+// 		id 						:		uuid.v4(),
+// 		name 					:		req.body.name,
+// 		lastName			:		req.body.lastName,
+// 		email 				:		req.body.email,
+// 		password 			:		req.body.password,
+// 		logged				: 	false,
+// 		idPurchases 	: 	[],
+// 		idSales 			: 	[],
+// 		phoneNumbers	: 	[],
+// 		directions 		: 	[],
+// 	};
 
-	Users.post(createdUser).then(user => {
-		return res.status(201).json(user);
-	}).catch(error => {
-		return res.status(500).json({
-			message: "Something went wrong with the DB",
-			status: 500
-		})
-	});
-});
+// 	Users.post(createdUser).then(user => {
+// 		return res.status(201).json(user);
+// 	}).catch(error => {
+// 		return res.status(500).json({
+// 			message: "Something went wrong with the DB",
+// 			status: 500
+// 		})
+// 	});
+// });
 
-app.put("/user-log/:id", jsonParser, (req, res, next) => {
+// app.put("/user-log/:id", jsonParser, (req, res, next) => {
 
-	if (!req.body.email) {
-		return res.status(406).json({
-			code: 406,
-			message: "Missing email"
-		});
-	}
+// 	if (!req.body.email) {
+// 		return res.status(406).json({
+// 			code: 406,
+// 			message: "Missing email"
+// 		});
+// 	}
 
-	if (req.params.email != req.body.email) {
-		return res.status(409).json({
-			code: 409,
-			message: "Email does not match"
-		});
-	}
+// 	if (req.params.email != req.body.email) {
+// 		return res.status(409).json({
+// 			code: 409,
+// 			message: "Email does not match"
+// 		});
+// 	}
 
-	if (req.params.password != req.body.password) {
-		return res.status(409).json({
-			code: 409,
-			message: "Password does not match"
-		});
-	}
+// 	if (req.params.password != req.body.password) {
+// 		return res.status(409).json({
+// 			code: 409,
+// 			message: "Password does not match"
+// 		});
+// 	}
 
-	req.body.id = req.params.id;
-	req.body.name = req.params.name;
-	req.body.lastName = req.params.lastName;
-	req.body.idPurchases = req.params.idPurchases;
-	req.body.idSales = req.params.idSales;
-	req.body.phoneNumbers = req.params.phoneNumbers;
-	req.body.directions = req.params.directions;
+// 	req.body.id = req.params.id;
+// 	req.body.name = req.params.name;
+// 	req.body.lastName = req.params.lastName;
+// 	req.body.idPurchases = req.params.idPurchases;
+// 	req.body.idSales = req.params.idSales;
+// 	req.body.phoneNumbers = req.params.phoneNumbers;
+// 	req.body.directions = req.params.directions;
 
-	Users.update(req.body).then(users => {
-		return res.status(202).json(users);
-	}).catch(err => {
-		return res.status(500).json({
-			message: "Something went wrong with the DB",
-			status: 500
-		})
-	});
-
-});
+// 	Users.update(req.body).then(users => {
+// 		return res.status(202).json(users);
+// 	}).catch(err => {
+// 		return res.status(500).json({
+// 			message: "Something went wrong with the DB",
+// 			status: 500
+// 		})
+// 	});
+// });
 
 // ----------------- Purchases ----------------
 
