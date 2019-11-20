@@ -237,6 +237,8 @@ function main() {
 
 			let userQuery = $("#ex1").val().toLowerCase();
 
+			console.log(userQuery);
+
 			searchEndPoint(userQuery);
 		}
 	});
