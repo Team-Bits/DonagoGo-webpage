@@ -91,7 +91,8 @@ function main() {
 			phoneNumbers	: 	[],
 			directions 		: 	[]
 		};
-		console.log(userLogged);
+		
+		logUser(userLogged);
 	});
 
 } main();
