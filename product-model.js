@@ -22,22 +22,7 @@ let productSchema = mongoose.Schema ({
 	bought 				:		{type: Boolean, require: false} 
 });
 
-let userSchema = mongoose.Schema ({
-
-	id 						:		{type: String, require: true},
-	name 					:		{type: String, require: true},
-	lastName			:		{type: String, require: true},
-	email 				:		{type: String, require: true},
-	password 			:		{type: String, require: true},
-	logged				: 	{type: Boolean, require: false},
-	idPurchases 	: 	[Number],
-	idSales 			: 	[Number],
-	phoneNumbers	: 	[String],
-	directions 		: 	[String],
-});
-
 let Product = mongoose.model('products', productSchema);
-let User = mongoose.model('users', userSchema);
 
 let Products = {
 	
@@ -74,40 +59,4 @@ let Products = {
 	}
 };
 
-let Users = {
-	
-	get: function(){
-		return User.find().then(users => {
-			return users;
-		}).catch(error => {
-			throw Error(error);
-		});
-	},
-
-	post: function(createdUser) {
-		return User.create(createdUser).then(user => {
-			return user;
-		}).catch(error => {
-			throw Error(error);
-		});
-	},
-
-	update: function(updatedUser) {
-		return User.updateOne({id:updatedUser.id}, updatedUser).then(user => {
-			return user;
-		}).catch(error => {
-			throw Error(error);
-		});
-	},
-
-	delete: function(userId) {
-		return User.findOneAndRemove({id:userId}).then(user => {
-			return user;
-		}).catch(error => {
-			throw Error(error);
-		});
-	}
-};
-
 module.exports = {Products};
-module.exports = {Users};
