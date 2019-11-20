@@ -29,10 +29,11 @@ let userSchema = mongoose.Schema ({
 	lastName			:		{type: String, require: true},
 	email 				:		{type: String, require: true},
 	password 			:		{type: String, require: true},
+	logged				: 	{type: Boolean, require: false},
 	idPurchases 	: 	[Number],
 	idSales 			: 	[Number],
 	phoneNumbers	: 	[String],
-	directions 		: 	[String]
+	directions 		: 	[String],
 });
 
 let Product = mongoose.model('products', productSchema);

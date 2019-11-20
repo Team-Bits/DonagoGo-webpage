@@ -45,10 +45,11 @@ app.post('/users', jsonParser, (req, res, next) => {
 		lastName			:		req.body.lastName,
 		email 				:		req.body.email,
 		password 			:		req.body.password,
+		logged				: 	false
 		idPurchases 	: 	[],
 		idSales 			: 	[],
 		phoneNumbers	: 	[],
-		directions 		: 	[]
+		directions 		: 	[],
 	};
 
 	Products.post(createdUser).then(user => {
@@ -62,6 +63,8 @@ app.post('/users', jsonParser, (req, res, next) => {
 });
 
 // ----------------- Purchases ----------------
+
+
 // ----------------- Products -----------------
 
 // GET
