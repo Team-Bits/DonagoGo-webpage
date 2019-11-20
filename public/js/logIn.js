@@ -89,8 +89,12 @@ function createUser(newUser) {
 	});
 }
 
-// Make a server call to log in the user
-function logUser(userLogged) {
+// Update user
+function updateUser(userLogged) {
+
+	userLogged.logged = true;
+
+	console.log(userLogged);
 
 	$.ajax({
 
@@ -102,12 +106,43 @@ function logUser(userLogged) {
 
 		success: function(responseJSON) {
 			console.log("success: ", responseJSON);
+			location.reload();
 		},
 
 		error: function(error) {
 			console.log("Juguito de chale: ", error);
 		}
 	});
+}
+
+// Make a server call to log in the user
+function logUser(userLogged) {
+
+	let foundUser = "";
+
+	$.ajax({
+
+		url: "/users",
+		method: "GET",
+		dataType: "json",
+
+		success: function(responseJSON) {
+			
+			for (let i=0; i<responseJSON.length; i++)
+				if (responseJSON[i].email == userLogged.email && responseJSON[i].password == userLogged.password);
+					foundUser = responseJSON[i];
+
+			if (foundUser != "")
+				updateUser(foundUser);
+
+			else 
+				alert("Usuario y contraseña no encontrados");
+		},
+
+		error: function(error) {
+			console.log("Juguito de chale: ", error);
+		}
+	});	
 }
 
 // Main function
@@ -146,16 +181,8 @@ function main() {
 	$("#logInBtn").on("click", function() {
 
 		let userLogged = {
-			id 						: 	"",
-			name 					: 	"",
-			lastname 			: 	"",
 			email					: 	$("#mail").val(),
 			password 			: 	$("#pwd").val(),
-			logged 				: 	true,
-			idPurchases		: 	[],
-			idSales 			: 	[],
-			phoneNumbers	: 	[],
-			directions 		: 	[]
 		};
 		
 		logUser(userLogged);
