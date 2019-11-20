@@ -52,7 +52,7 @@ app.post('/users', jsonParser, (req, res, next) => {
 		directions 		: 	[],
 	};
 
-	Products.post(createdUser).then(user => {
+	Users.post(createdUser).then(user => {
 		return res.status(201).json(user);
 	}).catch(error => {
 		return res.status(500).json({
