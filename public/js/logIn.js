@@ -57,6 +57,10 @@ function userIsIn() {
 						<h3 class="titleUser">⚙️ Configuración</h3>
 						<button type="button" class="btn btn-info btn-space">Administrar configuracio</nbutton>
 					</section>
+
+					<section class="sectionUser">
+						<button id="logOutBtn" type="button" class="btn btn-danger btn-space">Cerrar sesióna</nbutton>
+					</section>
 				`);
 			}
 		},
@@ -148,6 +152,57 @@ function logUser(userLogged) {
 	});	
 }
 
+function logOut(foundUser) {
+
+	userLogged.logged = false;
+
+	$.ajax({
+
+		url: `/users/${userLogged.email}`,
+		method: "PUT",
+		data: JSON.stringify(userLogged),
+		dataType: "JSON",
+		contentType: "application/json",
+
+		success: function(responseJSON) {
+			console.log("success: ", responseJSON);
+			location.reload();
+		},
+
+		error: function(error) {
+			console.log("Juguito de chale: ", error);
+		}
+	});	
+}
+
+function logOutUser() {
+	
+	let foundUser = "";
+
+	$.ajax({
+
+		url: "/users",
+		method: "GET",
+		dataType: "json",
+
+		success: function(responseJSON) {
+			
+			for (let i=0; i<responseJSON.length; i++) {
+ 				if (responseJSON[i].email == userLogged.email && responseJSON[i].password == userLogged.password);{
+					foundUser = responseJSON[i];
+ 				}
+			}
+
+			if (foundUser != "")
+				logOut(foundUser);
+		},
+
+		error: function(error) {
+			console.log("Juguito de chale: ", error);
+		}
+	});	
+}
+
 // Main function
 function main() {
 
@@ -189,6 +244,11 @@ function main() {
 		};
 		
 		logUser(userLogged);
+	});
+
+	$("#logOutBtn").on("click", function() {
+
+
 	});
 
 } main();
