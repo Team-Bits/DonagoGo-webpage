@@ -67,8 +67,9 @@ function main() {
 			
 			// Declare new
 			let newUser = {
-				id 				: 	$("#name-reg").val(),
-				name 			: 	$("#lname-reg").val(),
+				id 				: 	"",
+				name 			: 	$("#name-reg").val(),
+				lastname 	: 	$("#lname-reg").val(),
 				email			: 	$("#mail-reg").val(),
 				password	: 	$("#pwd-reg").val(),	
 			};
