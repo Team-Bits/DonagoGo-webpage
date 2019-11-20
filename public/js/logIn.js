@@ -156,13 +156,13 @@ function logUser(userLogged) {
 
 function logOut(foundUser) {
 
-	userLogged.logged = false;
+	foundUser.logged = false;
 
 	$.ajax({
 
-		url: `/users/${userLogged.email}`,
+		url: `/users/${foundUser.email}`,
 		method: "PUT",
-		data: JSON.stringify(userLogged),
+		data: JSON.stringify(foundUser),
 		dataType: "JSON",
 		contentType: "application/json",
 
