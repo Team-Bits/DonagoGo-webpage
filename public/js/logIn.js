@@ -1,5 +1,70 @@
 $(".user-information").hide();
 
+function userIsIn() {
+
+	$.ajax({
+		url: "/users",
+		method: "GET",
+		dataType: "json",
+
+		success: function(responseJSON) {
+
+			let log = "";
+
+			for (let i=0; i<responseJSON.length; i++)
+				if (responseJSON[i].logged)
+					log = responseJSON[i];
+
+			if (log == "") {
+				$(".user-information").hide();
+				$(".user-registration").show();
+			} 
+
+			else {
+				$(".user-registration").hide();
+				$(".user-information").show();
+
+				$(".user-information").append(`
+					<h1>${log.name} ${log.lastname}</h1>
+					<section class="sectionUser">
+						<h3 class="titleUser">📦 Pedidos</h3>
+						<a href="./orders.html"><button type="button" class="btn btn-info">Ver todos los pedidos</button></a>
+					</section>
+
+					<section class="sectionUser">
+						<h3 class="titleUser">🎁 Publicaciones</h3>
+						<a href="./publications.html"><button type="button" class="btn btn-info">Ver todas las publicaciones</button></a>
+					</section>
+
+					<section class="sectionUser">
+						<h3 class="titleUser">💾 Productos Guardados</h3>
+						<button type="button" class="btn btn-info btn-space">Ver productos guardados</button>
+					</section>
+
+					<section class="sectionUser">
+						<h3 class="titleUser">📍 Direcciones</h3>
+						<button type="button" class="btn btn-info btn-space">Administrar direcciones</button>
+					</section>
+
+					<section class="sectionUser">
+						<h3 class="titleUser">💳 Opciones de pago</h3>
+						<button type="button" class="btn btn-info btn-space">Administrar opciones de pago</button>
+					</section>
+
+					<section class="sectionUser">
+						<h3 class="titleUser">⚙️ Configuración</h3>
+						<button type="button" class="btn btn-info btn-space">Administrar configuracio</nbutton>
+					</section>
+				`);
+			}
+		},
+
+		error: function(error) {
+			console.log("Error en navbar", error);
+		}
+	});
+}userIsIn();
+
 // Makes a server call to create a user
 function createUser(newUser) {
 
