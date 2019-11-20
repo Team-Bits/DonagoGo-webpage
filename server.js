@@ -92,6 +92,7 @@ app.put("/users/:email", jsonParser, (req, res, next) => {
 	req.body.idSales = req.params.idSales;
 	req.body.phoneNumbers = req.params.phoneNumbers;
 	req.body.directions = req.params.directions;
+	req.body.logged = true;
 
 	Users.update(req.body).then(users => {
 		return res.status(202).json(users);
