@@ -45,7 +45,7 @@ app.post('/users', jsonParser, (req, res, next) => {
 		lastName			:		req.body.lastName,
 		email 				:		req.body.email,
 		password 			:		req.body.password,
-		logged				: 	false
+		logged				: 	false,
 		idPurchases 	: 	[],
 		idSales 			: 	[],
 		phoneNumbers	: 	[],
