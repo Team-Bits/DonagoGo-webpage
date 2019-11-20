@@ -80,7 +80,7 @@ app.put("/users/:email", jsonParser, (req, res, next) => {
 
 	if (req.params.password != req.body.password) {
 		return res.status(409).json({
-			code: 409,
+			code: 408,
 			message: "Password does not match"
 		});
 	}
