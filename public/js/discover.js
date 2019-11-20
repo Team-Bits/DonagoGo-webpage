@@ -273,14 +273,16 @@ function controller() {
 		
 		e.preventDefault();
 
-		let idProduct = 
+		let idProduct = $(".rightDetail").attr('id');
 
 		$(".categories").hide();
 		$(".category").hide();
 		$(".productDetail").hide();
 		$(".boughtProduct").show();
 
-		$(".detail-title").attr('id', );
+		console.log(idProduct);
+
+		$(".detail-title").attr('id', idProduct);
 
 		window.scroll({
 			top: 0, 
