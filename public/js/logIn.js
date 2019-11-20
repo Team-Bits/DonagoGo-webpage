@@ -1,3 +1,4 @@
+$(".user-registration").hide();
 $(".user-information").hide();
 
 function userIsIn() {
