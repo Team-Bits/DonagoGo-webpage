@@ -33,7 +33,7 @@ let userSchema = mongoose.Schema ({
 	idPurchases 	: 	[Number],
 	idSales 			: 	[Number],
 	phoneNumbers	: 	[String],
-	directions 		: 	[String],
+	directions 		: 	[String]
 });
 
 let Product = mongoose.model('products', productSchema);
@@ -93,7 +93,7 @@ let Users = {
 	},
 
 	update: function(updatedUser) {
-		return User.updateOne({id:updatedUser.id}, updatedUser).then(user => {
+		return User.updateOne({email:updatedUser.email}, updatedUser).then(user => {
 			return user;
 		}).catch(error => {
 			throw Error(error);

@@ -62,6 +62,48 @@ app.post('/users', jsonParser, (req, res, next) => {
 	});
 });
 
+app.put("/user-log/:id", jsonParser, (req, res, next) => {
+
+	if (!req.body.email) {
+		return res.status(406).json({
+			code: 406,
+			message: "Missing email"
+		});
+	}
+
+	if (req.params.email != req.body.email) {
+		return res.status(409).json({
+			code: 409,
+			message: "Email does not match"
+		});
+	}
+
+	if (req.params.password != req.body.password) {
+		return res.status(409).json({
+			code: 409,
+			message: "Password does not match"
+		});
+	}
+
+	req.body.id = req.params.id;
+	req.body.name = req.params.name;
+	req.body.lastName = req.params.lastName;
+	req.body.idPurchases = req.params.idPurchases;
+	req.body.idSales = req.params.idSales;
+	req.body.phoneNumbers = req.params.phoneNumbers;
+	req.body.directions = req.params.directions;
+
+	Users.update(req.body).then(users => {
+		return res.status(202).json(users);
+	}).catch(err => {
+		return res.status(500).json({
+			message: "Something went wrong with the DB",
+			status: 500
+		})
+	});
+
+});
+
 // ----------------- Purchases ----------------
 
 

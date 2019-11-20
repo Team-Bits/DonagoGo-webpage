@@ -230,25 +230,6 @@ function contController() {
 				category : $("#category").val(),
 				bought : false
 			};
-
-			// let newDonation = {
-				
-			// 	name : "Camara",
-			// 	description : "Fotografica",
-			// 	image : "phone.jpg",
-			// 	location : "Aqui",
-			// 	timeCreated : new Date(),
-			// 	quantity : 1,
-			// 	universalCode : "",
-			// 	guarantee : "",
-			// 	brand : "",
-			// 	model : "",
-			// 	year : "2000",
-			// 	condition : "Nuevo",
-			// 	category : "tech",
-			// 	bought : false
-			// };
-
 			postDonation(newDonation);
 		}
 
