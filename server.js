@@ -9,6 +9,7 @@ let jsonParser = bodyParser.json();
 mongoose.Promise = global.Promise;
 
 let {Products} = require('./model');
+let {Users} = require('./model');
 let {DATABASE_URL, PORT} = require('./config');
 
 let app = express();
@@ -21,6 +22,45 @@ app.use((req, res, next) => {
 });
 
 // ----------------- Users --------------------
+
+// GET
+app.get('/users', (req, res, next) => {
+
+	Users.get().then(User => {
+		return res.status(200).json(User);
+	}).catch(error => {
+		return res.status(500).json({
+			status : 500,
+			message : "Something went wrong"
+		});
+	});	
+});
+
+// POST
+app.post('/users', jsonParser, (req, res, next) => {
+
+	let createdUser = {
+		id 						:		uuid.v4(),
+		name 					:		req.body.name,
+		lastName			:		req.body.lastName,
+		email 				:		req.body.email,
+		password 			:		req.body.password,
+		idPurchases 	: 	[],
+		idSales 			: 	[],
+		phoneNumbers	: 	[],
+		directions 		: 	[]
+	};
+
+	Products.post(createdUser).then(user => {
+		return res.status(201).json(user);
+	}).catch(error => {
+		return res.status(500).json({
+			message: "Something went wrong with the DB",
+			status: 500
+		})
+	});
+});
+
 // ----------------- Purchases ----------------
 // ----------------- Products -----------------
 
@@ -41,22 +81,22 @@ app.get('/products', (req, res, next) => {
 app.post('/products', jsonParser, (req, res, next) => {
 
 	let createdProduct = {
-		id: uuid.v4(), 
-		userId: "1",
-		name: req.body.name,
-		description: req.body.description,
-		image: req.body.image,
-		location: req.body.location,
-		timeCreated: req.body.timeCreated,
-		quantity: req.body.quantity,
-		universalCode: req.body.universalCode,
-		guarantee: req.body.guarantee,
-		brand: req.body.brand,
-		model: req.body.model,
-		year: req.body.year,
-		condition: req.body.condition,
-		category: req.body.category,
-		bought: req.body.bought
+		id 						: 	uuid.v4(), 
+		userId				: 	"1",
+		name					: 	req.body.name,
+		description		: 	req.body.description,
+		image					: 	req.body.image,
+		location			: 	req.body.location,
+		timeCreated		: 	req.body.timeCreated,
+		quantity			: 	req.body.quantity,
+		universalCode	: 	req.body.universalCode,
+		guarantee			: 	req.body.guarantee,
+		brand					: 	req.body.brand,
+		model					: 	req.body.model,
+		year					: 	req.body.year,
+		condition			: 	req.body.condition,
+		category			: 	req.body.category,
+		bought				: 	req.body.bought
 	};
 
 	Products.post(createdProduct).then(product => {
