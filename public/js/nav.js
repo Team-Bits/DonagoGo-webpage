@@ -216,6 +216,7 @@ function searchEndPoint(userQuery) {
 			);
 
 			secondary();
+			third();
 		},
 
 		error: function(err) {
