@@ -148,8 +148,6 @@ function SearchSearch(id) {
 
 function searchEndPoint(userQuery) {
 
-	var found = [];
-
 	$.ajax({
 
 		url: "/products",
@@ -168,10 +166,8 @@ function searchEndPoint(userQuery) {
 
 			for (let i=0; i<responseJSON.length; i++) {
 
-				if (responseJSON[i].name == "Aspiradora") {
+				if(responseJSON[i].bought)
 					console.log(responseJSON[i]);
-					continue;
-				}
 
 				name = responseJSON[i].name.toLowerCase();
 				description = responseJSON[i].description.toLowerCase();
@@ -238,9 +234,6 @@ function main() {
 			$(".notSearch").hide();
 
 			let userQuery = $("#ex1").val().toLowerCase();
-
-			console.log(userQuery);
-
 			searchEndPoint(userQuery);
 		}
 	});
