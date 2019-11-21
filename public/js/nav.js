@@ -226,6 +226,8 @@ function searchEndPoint(userQuery) {
 
 function reportProduct(reportedProduct) {
 
+	console.log(3);
+
 	reportedProduct.bought = true;
 
 	$.ajax({
@@ -247,6 +249,8 @@ function reportProduct(reportedProduct) {
 }
 
 function getReported(reported) {
+
+	console.log(2);
 
 	$.ajax({
 
@@ -297,6 +301,7 @@ function secondary() {
 
 function third() {
 	$("#reportSearch").on("click", function(e) {
+		console.log("Reportar");
 		let reported = $('.rightSearch').attr('id');
 		getReported(reported);
 	});
