@@ -63,6 +63,13 @@ function SearchSearch(id) {
 					
 			$(".search").append(`
 				<div class="divition-all">
+
+					<button data-toggle="collapse" data-target="#demo">Collapsible</button>
+					<div id="demo" class="collapse">
+					Lorem ipsum dolor text....
+					</div>
+
+
 					<div class="divitionSearch">
 						<div class="leftSearch">
 							<img class="searchImage" src="./img/${selectedProduct.image}">
