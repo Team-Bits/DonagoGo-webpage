@@ -3,7 +3,6 @@ $(".orders-content").hide();
 function getProducts(id) {
 
 	let idUser = $(".nav-userId").attr('id');
-
 	console.log(idUser);
 
 	$.ajax({
