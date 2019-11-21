@@ -131,7 +131,7 @@ function SearchSearch(id) {
 							<div class="buttonsSearch">
 								<a href="./save.html"><button type="button" id="saveSearch" href="./save.html" class="btn btn-primary">Guardar</button></a>
 								<button type="button" id="buySearch" class="btn btn-success">Adquirir</button>
-								<a href="./report.html"><button type="button" id="reportSearch" class="btn btn-warning">Reportar</button></a>
+								<button type="button" id="reportSearch" class="btn btn-warning">Reportar</button>
 							</div>
 						</div>
 					</div>
@@ -246,5 +246,9 @@ function main() {
 		});
 
 		SearchSearch(e.target.id);
+	});
+
+	$("#reportSearch").on("click", function(e) {
+		console.log("Report");
 	});
 }

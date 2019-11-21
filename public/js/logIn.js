@@ -1,6 +1,7 @@
 $(".user-registration").hide();
 $(".user-information").hide();
 
+// Validates if a user is loged in the page
 function userIsIn() {
 
 	$.ajax({
@@ -197,7 +198,7 @@ function logOutUser() {
 		error: function(error) {
 			console.log("Juguito de chale: ", error);
 		}
-	});	
+	});
 }
 
 // Main function
