@@ -45,7 +45,7 @@ function getProducts() {
 				for (let i=0; i<filter2.length; i++) {
 				
 					let location = filter2[i].location.toLowerCase();
-					let posLocation = location.search($("#search-product-location").val().toLowerCase();
+					let posLocation = location.search($("#search-product-location").val().toLowerCase());
 
 					if (posLocation != -1)
 						filter3.push(filter2[i]);
