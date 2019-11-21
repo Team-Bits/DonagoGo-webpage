@@ -16,7 +16,7 @@ function isLogedIn() {
 
 			$("#navbar").append(`	
 				<div class="nav-align">
-					<a href="./LogIn.html">
+					<a class="nav-userId" id="${log.id}" href="./LogIn.html">
 						${(log == "") ? `LogIn/SignUp` : `${log.name}`} 
 					</a>
 					<a href="./index.html">Home</a>
