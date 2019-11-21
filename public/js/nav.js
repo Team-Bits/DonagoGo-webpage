@@ -190,6 +190,9 @@ function searchEndPoint(userQuery) {
 
 				if (namePos != -1 || descriptionPos != -1 || brandPos != -1 || modelPos != -1 || conditionPos != -1 || categoryPos != -1) {
 					
+					if (!responseJSON[i].bought)
+						continue;
+
 					$(".search").append(`
 						<div class="searches-container" id="${responseJSON[i].id}">
 							<div class="searches-image" >
