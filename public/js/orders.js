@@ -1,4 +1,4 @@
-$(".orders-content").hide();
+$(".orders-content").empty();
 
 function getProducts(id) {
 
@@ -38,6 +38,8 @@ function getProducts(id) {
 							</div>
 						`
 					);
+
+					$(".orders-content").show();
 				}
 			}
 		},
