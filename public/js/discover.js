@@ -301,25 +301,6 @@ function controller() {
 			behavior: 'smooth'
 		});
 	});
-
-	// 1 Reload page
-	$(".back").on("click", (e) => {
-
-		e.preventDefault();
-
-		$(".productDetail").hide();
-		$(".categories").hide();
-		$(".category").hide();
-		$(".boughtProduct").hide();
-
-		location.reload();
-
-		window.scroll({
-			top: 0, 
-			left: 0, 
-			behavior: 'smooth'
-		});
-	});	
 }
 
 function second() {
@@ -333,23 +314,6 @@ function second() {
 		$(".productDetail").show();
 		$(".categories").hide();
 		$(".category").hide();
-		$(".boughtProduct").hide();
-
-		window.scroll({
-			top: 0, 
-			left: 0, 
-			behavior: 'smooth'
-		});
-	});
-
-	// 2 Return to the categories
-	$(".backCategory").on("click", (e) => {
-
-		e.preventDefault();
-
-		$(".categories").hide();
-		$(".category").show();
-		$(".productDetail").hide();
 		$(".boughtProduct").hide();
 
 		window.scroll({
@@ -388,4 +352,44 @@ function third() {
 	});
 }
 
+function returnBtns() {
+
+	// 1 Reload page
+	$(".back").on("click", (e) => {
+
+		e.preventDefault();
+
+		$(".productDetail").hide();
+		$(".categories").hide();
+		$(".category").hide();
+		$(".boughtProduct").hide();
+
+		location.reload();
+
+		window.scroll({
+			top: 0, 
+			left: 0, 
+			behavior: 'smooth'
+		});
+	});	
+
+		// 2 Return to the categories
+	$(".backCategory").on("click", (e) => {
+
+		e.preventDefault();
+
+		$(".categories").hide();
+		$(".category").show();
+		$(".productDetail").hide();
+		$(".boughtProduct").hide();
+
+		window.scroll({
+			top: 0, 
+			left: 0, 
+			behavior: 'smooth'
+		});
+	});
+}
+
 controller();
+returnBtns();
