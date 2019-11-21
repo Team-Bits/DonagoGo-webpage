@@ -239,6 +239,8 @@ function main() {
 
 	$(".searches-container").on("click", function(e) {		
 
+		console.log("asdasd");
+
 		window.scroll({
 			top: 0, 
 			left: 0, 
