@@ -393,3 +393,4 @@ function returnBtns() {
 }
 
 controller();
+third();
