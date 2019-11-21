@@ -254,6 +254,7 @@ function controller() {
 	
 		e.preventDefault();
 
+		$(".productDetail").hide();
 		$(".categories").hide();
 		$(".category").show();
 		$(".boughtProduct").hide();
