@@ -102,7 +102,7 @@ function getProducts(category) {
 			let i=0, j=0;
 
 			$(".category").empty();
-			$(".category").append(`<button type="button" class="btn btn-success back">Regresar</button>`);
+			$(".category").append(`<a href="./discover.html"><button type="button" class="btn btn-success back">Regresar</button></a>`);
 
 			for (let i=0; i<responseJSON.length; i++)
 				if (responseJSON[i].category == category && !responseJSON[i].bought)
