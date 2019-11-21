@@ -178,6 +178,7 @@ function getProducts(category) {
 function getOneProduct(id) {
 
 	$.ajax({
+	
 		url : "/products",
 		method: "GET",
 		dataType: "json",
