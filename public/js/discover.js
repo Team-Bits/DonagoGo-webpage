@@ -31,9 +31,34 @@ function updateOneProduct(boughtProduct) {
 	});
 }
 
-function getBuyProduct(idProduct) {
+function createPurchase(boughtProduct) {
 
-	console.log(idProduct);
+	newPurchase = {
+		id: "",
+		userPurchase: $(".nav-userId").attr('id'),
+		userSaleId: "1",
+		productId: boughtProduct.id,
+		timeOfPurchase: new Date()
+	};
+
+	$.ajax({
+		url: "/purchases",
+		method: "POST",
+		data: JSON.stringify(newPurchase),
+		dataType: "JSON",
+		contentType: "application/json",
+
+		success: function(responseJSON) {
+			console.log("success: ", responseJSON);
+		},
+
+		error: function(errors) {
+			console.log("error: ", errors);
+		}
+	});
+}
+
+function getBuyProduct(idProduct) {
 
 	let found = ""
 
@@ -276,9 +301,6 @@ function controller() {
 	$(".product").on("click", (e) => {
 		
 		e.preventDefault();
-		
-		console.log(e.target.id);
-
 		getOneProduct(e.target.id);
 
 		$(".productDetail").show();

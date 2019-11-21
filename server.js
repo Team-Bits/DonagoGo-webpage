@@ -94,7 +94,6 @@ app.get('/purchases', (req, res, next) => {
 app.post('/purchases', jsonParser, (req, res, next) => {
 
 	let createdPurchase = {
-		
 		id 							:		uuid.v4(),
 		userPurchaseId	:		req.body.userPurchaseId,
 		userSaleId			:		req.body.userSaleId,
@@ -104,6 +103,17 @@ app.post('/purchases', jsonParser, (req, res, next) => {
 
 	Purchases.post(createdPurchase).then(purchase => {
 		return res.status(201).json(purchase);
+	}).catch(error => {
+		return res.status(500).json({
+			message: "Something went wrong with the DB",
+			status: 500
+		})
+	});
+});
+
+app.delete('/purchases/:id', jsonParser, (req, res, next) => {
+	Purchases.update(req.body).then(purchases => {
+		return res.status(202).json(purchases);
 	}).catch(error => {
 		return res.status(500).json({
 			message: "Something went wrong with the DB",
