@@ -19,7 +19,7 @@ function getProducts() {
 						filter1.push(responseJSON[i]);
 
 			else
-				filter1 = responseJSON;
+				filter1 = responseJSON.slice();
 
 			console.log(filter1);
 
@@ -29,7 +29,7 @@ function getProducts() {
 						filter2.push(filter1[i]);
 
 			else 
-				filter2 = filter1;
+				filter2 = filter1.slice();
 
 			console.log(filter2);
 
@@ -39,7 +39,7 @@ function getProducts() {
 						filter3.push(filter2[i]);
 
 			else
-				filter3 = filter2;
+				filter3 = filter2.slice();
 
 			console.log(filter3);
 
@@ -49,7 +49,7 @@ function getProducts() {
 						filter4.push(filter3[i]);
 
 			else
-				filter4 = filter3;
+				filter4 = filter3.slice();
 
 			console.log(filter4);
 		},
