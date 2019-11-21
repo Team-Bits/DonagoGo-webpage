@@ -7,6 +7,55 @@ $(".boughtProduct").hide();
 // Variable to store the product that will be bought
 let idProduct;
 
+function updateOneProduct(boughtProduct) {
+
+	boughtProduct.bought = true;
+
+	$.ajax({
+
+		url: `./products/${boughtProduct.id}`
+		method: "PUT",
+		data: JSON.stringify(boughtProduct),
+		dataType: "JSON",
+		contentType: "application/json",
+
+		success: function(responseJSON) {
+			window.location.href = "./schedule.html";
+		},
+
+		error: function(error) {
+			console.log("fail in update", error);
+		}
+	});
+}
+
+function getOneProduct(idProduct) {
+
+	let found = ""
+
+	$.ajax({
+
+		url: "/products",
+		method: "GET",
+		dataType: "json",
+
+		success: function(responseJSON) {
+
+			for (let i=0; i<responseJSON.length; i++) 
+				if (responseJSON[i].id == idProduct)
+					found = responseJSON[i];
+
+			if (found != "") {
+				updateOneProduct(found);
+			}
+		},
+
+		error: function(error) {
+			console.log("Juguito de chale")
+		}
+	});
+}
+
 function getProducts(category) {
 
 	let categoryProducts = [];
@@ -251,7 +300,6 @@ function controller() {
 		});
 	});
 
-
 	$(".backCategory").on("click", (e) => {
 
 		e.preventDefault();
@@ -291,9 +339,6 @@ function controller() {
 		e.preventDefault();
 
 		console.log(idProduct);
-
-		
-
 	});
 }
 

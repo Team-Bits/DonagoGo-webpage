@@ -170,6 +170,17 @@ app.delete("/products/:id", jsonParser, (req, res, next) => {
 	});
 });
 
+app.put("/products/:id", jsonParser, (req, res, next) => {
+	Products.update(req.body).then(products => {
+		return res.status(202).json(products);
+	}).catch(error => {
+		return res.status(500).json({
+			message: "Something went wrong with the DB",
+			status: 500
+		})
+	});
+});
+
 let server;
 
 function runServer(port, databaseUrl) {
