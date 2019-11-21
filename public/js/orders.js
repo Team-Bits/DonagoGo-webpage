@@ -61,7 +61,7 @@ function cancelOrder(canceledProduct) {
 
 	$.ajax({
 
-		url: `/products${canceledProduct.id}`,
+		url: `/products/${canceledProduct.id}`,
 		method: "PUT",
 		data: JSON.stringify(canceledProduct),
 		dataType: "json",
