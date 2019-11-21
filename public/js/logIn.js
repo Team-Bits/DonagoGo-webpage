@@ -251,4 +251,4 @@ function main() {
 
 	});
 
-} main();
+}
