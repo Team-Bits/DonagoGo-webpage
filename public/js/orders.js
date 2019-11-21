@@ -67,7 +67,7 @@ function cancelOrder(canceledProduct) {
 
 		success: function(responseJSON) {
 			location.reload();
-		}
+		},
 
 		error: function(error) {
 			console.log("Juguito de chale", error);
