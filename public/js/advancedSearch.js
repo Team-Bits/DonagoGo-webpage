@@ -13,43 +13,61 @@ function getProducts() {
 
 		success: function(responseJSON) {
 
-			if ($("#search-product-name").val() != "") 
-				for (let i=0; i<responseJSON.length; i++)
-					if (responseJSON[i].name.toLowerCase().search($("#search-product-name").val().toLowerCase()) != -1)
+			// Filter name of article
+			if ($("#search-product-name").val() != "") {
+
+				for (let i=0; i<responseJSON.length; i++) {
+
+					let name = responseJSON[i].name.toLowerCase();
+					let posName = name.search($("#search-product-name").val().toLowerCase());
+
+					if (posName != -1)
 						filter1.push(responseJSON[i]);
-
-			else
+				}
+			} else {
 				filter1 = responseJSON.slice();
+			} console.log(filter1);
 
-			console.log(filter1);
+			// Filter category
+			if ($("#search-product-category").val() != "") {
 
-			if ($("#search-product-category").val() != "")
 				for (let i=0; i<filter1.length; i++)
-					if (filter1[i].category.toLowerCase().search($("#search-product-category").val().toLowerCase()) != -1)
+					if (filter1.category == $("#search-product-category").val())
 						filter2.push(filter1[i]);
 
-			else 
+			} else {
 				filter2 = filter1.slice();
+			} console.log(filter2);
 
-			console.log(filter2);
+			// Filter location
+			if ($("#search-product-location").val() != "") {
+				
+				for (let i=0; i<filter2.length; i++) {
+				
+					let location = filter2[i].location.toLowerCase()
+					let posLocation = location.search($("#search-product-location").val().toLowerCase();
 
-			if ($("#search-product-location").val() != "")
-				for (let i=0; i<filter2.length; i++)
-					if (filter2[i].location.toLowerCase().search($("#search-product-location").val().toLowerCase()) != -1)
+					if (posLocation != -1)
 						filter3.push(filter2[i]);
-
-			else
+				}
+			} else {
 				filter3 = filter2.slice();
+			} console.log(filter3);
 
-			console.log(filter3);
+			// Filter brand
+			if ($("#search-product-brand").val() != "")	{
+				
+				for (let i=0; i<filter3.length; i++) {
+					
+					let brand = filter3[i].brand.toLowerCase();
+					let posBrand = brand.search($("#search-product-brand").val().toLowerCase();
 
-			if ($("#search-product-brand").val() != "")	
-				for (let i=0; i<filter3.length; i++)
-					if (filter3[i].brand.toLowerCase().search($("#search-product-brand").val().toLowerCase()) != -1)
+					if (posBrand != -1)
 						filter4.push(filter3[i]);
-
-			else
+				}
+			} else {
 				filter4 = filter3.slice();
+			}
 
 			console.log(filter4);
 		},
