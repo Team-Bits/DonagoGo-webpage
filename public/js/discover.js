@@ -273,6 +273,7 @@ function getOneProduct(id) {
 
 			$(".productDetail").append('<button type="button" class="btn btn-success backCategory backCategory-botom">Regresar</button>');
 			third(); //third
+			returnBtns();
 		},
 
 		error: function(err) {
@@ -392,4 +393,3 @@ function returnBtns() {
 }
 
 controller();
-returnBtns();
