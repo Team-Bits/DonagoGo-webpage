@@ -2,12 +2,11 @@ $(".orders-content").hide();
 
 function getProducts(id) {
 
-	let idUser = $(".nav-userId").attr('id');
-	console.log(idUser);
+	console.log(id);
 
 	$.ajax({
 
-		url: "/purchases",
+		url: "/products",
 		method: "GET",
 		dataType: "json",
 
@@ -16,7 +15,7 @@ function getProducts(id) {
 			$(".orders-content").empty();
 
 			for (let i=0; i<responseJSON.length; i++) {
-				if (responseJSON[i].userPurchaseId == id) {
+				if (responseJSON[i].bought) {
 					$(".orders-content").append (
 						`
 							<div class="orders-container">
@@ -46,4 +45,4 @@ function getProducts(id) {
 	});
 }
 
-getProducts("1");
+getProducts($(".nav-userId").attr('id'));
