@@ -138,6 +138,8 @@ function SearchSearch(id) {
 					<button type="button" class="btn btn-success btn-top">Regresar</button>
 				</div>		
 			`);
+
+			third();
 		},
 
 		error: function(err) {
@@ -212,6 +214,8 @@ function searchEndPoint(userQuery) {
 					<div class="space"></div>
 				`
 			);
+
+			secondary();
 		},
 
 		error: function(err) {
@@ -236,8 +240,10 @@ function main() {
 			searchEndPoint(userQuery);
 		}
 	});
+}
 
-	$(".searches-container").on("click", function(e) {		
+function secondary() {
+		$(".searches-container").on("click", function(e) {		
 
 		console.log("asdasd");
 
@@ -249,7 +255,9 @@ function main() {
 
 		SearchSearch(e.target.id);
 	});
+}
 
+function third() {
 	$("#reportSearch").on("click", function(e) {
 		console.log("Report");
 	});
