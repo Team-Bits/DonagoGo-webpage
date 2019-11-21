@@ -12,6 +12,8 @@ function getProducts(id) {
 
 		success: function(responseJSON) {
 			
+			console.log("ajua");
+
 			$(".orders-content").empty();
 
 			for (let i=0; i<responseJSON.length; i++) {
