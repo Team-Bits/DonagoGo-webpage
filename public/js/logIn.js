@@ -30,22 +30,22 @@ function userIsIn() {
 				$(".user-information").append(`
 					<h1>${log.name}</h1>
 					<section class="sectionUser">
-						<h3 class="titleUser">📦 Pedidos</h3>
+						<h3 class="titleUser">📦 Mis Pedidos</h3>
 						<a href="./orders.html"><button type="button" class="btn btn-info">Ver todos los pedidos</button></a>
 					</section>
 
 					<section class="sectionUser">
-						<h3 class="titleUser">🎁 Publicaciones</h3>
+						<h3 class="titleUser">🎁 Mis Publicaciones</h3>
 						<a href="./publications.html"><button type="button" class="btn btn-info">Ver todas las publicaciones</button></a>
 					</section>
 
 					<section class="sectionUser">
-						<h3 class="titleUser">💾 Productos Guardados</h3>
+						<h3 class="titleUser">💾 Mis Productos Guardados</h3>
 						<button type="button" class="btn btn-info btn-space">Ver productos guardados</button>
 					</section>
 
 					<section class="sectionUser">
-						<h3 class="titleUser">📍 Direcciones</h3>
+						<h3 class="titleUser">📍 Mis Direcciones</h3>
 						<button type="button" class="btn btn-info btn-space">Administrar direcciones</button>
 					</section>
 
