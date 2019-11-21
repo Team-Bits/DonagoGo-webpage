@@ -28,7 +28,8 @@
 
 .orders-info {
 	width: 100%;
-	margin-left: 10%;
+	margin-top: 2%;
+	margin-left: 15%;
 	padding-right: 10%;
 }
 
@@ -37,7 +38,7 @@
 }
 
 .order-info-buttons {
-	padding-top: 1%;
+	padding-top: 5%;
 }
 
 .btn {
@@ -53,4 +54,9 @@
 	object-fit: cover;
 	width: 350px; 
 	height: 300px;
+}
+
+.order-info-location {
+	margin-top: 5%;
+	margin-bottom: 2%;
 }
