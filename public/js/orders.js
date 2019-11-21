@@ -11,13 +11,14 @@ function getProducts(id) {
 		dataType: "json",
 
 		success: function(responseJSON) {
-			
-			console.log("ajua");
 
-			$(".orders-content").empty();
+			console.log("responseJSON.length", responseJSON.length);
 
 			for (let i=0; i<responseJSON.length; i++) {
 				if (responseJSON[i].bought) {
+
+					console.log(responseJSON[i].bought);
+
 					$(".orders-content").append (
 						`
 							<div class="orders-container">
