@@ -18,12 +18,18 @@ function getProducts() {
 					if (responseJSON[i].name.toLowerCase().search($("#search-product-name").val().toLowerCase()) != -1)
 						filter1.push(responseJSON[i]);
 
+			else
+				filter1 = responseJSON;
+
 			console.log(filter1);
 
 			if ($("#search-product-category").val() != "")
 				for (let i=0; i<filter1.length; i++)
 					if (filter1[i].category.toLowerCase().search($("#search-product-category").val().toLowerCase()) != -1)
 						filter2.push(filter1[i]);
+
+			else 
+				filter2 = filter1;
 
 			console.log(filter2);
 
@@ -32,12 +38,18 @@ function getProducts() {
 					if (filter2[i].location.toLowerCase().search($("#search-product-location").val().toLowerCase()) != -1)
 						filter3.push(filter2[i]);
 
+			else
+				filter3 = filter2;
+
 			console.log(filter3);
 
 			if ($("#search-product-brand").val() != "")	
 				for (let i=0; i<filter3.length; i++)
 					if (filter3[i].brand.toLowerCase().search($("#search-product-brand").val().toLowerCase()) != -1)
 						filter4.push(filter3[i]);
+
+			else
+				filter4 = filter3;
 
 			console.log(filter4);
 		},
