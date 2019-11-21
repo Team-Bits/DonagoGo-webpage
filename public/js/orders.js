@@ -53,7 +53,31 @@ function getProducts(id) {
 	});
 } getProducts($(".nav-userId").attr('id'));
 
+function cancelOrder(canceledProduct) {
+
+	canceledProduct.bought = false;
+
+	$.ajax({
+
+		url: `/products${canceledProduct.id}`,
+		method: "POST",
+		data: JSON.stringify(canceledProduct),
+		dataType: "json",
+		contentType: "application/json",
+
+		success: function(responseJSON) {
+			location.reload();
+		}
+
+		error: function(error) {
+			console.log("Juguito de chale", error);
+		}
+	});
+}
+
 function getProductForCancel(id) {
+
+	let canceledProduct;
 
 	$.ajax({
 
@@ -62,7 +86,12 @@ function getProductForCancel(id) {
 		dataType: "json",
 
 		success: function(responseJSON) {
-			console.log(responseJSON);
+			
+			for (let i=0; i<responseJSON.length; i++)
+				if (responseJSON[i].id == id)
+					canceledProduct = responseJSON[i];
+
+			cancelOrder(canceledProduct);
 		},
 
 		error: function(error) {
