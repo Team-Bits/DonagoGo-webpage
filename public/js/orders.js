@@ -54,8 +54,7 @@ function getProducts(id) {
 
 function cancelPolicy() {
 	
-	$(".cancel-btn").on("click", function(e) => {
-		
+	$(".cancel-btn").on("click", function(e) {
 		e.preventDefault();
 		console.log(e.target.id);
 	});
