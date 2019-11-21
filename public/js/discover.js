@@ -340,7 +340,7 @@ function controller() {
 	});	
 }
 
-function second() {
+function third() {
 
 	// 2 Click on a single product, show its details
 	$(".product").on("click", (e) => {
@@ -378,7 +378,7 @@ function second() {
 	});
 }
 
-function third() {
+function second() {
 		// 3 Make an apointment to get the product
 	$("#make-date").on("click", (e) => {
 
