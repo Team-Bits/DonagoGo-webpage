@@ -148,6 +148,8 @@ function SearchSearch(id) {
 
 function searchEndPoint(userQuery) {
 
+	let found = [];
+
 	$.ajax({
 
 		url: "/products",
@@ -164,14 +166,18 @@ function searchEndPoint(userQuery) {
 			$(".search").append(`<content class="searches-content">`);
 			$(".searches-content").empty();
 
-			for (let i=0; i<responseJSON.length; i++) {
+			for (let i=0; i<responseJSON.length; i++)
+				if (!responseJSON[i].bought)
+					found.push(responseJSON[i]);
 
-				name = responseJSON[i].name.toLowerCase();
-				description = responseJSON[i].description.toLowerCase();
-				brand = responseJSON[i].brand.toLowerCase();
-				model = responseJSON[i].model.toLowerCase();
-				condition = responseJSON[i].condition.toLowerCase();
-				category = responseJSON[i].category.toLowerCase();
+			for (let i=0; i<found.length; i++) {
+
+				name = found[i].name.toLowerCase();
+				description = found[i].description.toLowerCase();
+				brand = found[i].brand.toLowerCase();
+				model = found[i].model.toLowerCase();
+				condition = found[i].condition.toLowerCase();
+				category = found[i].category.toLowerCase();
 
 				namePos = name.search(userQuery);
 				descriptionPos = description.search(userQuery);
@@ -183,16 +189,16 @@ function searchEndPoint(userQuery) {
 				if (namePos != -1 || descriptionPos != -1 || brandPos != -1 || modelPos != -1 || conditionPos != -1 || categoryPos != -1) {
 
 					$(".search").append(`
-						<div class="searches-container" id="${responseJSON[i].id}">
+						<div class="searches-container" id="${found[i].id}">
 							<div class="searches-image" >
-								<img class="searches-image-size" id="${responseJSON[i].id}" src="./img/${responseJSON[i].image}">
+								<img class="searches-image-size" id="${found[i].id}" src="./img/${found[i].image}">
 							</div>
-							<div class="searches-info" id="${responseJSON[i].id}">
-								<h5 class="search-info-title" id="${responseJSON[i].id}">${responseJSON[i].name}</h5>
+							<div class="searches-info" id="${found[i].id}">
+								<h5 class="search-info-title" id="${found[i].id}">${found[i].name}</h5>
 								<ul>
-									<li class="search-info-description search-info-sub" id="${responseJSON[i].id}">${responseJSON[i].description}</li>
-									<li class="search-info-condition search-info-sub" id="${responseJSON[i].id}">${responseJSON[i].condition}</li>
-									<li class="search-info-location search-info-sub" id="${responseJSON[i].id}">${responseJSON[i].location}</li>
+									<li class="search-info-description search-info-sub" id="${found[i].id}">${found[i].description}</li>
+									<li class="search-info-condition search-info-sub" id="${found[i].id}">${found[i].condition}</li>
+									<li class="search-info-location search-info-sub" id="${found[i].id}">${found[i].location}</li>
 								</ul>
 							</div>
 						</div>
@@ -206,8 +212,6 @@ function searchEndPoint(userQuery) {
 					<div class="space"></div>
 				`
 			);
-
-			// main();
 		},
 
 		error: function(err) {

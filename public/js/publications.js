@@ -1,3 +1,5 @@
+$(".publications-content").hide();
+
 function getProducts(id) {
 
 	$.ajax({

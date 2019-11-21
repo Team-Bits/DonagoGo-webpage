@@ -1,3 +1,5 @@
+$(".orders-content").hide();
+
 function getProducts(id) {
 
 	$.ajax({
@@ -8,7 +10,7 @@ function getProducts(id) {
 
 		success: function(responseJSON) {
 			
-			$(".orders-content").empty()
+			$(".orders-content").empty();
 
 			for (let i=0; i<responseJSON.length; i++) {
 				if (responseJSON[i].userPurchaseId == id) {
