@@ -11,6 +11,8 @@ function updateOneProduct(boughtProduct) {
 
 	boughtProduct.bought = true;
 
+	console.log(boughtProduct);
+
 	$.ajax({
 
 		url: `./products/${boughtProduct.id}`,
@@ -30,6 +32,8 @@ function updateOneProduct(boughtProduct) {
 }
 
 function getOneProduct(idProduct) {
+
+	console.log(idProduct);
 
 	let found = ""
 
