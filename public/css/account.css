@@ -1,0 +1,23 @@
+* {
+	margin: 0%;
+}
+
+.accountHeader {
+	margin-top: 15%;
+	text-align: center;
+}
+
+.accountParagraph {
+	margin-top: 2%;
+	text-align: center;
+	font-size: 120%;
+}
+
+.accountReturnBtnDiv {
+	margin-top: 3%;
+	text-align: center;
+}
+
+.account-btn {
+	margin-top: 1%;
+}

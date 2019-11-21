@@ -82,7 +82,7 @@ function createUser(newUser) {
 		// On success, change to user creatin screen
 		success: function(responseJSON) {
 			console.log("success: ", responseJSON);
-			window.location.href = "./publish.html"
+			window.location.href = "./createAcount.html"
 		},
 
 		error: function(error) {
