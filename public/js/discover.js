@@ -78,7 +78,7 @@ function getProducts(category) {
 			$(".category").append(`<button type="button" class="btn btn-success back">Regresar</button>`);
 
 			for (let i=0; i<responseJSON.length; i++)
-				if (responseJSON[i].category == category)
+				if (responseJSON[i].category == category && !responseJSON[i].bought)
 					categoryProducts.push(responseJSON[i]);
 
 			if (categoryProducts.length >= 4) {

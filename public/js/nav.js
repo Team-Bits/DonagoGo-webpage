@@ -163,18 +163,12 @@ function searchEndPoint(userQuery) {
 
 			$(".search").empty();
 			$(".search").append(`<h2 class="searchTitle">🔎 Resultados de ${$("#ex1").val()}...</h2>`);
-
-			$(".search").append(
-				`
-					<content class="searches-content">
-				`
-			);
-			
+			$(".search").append(`<content class="searches-content">`);
 			$(".searches-content").empty();
 
 			for (let i=0; i<responseJSON.length; i++) {
 
-				if (!responseJSON[i].name == "Aspiradora") {
+				if (responseJSON[i].name == "Aspiradora") {
 					console.log(responseJSON[i]);
 					continue;
 				}
