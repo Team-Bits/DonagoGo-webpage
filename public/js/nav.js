@@ -298,6 +298,6 @@ function secondary() {
 function third() {
 	$("#reportSearch").on("click", function(e) {
 		let reported = $('.rightSearch').attr('id');
-		getReport(reported);
+		getReported(reported);
 	});
 }
