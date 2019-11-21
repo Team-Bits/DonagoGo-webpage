@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Donago-go</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/navStyle.css">
+	<link rel="stylesheet" href="./css/searchStyle.css">
+	<link rel="stylesheet" href="./css/advancedSearch.css">
+	<link rel="icon" type="image/png" href="./img/black.png">
+</head>
+<body>
+
+	<div id="navbar"></div>
+	<div class="search"></div>
+
+	<div class="noSearch">
+		<div class="search-product-forms">			
+			<h2>Busqueda avanzada</h2>
+			<div class="search-product-container">
+				<div class="search-product-left">
+					<div class="form-group search-product-top">
+						<label for="name">Nombre de producto</label>
+						<input type="text" class="form-control" id="search-product-name">
+					</div>
+					<div class="form-group search-product-bottom">
+						<label for="sel1">Categoría</label>
+						<select class="form-control" id="search-product-category">
+							<option value="select">Seleccionar</option>
+							<option value="clothes">Ropa y accesorios</option>
+							<option value="tech">Tecnología</option>
+							<option value="home">Hogar y familia</option>
+							<option value="clean">Limpieza</option>
+							<option value="pets">Mascotas</option>
+							<option value="toys">Juguetes</option>
+							<option value="books">Libros y útiles</option>
+							<option value="furniture">Muebles</option>
+							<option value="food">Comida</option>
+							<option value="sports">Depotes</option>
+							<option value="electrodomestics">Electrodomesticos</option>
+							<option value="tools">Herramientas</option>
+						</select>
+					</div>
+				</div>
+				<div class="search-product-right">
+					<div class="form-group search-product-top">
+						<label for="name">Lugar</label>
+						<input type="text" class="form-control" id="search-product-location">
+					</div>
+					<div class="form-group search-product-bottom">
+						<label for="name">Marca</label>
+						<input type="text" class="form-control" id="search-product-brand">
+					</div>
+				</div>
+			</div>
+			<button id="search-product-btn" type="button" class="btn btn-success">Buscar</button>
+		</div>
+		
+		<div class="search-product-products"></div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="./js/navbar.js"></script>
+	<script type="text/javascript" src="./js/nav.js"></script>
+	<script type="text/javascript" src="./js/advancedSearch.js"></script>
+</body>
+</html>

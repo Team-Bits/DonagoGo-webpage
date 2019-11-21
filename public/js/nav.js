@@ -167,7 +167,7 @@ function searchEndPoint(userQuery) {
 
 			$(".search").empty();
 			$(".search").append(`<h2 class="searchTitle">🔎 Resultados de ${$("#ex1").val()}...</h2>`);
-			$(".search").append(`<a><button type="button" class="btn btn-info">Busqueda Avanzada</button></a>`);
+			$(".search").append(`<a href="./advancedSearch.html"><button type="button" class="btn btn-info advanced-search">Busqueda Avanzada</button></a>`);
 			$(".search").append(`<content class="searches-content">`);
 			$(".searches-content").empty();
 

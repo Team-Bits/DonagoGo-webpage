@@ -1,0 +1,22 @@
+.noSearch {
+	margin: 7%; 
+}
+
+.search-product-container {
+	margin-top: 2%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.search-product-left{
+	width: 45%;
+}
+
+.search-product-right {
+	width: 45%;
+}
+
+#search-product-btn {
+	margin-top: 1%;
+	margin-left: 2.5%;
+}
