@@ -280,15 +280,14 @@ function controller() {
 		$(".productDetail").hide();
 		$(".boughtProduct").show();
 
-		console.log(idProduct);
-
-		$(".detail-title").attr('id', idProduct);
-
 		window.scroll({
 			top: 0, 
 			left: 0, 
 			behavior: 'smooth'
 		});
+
+		
+
 	});	
 }
 
