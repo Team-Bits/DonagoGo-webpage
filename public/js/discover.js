@@ -319,25 +319,6 @@ function controller() {
 			left: 0, 
 			behavior: 'smooth'
 		});
-	});
-
-	// 1 Buy a product
-	$("#buyDetail").on("click", (e) => {
-		
-		e.preventDefault();
-
-		idProduct = $(".rightDetail").attr('id');
-
-		$(".categories").hide();
-		$(".category").hide();
-		$(".productDetail").hide();
-		$(".boughtProduct").show();
-
-		window.scroll({
-			top: 0, 
-			left: 0, 
-			behavior: 'smooth'
-		});
 	});	
 }
 
@@ -385,6 +366,25 @@ function third() {
 
 		e.preventDefault();
 		getBuyProduct(idProduct);
+	});
+
+	// 3 Buy a product
+	$("#buyDetail").on("click", (e) => {
+		
+		e.preventDefault();
+
+		idProduct = $(".rightDetail").attr('id');
+
+		$(".categories").hide();
+		$(".category").hide();
+		$(".productDetail").hide();
+		$(".boughtProduct").show();
+
+		window.scroll({
+			top: 0, 
+			left: 0, 
+			behavior: 'smooth'
+		});
 	});
 }
 
