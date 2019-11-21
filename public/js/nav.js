@@ -65,7 +65,7 @@ function SearchSearch(id) {
 						<div class="leftSearch">
 							<img class="searchImage" src="./img/${selectedProduct.image}">
 						</div>
-						<div class="rightSearch">
+						<div class="rightSearch" id="${selectedProduct.id}">
 							<h2>${selectedProduct.name}</h2>
 							<p class="descriptionSearch">
 								${selectedProduct.description}  
@@ -224,18 +224,60 @@ function searchEndPoint(userQuery) {
 	});
 }
 
+function reportProduct(reportedProduct) {
+
+	reportedProduct.bought = true;
+
+	$.ajax({
+
+		url: `/products/${reportedProduct.id}`,
+		method: "PUT",
+		data: JSON.stringify(reportedProduct),
+		dataType: "JSON",
+		contentType: "application/json",
+
+		success: function(responseJSON) {
+			location.replace("./report.html");
+		},
+
+		error: function(errors) {
+			console.log("error: ", errors);
+		}
+	});
+}
+
+function getReported(reported) {
+
+	$.ajax({
+
+		url: "/products",
+		method: "GET",
+		dataType: "json",
+
+		success: function(responseJSON) {
+
+			let found = "";
+
+			for (let i=0; i<responseJSON.length; i++)
+				if (responseJSON[i].id == reported)
+					found = responseJSON[i];
+
+			reportProduct(fond);
+		},
+
+		error: function(error) {
+			console.log("Error en navbar", error);
+		}
+	});
+}
+
 function main() {
-
 	$("#nav-search-btn").on("click", function(e) {
-
 		e.preventDefault();
-
 		if ($("#ex1").val()) {
-
 			$(".search").empty();
 			$(".search").show();
 			$(".notSearch").hide();
-
 			let userQuery = $("#ex1").val().toLowerCase();
 			searchEndPoint(userQuery);
 		}
@@ -243,22 +285,19 @@ function main() {
 }
 
 function secondary() {
-		$(".searches-container").on("click", function(e) {		
-
-		console.log("asdasd");
-
+	$(".searches-container").on("click", function(e) {		
 		window.scroll({
 			top: 0, 
 			left: 0, 
 			behavior: 'smooth'
 		});
-
 		SearchSearch(e.target.id);
 	});
 }
 
 function third() {
 	$("#reportSearch").on("click", function(e) {
-		console.log("Report");
+		let reported = $('.rightSearch').attr('id');
+		getReport(reported);
 	});
 }
