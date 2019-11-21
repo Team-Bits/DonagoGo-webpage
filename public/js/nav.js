@@ -174,6 +174,11 @@ function searchEndPoint(userQuery) {
 
 			for (let i=0; i<responseJSON.length; i++) {
 
+				if (!responseJSON[i].name == "Aspiradora") {
+					console.log(responseJSON[i]);
+					continue;
+				}
+
 				name = responseJSON[i].name.toLowerCase();
 				description = responseJSON[i].description.toLowerCase();
 				brand = responseJSON[i].brand.toLowerCase();
@@ -190,10 +195,6 @@ function searchEndPoint(userQuery) {
 
 				if (namePos != -1 || descriptionPos != -1 || brandPos != -1 || modelPos != -1 || conditionPos != -1 || categoryPos != -1) {
 					
-					if (!responseJSON[i].bought) {
-						console.log(responseJSON[i]);
-						continue;
-					}
 
 					$(".search").append(`
 						<div class="searches-container" id="${responseJSON[i].id}">
