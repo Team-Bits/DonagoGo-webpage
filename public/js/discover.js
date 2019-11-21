@@ -290,7 +290,10 @@ function controller() {
 
 		e.preventDefault();
 
-		console.log();
+		console.log(idProduct);
+
+		
+
 	});
 }
 
