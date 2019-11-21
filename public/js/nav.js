@@ -262,7 +262,7 @@ function getReported(reported) {
 				if (responseJSON[i].id == reported)
 					found = responseJSON[i];
 
-			reportProduct(fond);
+			reportProduct(found);
 		},
 
 		error: function(error) {
