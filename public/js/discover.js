@@ -13,7 +13,7 @@ function updateOneProduct(boughtProduct) {
 
 	$.ajax({
 
-		url: `./products/${boughtProduct.id}`
+		url: `./products/${boughtProduct.id}`,
 		method: "PUT",
 		data: JSON.stringify(boughtProduct),
 		dataType: "JSON",
@@ -292,6 +292,11 @@ function controller() {
 
 		e.preventDefault();
 
+		$(".productDetail").hide();
+		$(".categories").hide();
+		$(".category").hide();
+		$(".boughtProduct").hide();
+
 		location.reload();
 
 		window.scroll({
@@ -338,8 +343,8 @@ function controller() {
 	$("#make-date").on("click", (e) => {
 
 		e.preventDefault();
-
 		console.log(idProduct);
+		getOneProduct(idProduct)		
 	});
 }
 
