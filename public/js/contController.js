@@ -214,7 +214,7 @@ function contController() {
 			
 			let newDonation = {
 				id : "",
-				userId : "1",
+				userId : $(".nav-userId").attr('id'),
 				name : $("#name").val(),
 				description : $("#descriptionText").val(),
 				image : $("#label-photo-update").html(),

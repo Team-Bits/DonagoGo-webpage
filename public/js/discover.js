@@ -51,6 +51,7 @@ function getBuyProduct(idProduct) {
 
 			if (found != "") {
 				updateOneProduct(found);
+				createPurchase(found);
 			}
 		},
 
@@ -236,7 +237,7 @@ function getOneProduct(id) {
 						<div class="buttonsDetail">
 							<a href="./save.html"><button type="button" id="saveDetail" href="./save.html" class="btn btn-primary">Guardar</button></a>
 							<button type="button" id="buyDetail" class="btn btn-success">Adquirir</button>
-							<a href="./report.html"><button type="button" id="reportDetail" class="btn btn-warning">Reportar</button></a>
+							<button type="button" id="reportDetail" class="btn btn-warning">Reportar</button>
 						</div>
 					</div>
 				</div>
