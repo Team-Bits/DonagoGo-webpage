@@ -57,6 +57,8 @@ function cancelOrder(canceledProduct) {
 
 	canceledProduct.bought = false;
 
+	console.log(canceledProduct);
+
 	$.ajax({
 
 		url: `/products${canceledProduct.id}`,
