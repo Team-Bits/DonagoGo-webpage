@@ -31,7 +31,7 @@ function updateOneProduct(boughtProduct) {
 	});
 }
 
-function getOneProduct(idProduct) {
+function getBuyProduct(idProduct) {
 
 	console.log(idProduct);
 
@@ -347,8 +347,7 @@ function controller() {
 	$("#make-date").on("click", (e) => {
 
 		e.preventDefault();
-		console.log(idProduct);
-		getOneProduct(idProduct)		
+		getBuyProduct(idProduct);
 	});
 }
 
