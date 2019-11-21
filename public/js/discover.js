@@ -1,8 +1,12 @@
+// Displaythe categories in the order that must be displayed
 $(".productDetail").hide();
 $(".categories").show();
 $(".category").hide();
 $(".boughtProduct").hide();
- 
+
+// Variable to store the product that will be bought
+let idProduct;
+
 function getProducts(category) {
 
 	let categoryProducts = [];
@@ -240,11 +244,6 @@ function controller() {
 
 		location.reload();
 
-		// $(".categories").show();
-		// $(".category").hide();
-		// $(".productDetail").hide();
-		// $(".boughtProduct").hide();
-
 		window.scroll({
 			top: 0, 
 			left: 0, 
@@ -273,7 +272,7 @@ function controller() {
 		
 		e.preventDefault();
 
-		let idProduct = $(".rightDetail").attr('id');
+		idProduct = $(".rightDetail").attr('id');
 
 		$(".categories").hide();
 		$(".category").hide();
@@ -285,10 +284,14 @@ function controller() {
 			left: 0, 
 			behavior: 'smooth'
 		});
-
-		
-
 	});	
+
+	$("#make-date").on("click", (e) => {
+
+		e.preventDefault();
+
+		console.log();
+	});
 }
 
 controller();
