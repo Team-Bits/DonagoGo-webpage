@@ -166,13 +166,14 @@ function searchEndPoint(userQuery) {
 			var namePos, descriptionPos, brandPos, modelPos, conditionPos, categoryPos;
 
 			$(".search").empty();
-			$(".search").append(`<h2 class="searchTitle">🔎 Resultados de ${$("#ex1").val()}...</h2>`);
 			$(".search").append(`
 				<button data-toggle="collapse" data-target="#demo">Collapsible</button>
+
 				<div id="demo" class="collapse">
-				Lorem ipsum dolor text....
+					Lorem ipsum dolor text....
 				</div>
 			`);
+			$(".search").append(`<h2 class="searchTitle">🔎 Resultados de ${$("#ex1").val()}...</h2>`);
 			$(".search").append(`<content class="searches-content">`);
 			$(".searches-content").empty();
 
