@@ -60,7 +60,7 @@ function getProducts() {
 				for (let i=0; i<filter3.length; i++) {
 					
 					let brand = filter3[i].brand.toLowerCase();
-					let posBrand = brand.search($("#search-product-brand").val().toLowerCase();
+					let posBrand = brand.search($("#search-product-brand").val().toLowerCase());
 
 					if (posBrand != -1)
 						filter4.push(filter3[i]);
