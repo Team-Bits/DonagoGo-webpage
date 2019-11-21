@@ -86,6 +86,7 @@ function getBuyProduct(idProduct) {
 	});
 }
 
+// 1 Get products from 4 to 4
 function getProducts(category) {
 
 	let categoryProducts = [];
@@ -164,7 +165,7 @@ function getProducts(category) {
 				`);
 			}
 
-			controller();
+			second();
 		},
 
 		error: function(err) {
@@ -173,6 +174,7 @@ function getProducts(category) {
 	});
 }
 
+// 2 Get a specific product
 function getOneProduct(id) {
 
 	$.ajax({
@@ -269,7 +271,7 @@ function getOneProduct(id) {
 			`);
 
 			$(".productDetail").append('<button type="button" class="btn btn-success backCategory backCategory-botom">Regresar</button>');
-			controller();
+			third(); //third
 		},
 
 		error: function(err) {
@@ -280,6 +282,7 @@ function getOneProduct(id) {
 
 function controller() {
 	
+	// 1 Click on a category
 	$(".main").on("click", (e) => {
 	
 		e.preventDefault();
@@ -298,23 +301,7 @@ function controller() {
 		});
 	});
 
-	$(".product").on("click", (e) => {
-		
-		e.preventDefault();
-		getOneProduct(e.target.id);
-
-		$(".productDetail").show();
-		$(".categories").hide();
-		$(".category").hide();
-		$(".boughtProduct").hide();
-
-		window.scroll({
-			top: 0, 
-			left: 0, 
-			behavior: 'smooth'
-		});
-	});
-
+	// 1 Reload page
 	$(".back").on("click", (e) => {
 
 		e.preventDefault();
@@ -333,22 +320,7 @@ function controller() {
 		});
 	});
 
-	$(".backCategory").on("click", (e) => {
-
-		e.preventDefault();
-
-		$(".categories").hide();
-		$(".category").show();
-		$(".productDetail").hide();
-		$(".boughtProduct").hide();
-
-		window.scroll({
-			top: 0, 
-			left: 0, 
-			behavior: 'smooth'
-		});
-	});
-
+	// 1 Buy a product
 	$("#buyDetail").on("click", (e) => {
 		
 		e.preventDefault();
@@ -366,7 +338,48 @@ function controller() {
 			behavior: 'smooth'
 		});
 	});	
+}
 
+function second() {
+
+	// 2 Click on a single product, show its details
+	$(".product").on("click", (e) => {
+		
+		e.preventDefault();
+		getOneProduct(e.target.id);
+
+		$(".productDetail").show();
+		$(".categories").hide();
+		$(".category").hide();
+		$(".boughtProduct").hide();
+
+		window.scroll({
+			top: 0, 
+			left: 0, 
+			behavior: 'smooth'
+		});
+	});
+
+	// 2 Return to the categories
+	$(".backCategory").on("click", (e) => {
+
+		e.preventDefault();
+
+		$(".categories").hide();
+		$(".category").show();
+		$(".productDetail").hide();
+		$(".boughtProduct").hide();
+
+		window.scroll({
+			top: 0, 
+			left: 0, 
+			behavior: 'smooth'
+		});
+	});
+}
+
+function third() {
+		// 3 Make an apointment to get the product
 	$("#make-date").on("click", (e) => {
 
 		e.preventDefault();
