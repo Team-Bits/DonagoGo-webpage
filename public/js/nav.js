@@ -280,6 +280,9 @@ function getReported(reported) {
 }
 
 function main() {
+
+	console.log("AAAAAAAAAA");
+
 	$("#nav-search-btn").on("click", function(e) {
 		e.preventDefault();
 		if ($("#ex1").val()) {
