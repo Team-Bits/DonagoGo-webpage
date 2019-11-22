@@ -13,8 +13,10 @@ function getProducts() {
 
 		success: function(responseJSON) {
 
+			console.log($("#search-product-category").val());
+
 			// Filter name of article
-			if ($("#search-product-name").val() != "select") {
+			if ($("#search-product-name").val() != "") {
 
 				for (let i=0; i<responseJSON.length; i++) {
 
