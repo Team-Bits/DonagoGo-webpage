@@ -139,7 +139,7 @@ function SearchSearch(id) {
 				</div>		
 			`);
 
-			third();
+			main();
 		},
 
 		error: function(err) {
@@ -218,8 +218,9 @@ function searchEndPoint(userQuery) {
 				`
 			);
 
-			secondary();
-			third();
+			main();
+			// secondary();
+			// third();
 		},
 
 		error: function(err) {
@@ -281,8 +282,6 @@ function getReported(reported) {
 
 function main() {
 
-	console.log("A");
-
 	$("#nav-search-btn").on("click", function(e) {
 		e.preventDefault();
 		if ($("#ex1").val()) {
@@ -292,6 +291,21 @@ function main() {
 			let userQuery = $("#ex1").val().toLowerCase();
 			searchEndPoint(userQuery);
 		}
+	});
+
+	$("#reportSearch").on("click", function(e) {
+		console.log("Reportar");
+		let reported = $('.rightSearch').attr('id');
+		getReported(reported);
+	});
+
+	$(".searches-container").on("click", function(e) {		
+		window.scroll({
+			top: 0, 
+			left: 0, 
+			behavior: 'smooth'
+		});
+		SearchSearch(e.target.id);
 	});
 }
 
@@ -315,4 +329,4 @@ function third() {
 	});
 }
 
-third();
+// third();
