@@ -69,9 +69,26 @@ function getProducts() {
 				}
 			} else {
 				filter4 = filter3.slice();
-			}
+			} console.log(filter4);
 
-			console.log(filter4);
+			// Display obtained results
+			for (let i=0; i<filter4.length; i++) {
+				$(".search-product-products").append(`
+					<div class="searches-container" id="${filter4[i].id}">
+						<div class="searches-image" >
+							<img class="searches-image-size" id="${filter4[i].id}" src="./img/${filter4[i].image}">
+						</div>
+						<div class="searches-info" id="${filter4[i].id}">
+							<h5 class="search-info-title" id="${filter4[i].id}">${filter4[i].name}</h5>
+							<ul>
+								<li class="search-info-description search-info-sub" id="${filter4[i].id}">${filter4[i].description}</li>
+								<li class="search-info-condition search-info-sub" id="${filter4[i].id}">${filter4[i].condition}</li>
+								<li class="search-info-location search-info-sub" id="${filter4[i].id}">${filter4[i].location}</li>
+							</ul>
+						</div>
+					</div>
+				`);
+			}
 		},
 
 		error: function(errors) {
