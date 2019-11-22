@@ -71,7 +71,9 @@ function getProducts() {
 				filter4 = filter3.slice();
 			} console.log(filter4);
 
+
 			// Display obtained results
+			$(".search-product-products").empty();
 			for (let i=0; i<filter4.length; i++) {
 				$(".search-product-products").append(`
 					<div class="searches-container" id="${filter4[i].id}">
