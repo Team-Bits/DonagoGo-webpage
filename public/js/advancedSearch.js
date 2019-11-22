@@ -14,7 +14,7 @@ function getProducts() {
 		success: function(responseJSON) {
 
 			// Filter name of article
-			if ($("#search-product-name").val() != "") {
+			if ($("#search-product-name").val() != "select") {
 
 				for (let i=0; i<responseJSON.length; i++) {
 
