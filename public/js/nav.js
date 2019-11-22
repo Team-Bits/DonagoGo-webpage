@@ -41,8 +41,6 @@ function isLogedIn() {
 	});
 } isLogedIn();
 
-third();
-
 function SearchSearch(id) {
 
 	$.ajax({
@@ -305,8 +303,6 @@ function secondary() {
 }
 
 function third() {
-
-	console.log("AAAAAAAAAA");
 
 	$("#reportSearch").on("click", function(e) {
 		console.log("Reportar");
