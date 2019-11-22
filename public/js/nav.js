@@ -311,3 +311,5 @@ function third() {
 		getReported(reported);
 	});
 }
+
+third();
