@@ -34,7 +34,7 @@ function getProducts() {
 			if ($("#search-product-category").val() != "") {
 
 				for (let i=0; i<filter1.length; i++)
-					if (filter1.category == $("#search-product-category").val())
+					if (filter1[i].category == $("#search-product-category").val())
 						filter2.push(filter1[i]);
 
 			} else {
