@@ -148,6 +148,8 @@ function SearchSearch(id) {
 	});
 }
 
+main();
+
 function searchEndPoint(userQuery) {
 
 	let found = [];
