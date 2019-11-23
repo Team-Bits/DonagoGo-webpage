@@ -1,3 +1,17 @@
+/*
+Controller.js
+
+	Main file of the web page. It controlls the principal functions for the page such ass:
+
+		- Nav bar
+		- Searches
+		- Get id of the logged user
+		- Get the user connection
+		- Report a product
+*/
+
+
+// Go to database and look if the current user is loged in
 function isLogedIn() {
 
 	$.ajax({
@@ -41,7 +55,8 @@ function isLogedIn() {
 	});
 } isLogedIn();
 
-function SearchSearch(id) {
+// With the id of a product, display the searched product
+function displaySearch(id) {
 
 	$.ajax({
 
@@ -150,6 +165,7 @@ function SearchSearch(id) {
 
 main();
 
+// with the user keyword, the program lof in the database any product with the word given
 function searchEndPoint(userQuery) {
 
 	let found = [];
@@ -219,8 +235,6 @@ function searchEndPoint(userQuery) {
 			);
 
 			main();
-			// secondary();
-			// third();
 		},
 
 		error: function(err) {
@@ -230,8 +244,6 @@ function searchEndPoint(userQuery) {
 }
 
 function reportProduct(reportedProduct) {
-
-	console.log(3);
 
 	reportedProduct.bought = true;
 
@@ -253,9 +265,8 @@ function reportProduct(reportedProduct) {
 	});
 }
 
+// Looks for the database all products 
 function getReported(reported) {
-
-	console.log(2);
 
 	$.ajax({
 
@@ -280,6 +291,7 @@ function getReported(reported) {
 	});
 }
 
+// Watchforms of the page
 function main() {
 
 	$("#nav-search-btn").on("click", function(e) {
@@ -305,7 +317,7 @@ function main() {
 			left: 0, 
 			behavior: 'smooth'
 		});
-		SearchSearch(e.target.id);
+		displaySearch(e.target.id);
 	});
 }
 
@@ -316,7 +328,7 @@ function secondary() {
 			left: 0, 
 			behavior: 'smooth'
 		});
-		SearchSearch(e.target.id);
+		displaySearch(e.target.id);
 	});
 }
 
