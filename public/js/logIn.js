@@ -131,11 +131,9 @@ function logUser(userLogged) {
 
 		success: function(responseJSON) {
 			
-			for (let i=0; i<responseJSON.length; i++) {
- 				if (responseJSON[i].email == userLogged.email && responseJSON[i].password == userLogged.password) {
+			for (let i=0; i<responseJSON.length; i++) 
+ 				if (responseJSON[i].email == userLogged.email && responseJSON[i].password == userLogged.password) 
 					foundUser = responseJSON[i];
- 				}
-			}
 
 			if (foundUser != "")
 				updateUser(foundUser);
@@ -185,11 +183,9 @@ function logOutUser() {
 
 		success: function(responseJSON) {
 			
-			for (let i=0; i<responseJSON.length; i++) {
- 				if (responseJSON[i].logged) {
+			for (let i=0; i<responseJSON.length; i++)
+ 				if (responseJSON[i].logged)
 					foundUser = responseJSON[i];
- 				}
-			}
 
 			if (foundUser != "")
 				logOut(foundUser);
@@ -228,7 +224,6 @@ function main() {
 				email			: 	$("#mail-reg").val(),
 				password	: 	$("#pwd-reg").val(),	
 			};
-
 			createUser(newUser);
 		}
 	});
@@ -246,10 +241,6 @@ function main() {
 
 	$("#logOutBtn").on("click", function() {
 
-		console.log("out");
-
 		logOutUser();
-
 	});
-
 }
