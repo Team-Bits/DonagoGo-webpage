@@ -96,9 +96,7 @@ function getProducts() {
 		error: function(errors) {
 			console.log("error: ", errors);
 		}
-
 	});
-
 }
 
 function main() {

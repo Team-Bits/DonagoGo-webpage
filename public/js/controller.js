@@ -10,7 +10,6 @@ Controller.js
 		- Report a product
 */
 
-
 // Go to database and look if the current user is loged in
 function isLogedIn() {
 
@@ -340,5 +339,3 @@ function third() {
 		getReported(reported);
 	});
 }
-
-// third();
